@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import { fancy } from 'fancy-test';
 import { expect } from '@oclif/test';
 import cloneDeep from 'lodash/cloneDeep';
-import { ux } from '@contentstack/cli-utilities';
+import { ux } from 'cs/cli-utilities';
 
 import config from '../../../src/config';
 import { Extensions } from '../../../src/modules';
@@ -77,14 +77,14 @@ const fixedSchema = [
     content_types: ['ct6'],
     type: 'widget',
     scope: {
-      content_types: ["ct4", "ct3", "ct2", "ct1",'ct6'],
+      content_types: ["ct4", "ct3", "ct2", "ct1", 'ct6'],
     },
   },
 ]
 describe('Extensions scope containing content_types uids', () => {
   describe('run method with invalid path for extensions', () => {
     const ext = new Extensions({
-      log: () => {},
+      log: () => { },
       moduleName: 'extensions',
       ctSchema: cloneDeep(require('./../mock/contents/extensions/ctSchema.json')),
       config: Object.assign(config, { basePath: resolve(__dirname, '..', 'mock', 'workflows'), flags: {} }),
@@ -103,7 +103,7 @@ describe('Extensions scope containing content_types uids', () => {
   });
   describe('run method with valid path for extensions containing extensions with missing content types', () => {
     const ext = new Extensions({
-      log: () => {},
+      log: () => { },
       moduleName: 'extensions',
       ctSchema: cloneDeep(require('./../mock/contents/extensions/ctSchema.json')),
       config: Object.assign(config, {
@@ -192,7 +192,7 @@ describe('Extensions scope containing content_types uids', () => {
   });
   describe('run method with valid path for extensions containing extensions with no missing content types and ct set to $all', () => {
     const ext = new Extensions({
-      log: () => {},
+      log: () => { },
       moduleName: 'extensions',
       ctSchema: cloneDeep(require('./../mock/contents/extensions/ctSchema.json')),
       config: Object.assign(config, {
@@ -213,7 +213,7 @@ describe('Extensions scope containing content_types uids', () => {
   });
   describe('run method with valid path for extensions containing extensions with no missing content types and ct set content types that are present', () => {
     const ext = new Extensions({
-      log: () => {},
+      log: () => { },
       moduleName: 'extensions',
       ctSchema: cloneDeep(require('./../mock/contents/extensions/ctSchema.json')),
       config: Object.assign(config, {
@@ -238,7 +238,7 @@ describe('Extensions scope containing content_types uids', () => {
       public fixedExtensions!: Record<string, Extension>;
       constructor() {
         super({
-          log: () => {},
+          log: () => { },
           moduleName: 'extensions',
           ctSchema: cloneDeep(require('./../mock/contents/extensions/ctSchema.json')),
           config: Object.assign(config, {
@@ -256,7 +256,7 @@ describe('Extensions scope containing content_types uids', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || true })
       .stub(ux, 'confirm', async () => true)
-      .stub(ext, 'writeFileSync', () => {})
+      .stub(ext, 'writeFileSync', () => { })
       .it(
         'missingCts in extension to extensionSchema containing, extensions with fixed scope, missing Cts to the Cts that are not present in Ct Schema, And the fixed extensions that would be overwritten in the file',
         async () => {
@@ -332,7 +332,7 @@ describe('Extensions scope containing content_types uids', () => {
   });
   describe('fixSchema method with valid path for extensions containing extensions with missing content types checking the fixed content', () => {
     const ext = new Extensions({
-      log: () => {},
+      log: () => { },
       moduleName: 'extensions',
       ctSchema: cloneDeep(require('./../mock/contents/extensions/ctSchema.json')),
       config: Object.assign(config, {
@@ -344,8 +344,8 @@ describe('Extensions scope containing content_types uids', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || true })
       .stub(ux, 'confirm', async () => true)
-      .stub(ext, 'writeFixContent', async () => {})
-      .stub(ext, 'writeFileSync', () => {})
+      .stub(ext, 'writeFixContent', async () => { })
+      .stub(ext, 'writeFileSync', () => { })
       .it(
         'missingCts in extension to extensionSchema containing, extensions with fixed scope, missing Cts to the Cts that are not present in Ct Schema, Not overwriting to the file',
         async () => {
@@ -358,7 +358,7 @@ describe('Extensions scope containing content_types uids', () => {
   });
   describe('fixSchema method with valid path for extensions containing extensions with no missing content types and ct set to $all', () => {
     const ext = new Extensions({
-      log: () => {},
+      log: () => { },
       moduleName: 'extensions',
       ctSchema: cloneDeep(require('./../mock/contents/extensions/ctSchema.json')),
       config: Object.assign(config, {
@@ -370,7 +370,7 @@ describe('Extensions scope containing content_types uids', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || true })
       .stub(ux, 'confirm', async () => true)
-      .stub(ext, 'writeFileSync', () => {})
+      .stub(ext, 'writeFileSync', () => { })
       .it(
         'should expect missingRefs equal to empty array, expect entire workflow schema and empty missingCts',
         async () => {

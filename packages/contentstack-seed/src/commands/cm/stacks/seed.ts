@@ -1,4 +1,4 @@
-import { Command } from '@contentstack/cli-command';
+import { Command } from 'cs/cli-command';
 import {
   printFlagDeprecation,
   flags,
@@ -6,7 +6,7 @@ import {
   FlagInput,
   cliux,
   configHandler,
-} from '@contentstack/cli-utilities';
+} from 'cs/cli-utilities';
 import ContentModelSeeder, { ContentModelSeederOptions } from '../../../seed';
 
 export default class SeedCommand extends Command {

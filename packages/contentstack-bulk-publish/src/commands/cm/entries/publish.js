@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 /* eslint-disable node/no-extraneous-require */
-const { Command } = require('@contentstack/cli-command');
-const { printFlagDeprecation, flags } = require('@contentstack/cli-utilities');
+const { Command } = require('cs/cli-command');
+const { printFlagDeprecation, flags } = require('cs/cli-utilities');
 const { start: startPublish } = require('../../../producer/publish-entries');
 const { start: startCrossPublish } = require('../../../producer/cross-publish');
 const store = require('../../../util/store.js');
-const { cliux } = require('@contentstack/cli-utilities');
+const { cliux } = require('cs/cli-utilities');
 const configKey = 'publish_entries';
 const configKeyCrossEnv = 'cross_env_publish';
 const { prettyPrint, formatError } = require('../../../util');
@@ -197,7 +197,7 @@ PublishEntriesCommand.flags = {
     default: 'true',
   }),
   'api-version': flags.string({
-    description : "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
+    description: "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
   }),
   'publish-all-content-types': flags.boolean({
     description: '(optional) Publish all contenttypes (cannot be set when contentTypes flag is set)',

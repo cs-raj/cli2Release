@@ -1,6 +1,6 @@
 const fs = require('fs');
-const { Command } = require('@contentstack/cli-command');
-const { cliux, printFlagDeprecation, flags } = require('@contentstack/cli-utilities');
+const { Command } = require('cs/cli-command');
+const { cliux, printFlagDeprecation, flags } = require('cs/cli-utilities');
 
 const { getLogsDirPath } = require('../../../util/logger.js');
 

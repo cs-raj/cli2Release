@@ -17,7 +17,7 @@ const {
   messageHandler,
   managementSDKClient,
   ContentstackClient,
-} = require('@contentstack/cli-utilities');
+} = require('cs/cli-utilities');
 
 const directory = './data';
 const delimeter = os.platform() === 'win32' ? '\\' : '/';
@@ -527,7 +527,7 @@ async function getUsers(managementAPIClient, organization, params, result = []) 
       await wait(200);
       return getUsers(managementAPIClient, organization, params, result);
     }
-  } catch (error) {}
+  } catch (error) { }
 }
 
 function getMappedUsers(users) {
@@ -660,7 +660,7 @@ function formatError(error) {
     } else {
       error = JSON.parse(error.message);
     }
-  } catch (e) {}
+  } catch (e) { }
   let message = error.errorMessage || error.error_message || error.message || error;
   if (error.errors && Object.keys(error.errors).length > 0) {
     Object.keys(error.errors).forEach((e) => {
@@ -813,10 +813,9 @@ async function cleanTeamsData(data, managementAPIClient, org) {
  */
 async function exportTeams(managementAPIClient, organization, teamUid, delimiter) {
   cliux.print(
-    `info: Exporting the ${
-      teamUid && organization?.name
-        ? `team with uid ${teamUid} in Organisation ${organization?.name} `
-        : `teams of Organisation ` + organization?.name
+    `info: Exporting the ${teamUid && organization?.name
+      ? `team with uid ${teamUid} in Organisation ${organization?.name} `
+      : `teams of Organisation ` + organization?.name
     }`,
     { color: 'blue' },
   );
@@ -840,8 +839,7 @@ async function exportTeams(managementAPIClient, organization, teamUid, delimiter
     );
     await getTeamsDetail(allTeamsData, organization, teamUid, delimiter);
     cliux.print(
-      `info: Exporting the stack role details for  ${
-        teamUid ? `team ` + teamUid : `organisation ` + organization?.name
+      `info: Exporting the stack role details for  ${teamUid ? `team ` + teamUid : `organisation ` + organization?.name
       }`,
       { color: 'blue' },
     );
@@ -944,9 +942,8 @@ async function exportRoleMappings(managementAPIClient, allTeamsData, teamUid, de
     }
   }
 
-  const fileName = `${kebabize('Stack_Role_Mapping'.replace(config.organizationNameRegex, ''))}${
-    teamUid ? `_${teamUid}` : ''
-  }.csv`;
+  const fileName = `${kebabize('Stack_Role_Mapping'.replace(config.organizationNameRegex, ''))}${teamUid ? `_${teamUid}` : ''
+    }.csv`;
 
   write(this, stackRoleWithTeamData, fileName, 'Team Stack Role details', delimiter);
 }
@@ -1176,20 +1173,20 @@ function handleTaxonomyErrorMsg(err) {
  * @returns
  */
 async function createImportableCSV(payload, taxonomies) {
-    let taxonomiesData = [];
-    let headers = [];
-    payload['type'] = 'export-taxonomies';
-    payload['format'] = 'csv';
-    for (const taxonomy of taxonomies) {
-      if (taxonomy?.uid) {
-        payload['taxonomyUID'] = taxonomy?.uid;
-        const data = await taxonomySDKHandler(payload);
-        const taxonomies = await csvParse(data, headers);
-        taxonomiesData.push(...taxonomies);
-      }
+  let taxonomiesData = [];
+  let headers = [];
+  payload['type'] = 'export-taxonomies';
+  payload['format'] = 'csv';
+  for (const taxonomy of taxonomies) {
+    if (taxonomy?.uid) {
+      payload['taxonomyUID'] = taxonomy?.uid;
+      const data = await taxonomySDKHandler(payload);
+      const taxonomies = await csvParse(data, headers);
+      taxonomiesData.push(...taxonomies);
     }
+  }
 
-    return { taxonomiesData, headers };
+  return { taxonomiesData, headers };
 }
 
 /**

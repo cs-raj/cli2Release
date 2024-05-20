@@ -3,7 +3,7 @@ import * as zlib from 'zlib';
 import * as https from 'https';
 import { Stream } from 'stream';
 import mkdirp = require('mkdirp');
-import { HttpClient } from '@contentstack/cli-utilities';
+import { HttpClient } from 'cs/cli-utilities';
 
 import GithubError from './error';
 
@@ -80,7 +80,7 @@ export default class GitHubClient {
 
       https.request(options, (response) => {
         let responseBody = '';
-        const data: any = {  statusCode: response.statusCode, };
+        const data: any = { statusCode: response.statusCode, };
         if (data.statusCode === 403) {
           const xRateLimitReset = response.rawHeaders[response.rawHeaders.indexOf('X-RateLimit-Reset') + 1];
           const startDate = (new Date()).getTime() / 1000;

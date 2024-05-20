@@ -3,7 +3,7 @@ import { resolve } from "path";
 import { existsSync } from "fs";
 import isEmpty from "lodash/isEmpty";
 import includes from "lodash/includes";
-import { cliux as ux } from "@contentstack/cli-utilities";
+import { cliux as ux } from "cs/cli-utilities";
 
 import BaseClass from "./base-class";
 import { getRemoteUrls } from "../util";
@@ -123,7 +123,7 @@ export default class PreCheck extends BaseClass {
         this.log("Invalid Launch config!", "warn");
         this.exit(1);
       }
-    } catch (error) {}
+    } catch (error) { }
   }
 
   /**

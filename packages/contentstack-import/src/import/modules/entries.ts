@@ -7,7 +7,7 @@
 
 import * as path from 'path';
 import { isEmpty, values, cloneDeep, find, indexOf, forEach } from 'lodash';
-import { FsUtility } from '@contentstack/cli-utilities';
+import { FsUtility } from 'cs/cli-utilities';
 import {
   fsUtil,
   log,
@@ -174,8 +174,7 @@ export default class EntriesImport extends BaseClass {
           await this.publishEntries(entryRequestOption).catch((error) => {
             log(
               this.importConfig,
-              `Error in publishing entries of ${entryRequestOption.cTUid} in locale ${
-                entryRequestOption.locale
+              `Error in publishing entries of ${entryRequestOption.cTUid} in locale ${entryRequestOption.locale
               } ${formatError(error)}`,
               'error',
             );

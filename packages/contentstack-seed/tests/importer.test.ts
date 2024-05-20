@@ -1,4 +1,4 @@
-jest.mock('@contentstack/cli-cm-import/src/lib/util/import-flags');
+jest.mock('cs/cli-cm-import/src/lib/util/import-flags');
 jest.mock('path');
 
 import * as process from 'process';
@@ -11,7 +11,7 @@ const tmpPath = '/var/tmp';
 describe('importer', () => {
   test('should cwd into temp path', () => {
     // eslint-disable-next-line
-    const chdirMock = jest.spyOn(process, 'chdir').mockImplementation(() => {});
+    const chdirMock = jest.spyOn(process, 'chdir').mockImplementation(() => { });
 
     importer.run({
       api_key: '',

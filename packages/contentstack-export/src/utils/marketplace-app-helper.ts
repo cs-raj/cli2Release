@@ -1,4 +1,4 @@
-import { cliux, configHandler, NodeCrypto, managementSDKClient, createDeveloperHubUrl } from '@contentstack/cli-utilities';
+import { cliux, configHandler, NodeCrypto, managementSDKClient, createDeveloperHubUrl } from 'cs/cli-utilities';
 
 import { formatError, log } from '../utils';
 import { ExportConfig } from '../types';

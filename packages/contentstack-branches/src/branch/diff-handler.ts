@@ -1,6 +1,6 @@
 import startCase from 'lodash/startCase';
 import camelCase from 'lodash/camelCase';
-import { cliux } from '@contentstack/cli-utilities';
+import { cliux } from 'cs/cli-utilities';
 import { getbranchConfig } from '../utils';
 import { BranchOptions, BranchDiffRes, BranchDiffPayload } from '../interfaces';
 import { askBaseBranch, askCompareBranch, askStackAPIKey, selectModule } from '../utils/interactive';
@@ -39,7 +39,7 @@ export default class BranchDiffHandler {
     }
 
     if (!this.options.baseBranch) {
-       baseBranch = getbranchConfig(this.options.stackAPIKey);
+      baseBranch = getbranchConfig(this.options.stackAPIKey);
       if (!baseBranch) {
         this.options.baseBranch = await askBaseBranch();
       } else {
@@ -55,7 +55,7 @@ export default class BranchDiffHandler {
       this.options.module = await selectModule();
     }
 
-    if(baseBranch){
+    if (baseBranch) {
       cliux.print(`\nBase branch: ${baseBranch}`, { color: 'grey' });
     }
   }
@@ -84,15 +84,15 @@ export default class BranchDiffHandler {
     const branchDiffData = await fetchBranchesDiff(payload);
     const diffData = filterBranchDiffDataByModule(branchDiffData);
     cliux.loaderV2('', spinner);
-   
-    if(this.options.module === 'all'){
+
+    if (this.options.module === 'all') {
       for (let module in diffData) {
         const branchDiff = diffData[module];
-          payload.module = module;
-          this.displaySummary(branchDiff, module);
-          await this.displayBranchDiffTextAndVerbose(branchDiff, payload);
+        payload.module = module;
+        this.displaySummary(branchDiff, module);
+        await this.displayBranchDiffTextAndVerbose(branchDiff, payload);
       }
-    }else{
+    } else {
       const branchDiff = diffData[payload.module];
       this.displaySummary(branchDiff, this.options.module);
       await this.displayBranchDiffTextAndVerbose(branchDiff, payload);

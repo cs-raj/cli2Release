@@ -4,7 +4,7 @@ import { resolve } from 'path';
 import { fancy } from 'fancy-test';
 import { PassThrough } from 'stream';
 import { expect } from '@oclif/test';
-import { ux, cliux } from '@contentstack/cli-utilities';
+import { ux, cliux } from 'cs/cli-utilities';
 
 import { AuditBaseCommand } from '../../src/audit-base-command';
 import { ContentType, Entries, GlobalField, Extensions, Workflows } from '../../src/modules';
@@ -33,16 +33,16 @@ describe('AuditBaseCommand class', () => {
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(winston.transports, 'File', () => fsTransport)
       .stub(winston, 'createLogger', () => ({ log: console.log, error: console.error }))
-      .stub(fs, 'mkdirSync', () => {})
-      .stub(fs, 'writeFileSync', () => {})
-      .stub(ux, 'table', () => {})
-      .stub(ux.action, 'stop', () => {})
-      .stub(ux.action, 'start', () => {})
+      .stub(fs, 'mkdirSync', () => { })
+      .stub(fs, 'writeFileSync', () => { })
+      .stub(ux, 'table', () => { })
+      .stub(ux.action, 'stop', () => { })
+      .stub(ux.action, 'start', () => { })
       .stub(Entries.prototype, 'run', () => ({ entry_1: {} }))
       .stub(ContentType.prototype, 'run', () => ({ ct_1: {} }))
       .stub(GlobalField.prototype, 'run', () => ({ gf_1: {} }))
       .stub(Extensions.prototype, 'run', () => ({ ext_1: {} }))
-      .stub(AuditBaseCommand.prototype, 'showOutputOnScreenWorkflowsAndExtension', () => {})
+      .stub(AuditBaseCommand.prototype, 'showOutputOnScreenWorkflowsAndExtension', () => { })
       .stub(fs, 'createWriteStream', () => new PassThrough())
       .it('should show audit report path', async (ctx) => {
         await AuditCMD.run(['--data-dir', resolve(__dirname, 'mock', 'contents')]);
@@ -53,11 +53,11 @@ describe('AuditBaseCommand class', () => {
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(winston.transports, 'File', () => fsTransport)
       .stub(winston, 'createLogger', () => ({ log: console.log, error: console.error }))
-      .stub(fs, 'mkdirSync', () => {})
-      .stub(fs, 'writeFileSync', () => {})
-      .stub(ux, 'table', () => {})
-      .stub(ux.action, 'stop', () => {})
-      .stub(ux.action, 'start', () => {})
+      .stub(fs, 'mkdirSync', () => { })
+      .stub(fs, 'writeFileSync', () => { })
+      .stub(ux, 'table', () => { })
+      .stub(ux.action, 'stop', () => { })
+      .stub(ux.action, 'start', () => { })
       .stub(cliux, 'inquire', () => resolve(__dirname, 'mock', 'contents'))
       .stub(AuditBaseCommand.prototype, 'scanAndFix', () => ({ val_1: {} }))
       .stub(Entries.prototype, 'run', () => ({ entry_1: {} }))
@@ -77,15 +77,15 @@ describe('AuditBaseCommand class', () => {
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(winston.transports, 'File', () => fsTransport)
       .stub(winston, 'createLogger', () => ({ log: console.log, error: console.error }))
-      .stub(fs, 'mkdirSync', () => {})
-      .stub(fs, 'writeFileSync', () => {})
-      .stub(AuditBaseCommand.prototype, 'showOutputOnScreenWorkflowsAndExtension', () => {})
+      .stub(fs, 'mkdirSync', () => { })
+      .stub(fs, 'writeFileSync', () => { })
+      .stub(AuditBaseCommand.prototype, 'showOutputOnScreenWorkflowsAndExtension', () => { })
       .stub(ux, 'table', (...args: any) => {
         args[1].missingRefs.get({ missingRefs: ['gf_0'] });
       })
-      .stub(AuditBaseCommand.prototype, 'showOutputOnScreenWorkflowsAndExtension', () => {})
-      .stub(ux.action, 'stop', () => {})
-      .stub(ux.action, 'start', () => {})
+      .stub(AuditBaseCommand.prototype, 'showOutputOnScreenWorkflowsAndExtension', () => { })
+      .stub(ux.action, 'stop', () => { })
+      .stub(ux.action, 'start', () => { })
       .stub(Entries.prototype, 'run', () => ({
         entry_1: {
           name: 'T1',
@@ -99,9 +99,9 @@ describe('AuditBaseCommand class', () => {
       .stub(GlobalField.prototype, 'run', () => ({ gf_1: {} }))
       .stub(Workflows.prototype, 'run', () => ({ wf_1: {} }))
       .stub(Extensions.prototype, 'run', () => ({ ext_1: {} }))
-      .stub(fs, 'createBackUp', () => {})
+      .stub(fs, 'createBackUp', () => { })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(AuditBaseCommand.prototype, 'createBackUp', () => {})
+      .stub(AuditBaseCommand.prototype, 'createBackUp', () => { })
       .it('should print missing ref and fix status on table formate', async (ctx) => {
         await AuditFixCMD.run(['--data-dir', resolve(__dirname, 'mock', 'contents')]);
         expect(ctx.stdout).to.includes('warn You can locate the fixed content at');
@@ -110,7 +110,7 @@ describe('AuditBaseCommand class', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(winston.transports, 'File', () => fsTransport)
-      .stub(winston, 'createLogger', () => ({ log: () => {}, error: () => {} }))
+      .stub(winston, 'createLogger', () => ({ log: () => { }, error: () => { } }))
       .it('return the status column object ', async () => {
         class FixCMD extends AuditBaseCommand {
           async run() {
@@ -131,11 +131,11 @@ describe('AuditBaseCommand class', () => {
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(winston.transports, 'File', () => fsTransport)
       .stub(winston, 'createLogger', () => ({ log: console.log, error: console.error }))
-      .stub(AuditBaseCommand.prototype, 'promptQueue', async () => {})
+      .stub(AuditBaseCommand.prototype, 'promptQueue', async () => { })
       .stub(AuditBaseCommand.prototype, 'scanAndFix', async () => ({}))
-      .stub(AuditBaseCommand.prototype, 'showOutputOnScreen', () => {})
-      .stub(fs, 'mkdirSync', () => {})
-      .stub(require('fs-extra'), 'copy', () => {})
+      .stub(AuditBaseCommand.prototype, 'showOutputOnScreen', () => { })
+      .stub(fs, 'mkdirSync', () => { })
+      .stub(require('fs-extra'), 'copy', () => { })
       .it('should create backup dir', async () => {
         class CMD extends AuditBaseCommand {
           async run() {
@@ -158,11 +158,11 @@ describe('AuditBaseCommand class', () => {
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(winston.transports, 'File', () => fsTransport)
       .stub(winston, 'createLogger', () => ({ log: console.log, error: console.error }))
-      .stub(AuditBaseCommand.prototype, 'promptQueue', async () => {})
+      .stub(AuditBaseCommand.prototype, 'promptQueue', async () => { })
       .stub(AuditBaseCommand.prototype, 'scanAndFix', async () => ({}))
-      .stub(AuditBaseCommand.prototype, 'showOutputOnScreen', () => {})
-      .stub(fs, 'mkdirSync', () => {})
-      .stub(require('fs-extra'), 'copy', () => {})
+      .stub(AuditBaseCommand.prototype, 'showOutputOnScreen', () => { })
+      .stub(fs, 'mkdirSync', () => { })
+      .stub(require('fs-extra'), 'copy', () => { })
       .it('should throw error if not valid path provided to create backup dir', async () => {
         class CMD extends AuditBaseCommand {
           async run() {
@@ -281,7 +281,7 @@ describe('AuditBaseCommand class', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(winston.transports, 'File', () => fsTransport)
-      .stub(winston, 'createLogger', () => ({ log: () => {}, error: () => {} }))
+      .stub(winston, 'createLogger', () => ({ log: () => { }, error: () => { } }))
       .stub(fs, 'createWriteStream', () => new PassThrough())
       .it('should log error and return empty array', async () => {
         class CMD extends AuditBaseCommand {

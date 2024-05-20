@@ -4,7 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 import forEach from 'lodash/forEach'
-import { configHandler, cliux, messageHandler } from '@contentstack/cli-utilities';
+import { configHandler, cliux, messageHandler } from 'cs/cli-utilities';
 import { MergeParams } from '../interfaces';
 
 export const getbranchesList = (branchResult, baseBranch: string) => {
@@ -116,7 +116,7 @@ export function validateCompareData(branchCompareData) {
     forEach(branchCompareData.content_types, (value, key) => {
       if (value?.length > 0) {
         validCompareData = true;
-       }
+      }
     });
   }
 
@@ -124,7 +124,7 @@ export function validateCompareData(branchCompareData) {
     forEach(branchCompareData.global_fields, (value, key) => {
       if (value?.length > 0) {
         validCompareData = true;
-       }
+      }
     });
   }
 

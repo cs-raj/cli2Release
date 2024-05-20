@@ -2,7 +2,7 @@ import * as path from "path";
 import { expect, test } from "@oclif/test";
 // @ts-ignore
 import { Helper } from "./utils";
-import { cliux, messageHandler } from "@contentstack/cli-utilities";
+import { cliux, messageHandler } from "cs/cli-utilities";
 // @ts-ignore
 import { PRINT_LOGS, CDA, CMA, REGION_NAME } from "./config.json";
 
@@ -74,15 +74,12 @@ describe("ContentStack-Config plugin test", () => {
         `-m=${CMA || "https://api.contentstack.io"}`,
       ])
       .it(
-        `Check Name=${REGION_NAME || "Test"}, CDA=${
-          CDA || "https://cdn.contentstack.io"
+        `Check Name=${REGION_NAME || "Test"}, CDA=${CDA || "https://cdn.contentstack.io"
         }, CMA=${CMA || "https://api.contentstack.io"} values has setup`,
         (ctx) => {
           expect(ctx.stdout).to.equal(
-            `Custom region has been set to ${
-              REGION_NAME || "Test"
-            }\nCMA HOST: ${CMA || "https://api.contentstack.io"}\nCDA HOST: ${
-              CDA || "https://cdn.contentstack.io"
+            `Custom region has been set to ${REGION_NAME || "Test"
+            }\nCMA HOST: ${CMA || "https://api.contentstack.io"}\nCDA HOST: ${CDA || "https://cdn.contentstack.io"
             }\n`
           );
         }
@@ -111,10 +108,8 @@ describe("ContentStack-Config plugin test", () => {
         expect(ctx.stdout)
           .to.be.a("string")
           .that.have.includes(
-            `Custom region has been set to ${
-              REGION_NAME || "Test"
-            }\nCMA HOST: ${CMA || "https://api.contentstack.io"}\nCDA HOST: ${
-              CDA || "https://cdn.contentstack.io"
+            `Custom region has been set to ${REGION_NAME || "Test"
+            }\nCMA HOST: ${CMA || "https://api.contentstack.io"}\nCDA HOST: ${CDA || "https://cdn.contentstack.io"
             }\n`,
             "Custom CDA, CMA setup failed.!"
           );

@@ -2,8 +2,8 @@ const fs = require('fs');
 const _ = require('lodash');
 const https = require('https');
 const config = require('../../../src/config/default');
-const { Command } = require('@contentstack/cli-command');
-const { managementSDKClient } = require('@contentstack/cli-utilities');
+const { Command } = require('cs/cli-command');
+const { managementSDKClient } = require('cs/cli-utilities');
 const pjson = require('../../../package.json');
 const { REGIONS } = require('../../config.json');
 
@@ -70,7 +70,7 @@ const getBranches = async (data) => {
 
 const getEnvData = () => envData
 
-const getStack = async (data={}) => {
+const getStack = async (data = {}) => {
   const client = await managementSDKClient(config);
   return client.stack({
     api_key: data.STACK_API_KEY || config.target_stack,
@@ -155,7 +155,7 @@ const getExtensionsCount = async (data) => {
 
   return extensionCount;
 }
-const getMarketplaceAppsCount = async (data) => { 
+const getMarketplaceAppsCount = async (data) => {
   const queryVariables = {
     include_count: true,
     include_marketplace_extensions: true
@@ -179,7 +179,7 @@ const getGlobalFieldsCount = async (data) => {
     .globalField()
     .query(queryVariables)
     .find()
-    .then(({items}) => items.length)
+    .then(({ items }) => items.length)
 
   return globalFieldCount;
 }
@@ -246,7 +246,7 @@ const getCustomRolesCount = async (data) => {
     });
 
   return customRoles;
- }
+}
 
 const getWebhooksCount = async (data) => {
   const queryVariables = {
@@ -284,7 +284,7 @@ const getLoginCredentials = () => {
         REGION: region
       }
       keys.forEach(element => {
-        if(element.includes('USERNAME')) {
+        if (element.includes('USERNAME')) {
           creds[region]['USERNAME'] = process.env[element];
         } else {
           creds[region]['PASSWORD'] = process.env[element];
@@ -334,7 +334,7 @@ const readJsonFileContents = (filePath) => {
 }
 
 const cleanUp = async (path) => {
-  fs.rmSync(path, {recursive: true, force: true})
+  fs.rmSync(path, { recursive: true, force: true })
 }
 
 const deleteStack = async (data) => {
@@ -358,7 +358,7 @@ const _deleteStack = data => {
       res.on('data', chunk => {
         body += chunk;
       });
-  
+
       res.on('end', () => {
         if (res.statusCode === 200) {
           resolve(null);

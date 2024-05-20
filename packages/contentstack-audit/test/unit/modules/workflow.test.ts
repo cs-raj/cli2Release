@@ -3,7 +3,7 @@ import { resolve } from 'path';
 import { fancy } from 'fancy-test';
 import { expect } from '@oclif/test';
 import cloneDeep from 'lodash/cloneDeep';
-import { ux } from '@contentstack/cli-utilities';
+import { ux } from 'cs/cli-utilities';
 
 import config from '../../../src/config';
 import { Workflows } from '../../../src/modules';
@@ -13,7 +13,7 @@ import { values } from 'lodash';
 describe('Workflows', () => {
   describe('run method with invalid path for workflows', () => {
     const wf = new Workflows({
-      log: () => {},
+      log: () => { },
       moduleName: 'workflows',
       ctSchema: cloneDeep(require('./../mock/contents/workflows/ctSchema.json')),
       config: Object.assign(config, { basePath: resolve(__dirname, '..', 'mock', 'workflows'), flags: {} }),
@@ -32,7 +32,7 @@ describe('Workflows', () => {
   });
   describe('run method with valid path for workflows and ctSchema', () => {
     const wf = new Workflows({
-      log: () => {},
+      log: () => { },
       moduleName: 'workflows',
       ctSchema: cloneDeep(require('./../mock/contents/workflows/ctSchema.json')),
       config: Object.assign(config, {
@@ -86,7 +86,7 @@ describe('Workflows', () => {
 
   describe('run method with audit fix for workflows with valid path and empty ctSchema', () => {
     const wf = new Workflows({
-      log: () => {},
+      log: () => { },
       moduleName: 'workflows',
       ctSchema: cloneDeep(require('./../mock/contents/workflows/ctSchema.json')),
       config: Object.assign(config, {
@@ -98,10 +98,10 @@ describe('Workflows', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || true })
-      .stub(wf, 'log', async () => {})
+      .stub(wf, 'log', async () => { })
       .stub(ux, 'confirm', async () => true)
-      .stub(wf, 'WriteFileSync', () => {})
-      .stub(wf, 'writeFixContent', () => {})
+      .stub(wf, 'WriteFileSync', () => { })
+      .stub(wf, 'writeFixContent', () => { })
       .it('the run function should run and flow should go till fixWorkflowSchema', async () => {
         const fixedReference = await wf.run();
         expect(fixedReference).eql([

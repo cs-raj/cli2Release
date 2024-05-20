@@ -1,6 +1,6 @@
 const { describe, it } = require('mocha');
 const CrossPublish = require('../../../../src/commands/cm/bulk-publish/cross-publish');
-const { cliux } = require('@contentstack/cli-utilities');
+const { cliux } = require('cs/cli-utilities');
 const sinon = require('sinon');
 const { config } = require('dotenv');
 const { expect } = require('chai');

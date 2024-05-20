@@ -1,4 +1,4 @@
-import { Command } from '@contentstack/cli-command';
+import { Command } from 'cs/cli-command';
 import {
   cliux,
   CLIError,
@@ -6,7 +6,7 @@ import {
   flags,
   managementSDKClient,
   FlagInput
-} from '@contentstack/cli-utilities';
+} from 'cs/cli-utilities';
 import { User } from '../../interfaces';
 import { authHandler, interactive } from '../../utils';
 import { BaseCommand } from '../../base-command';

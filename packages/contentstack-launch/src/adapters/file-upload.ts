@@ -6,7 +6,7 @@ import FormData from 'form-data';
 import filter from 'lodash/filter';
 import includes from 'lodash/includes';
 import { basename, resolve } from 'path';
-import { cliux, ux } from '@contentstack/cli-utilities';
+import { cliux, ux } from 'cs/cli-utilities';
 import { createReadStream, existsSync, PathLike, statSync } from 'fs';
 
 import { print } from '../util';

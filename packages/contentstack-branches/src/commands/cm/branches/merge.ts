@@ -1,5 +1,5 @@
-import { Command } from '@contentstack/cli-command';
-import { cliux, flags, isAuthenticated } from '@contentstack/cli-utilities';
+import { Command } from 'cs/cli-command';
+import { cliux, flags, isAuthenticated } from 'cs/cli-utilities';
 import { setupMergeInputs, displayBranchStatus, handleErrorMsg, validateCompareData } from '../../../utils';
 import { MergeHandler } from '../../../branch';
 export default class BranchMergeCommand extends Command {
@@ -78,7 +78,7 @@ export default class BranchMergeCommand extends Command {
         format: 'compact-text',
       });
       const isCompareDataValid = validateCompareData(branchCompareData);
-      if(isCompareDataValid) {
+      if (isCompareDataValid) {
         await new MergeHandler({
           stackAPIKey: branchMergeFlags['stack-api-key'],
           compareBranch: branchMergeFlags['compare-branch'],
@@ -94,7 +94,7 @@ export default class BranchMergeCommand extends Command {
           mergeSummary: branchMergeFlags.mergeSummary,
           host: this.cmaHost,
           enableEntryExp: false,
-        }).start(); 
+        }).start();
       } else {
         cliux.print("No changes found to merge.");
       }

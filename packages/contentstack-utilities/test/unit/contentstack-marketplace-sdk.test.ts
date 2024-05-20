@@ -1,5 +1,5 @@
 import { expect } from '@oclif/test';
-import { fancy } from '@contentstack/cli-dev-dependencies';
+import { fancy } from 'cs/cli-dev-dependencies';
 
 import authHandler from '../../src/auth-handler';
 import configStore from '../../src/config-handler';

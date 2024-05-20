@@ -1,6 +1,6 @@
 import * as path from 'path';
 const inquirer = require('inquirer');
-import { cliux, pathValidator } from '@contentstack/cli-utilities';
+import { cliux, pathValidator } from 'cs/cli-utilities';
 
 import messageHandler from '../messages';
 

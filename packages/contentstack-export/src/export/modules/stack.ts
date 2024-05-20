@@ -1,6 +1,6 @@
 import find from 'lodash/find';
 import { resolve as pResolve } from 'node:path';
-import { isAuthenticated, managementSDKClient } from '@contentstack/cli-utilities';
+import { isAuthenticated, managementSDKClient } from 'cs/cli-utilities';
 
 import BaseClass from './base-class';
 import { log, formatError, fsUtil } from '../../utils';
@@ -42,7 +42,7 @@ export default class ExportStack extends BaseClass {
     return await tempAPIClient
       .stack({ api_key: this.exportConfig.source_stack })
       .fetch()
-      .catch((error: any) => {});
+      .catch((error: any) => { });
   }
 
   async getLocales(skip: number = 0) {

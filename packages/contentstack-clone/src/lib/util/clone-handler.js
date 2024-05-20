@@ -3,8 +3,8 @@ const path = require('path');
 const inquirer = require('inquirer');
 const chalk = require('chalk');
 const fs = require('fs');
-let { default: exportCmd } = require('@contentstack/cli-cm-export');
-let { default: importCmd } = require('@contentstack/cli-cm-import');
+let { default: exportCmd } = require('cs/cli-cm-export');
+let { default: importCmd } = require('cs/cli-cm-import');
 const { CustomAbortController } = require('./abort-controller');
 const prompt = require('prompt');
 const colors = require('@colors/colors/safe');
@@ -21,7 +21,7 @@ const {
   Clone,
   HandleBranchCommand,
 } = require('../helpers/command-helpers');
-const { configHandler } = require('@contentstack/cli-utilities')
+const { configHandler } = require('cs/cli-utilities')
 
 let client = {};
 let config;
@@ -158,7 +158,7 @@ class CloneHandler {
           .query()
           .find()
           .then(({ items }) => items)
-          .catch((_err) => {});
+          .catch((_err) => { });
 
         const condition = result && Array.isArray(result) && result.length > 0;
 
@@ -444,12 +444,12 @@ class CloneHandler {
           .branch()
           .query()
           .find()
-          .catch((_err) => {});
+          .catch((_err) => { });
 
         if (branches && branches.items && branches.items.length) {
           config.sourceStackBranch = 'main';
         }
-      } catch (_error) {}
+      } catch (_error) { }
     }
   }
 
@@ -471,7 +471,7 @@ class CloneHandler {
         } else {
           organizations = await client.organization().fetchAll({ limit: 100 });
         }
-        
+
         spinner.succeed('Fetched Organization');
         for (const element of organizations.items || [organizations]) {
           orgUidList[element.name] = element.uid;
@@ -618,7 +618,7 @@ class CloneHandler {
   async cmdExport() {
     return new Promise((resolve, reject) => {
       // Creating export specific config by merging external configurations
-      let exportConfig = Object.assign({}, cloneDeep(config), {...config?.export});
+      let exportConfig = Object.assign({}, cloneDeep(config), { ...config?.export });
       delete exportConfig.import;
       delete exportConfig.export;
 
@@ -648,7 +648,7 @@ class CloneHandler {
   async cmdImport() {
     return new Promise(async (resolve, _reject) => {
       // Creating export specific config by merging external configurations
-      let importConfig = Object.assign({}, cloneDeep(config), {...config?.import});
+      let importConfig = Object.assign({}, cloneDeep(config), { ...config?.import });
       delete importConfig.import;
       delete importConfig.export;
 

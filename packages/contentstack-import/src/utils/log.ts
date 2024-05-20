@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { LogEntry } from 'winston/index';
-import { Logger, pathValidator } from '@contentstack/cli-utilities';
-import { LogsType, MessageType } from '@contentstack/cli-utilities/lib/logger';
+import { Logger, pathValidator } from 'cs/cli-utilities';
+import { LogsType, MessageType } from 'cs/cli-utilities/lib/logger';
 
 import { ImportConfig } from '../types';
 

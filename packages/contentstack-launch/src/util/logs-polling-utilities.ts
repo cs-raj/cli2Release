@@ -1,5 +1,5 @@
 import EventEmitter from "events";
-import { ux } from "@contentstack/cli-utilities";
+import { ux } from "cs/cli-utilities";
 import { ApolloClient, ObservableQuery } from "@apollo/client/core";
 
 import { LogPollingInput, ConfigType } from "../types";
@@ -118,9 +118,9 @@ export default class LogPolling {
 
       if (error) {
         ux.action.stop();
-        this.$event.emit("deployment-logs", { 
+        this.$event.emit("deployment-logs", {
           message: error?.message,
-          msgType: "error", 
+          msgType: "error",
         });
         this.$event.emit("deployment-logs", {
           message: "DONE",

@@ -1,4 +1,4 @@
-import { ContentstackClient } from '@contentstack/cli-utilities';
+import { ContentstackClient } from 'cs/cli-utilities';
 import ImportConfig from './import-config';
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
@@ -90,7 +90,7 @@ export interface CustomRoleConfig {
   customRolesLocalesFileName: string;
 }
 
-export interface TaxonomiesConfig{
+export interface TaxonomiesConfig {
   dirName: string;
   fileName: string;
   dependencies?: Modules[];
@@ -102,8 +102,8 @@ export { default as ImportConfig } from './import-config';
 export * from './entries'
 export * from './marketplace-app'
 
-export type ExtensionType  = {
+export type ExtensionType = {
   uid: string,
-  scope: Record<string,unknown>,
+  scope: Record<string, unknown>,
   title: string
 }

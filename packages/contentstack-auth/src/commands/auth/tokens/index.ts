@@ -1,5 +1,5 @@
-import { Command } from '@contentstack/cli-command';
-import { cliux, configHandler } from '@contentstack/cli-utilities';
+import { Command } from 'cs/cli-command';
+import { cliux, configHandler } from 'cs/cli-utilities';
 import { BaseCommand } from '../../../base-command';
 export default class TokensListCommand extends BaseCommand<typeof TokensListCommand> {
   static aliases = ['tokens'];

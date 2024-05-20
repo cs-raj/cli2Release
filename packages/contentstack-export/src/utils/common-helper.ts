@@ -6,7 +6,7 @@
 
 import promiseLimit from 'promise-limit';
 import * as path from 'path';
-import { isAuthenticated } from '@contentstack/cli-utilities';
+import { isAuthenticated } from 'cs/cli-utilities';
 import { ExternalConfig, ExportConfig } from '../types';
 import { fsUtil } from './file-helper';
 
@@ -47,7 +47,7 @@ export const formatError = function (error: any) {
     } else {
       error = JSON.parse(error.message);
     }
-  } catch (e) {}
+  } catch (e) { }
   let message = error.errorMessage || error.error_message || error.message || error;
   if (error.errors && Object.keys(error.errors).length > 0) {
     Object.keys(error.errors).forEach((e) => {

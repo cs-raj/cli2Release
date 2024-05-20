@@ -1,11 +1,11 @@
-const { Command } = require('@contentstack/cli-command');
+const { Command } = require('cs/cli-command');
 const { start } = require('../../../producer/nonlocalized-field-changes');
 const store = require('../../../util/store.js');
-const { cliux } = require('@contentstack/cli-utilities');
+const { cliux } = require('cs/cli-utilities');
 const configKey = 'nonlocalized_field_changes';
 const { prettyPrint, formatError } = require('../../../util');
 const { getStack } = require('../../../util/client.js');
-const { printFlagDeprecation, flags } = require('@contentstack/cli-utilities');
+const { printFlagDeprecation, flags } = require('cs/cli-utilities');
 let config;
 
 class NonlocalizedFieldChangesCommand extends Command {
@@ -19,8 +19,8 @@ class NonlocalizedFieldChangesCommand extends Command {
       nonlocalizedFieldChangesFlags['source-env'] || nonlocalizedFieldChangesFlags.sourceEnv;
     nonlocalizedFieldChangesFlags.contentTypes =
       nonlocalizedFieldChangesFlags['content-types'] || nonlocalizedFieldChangesFlags.contentTypes;
-      nonlocalizedFieldChangesFlags.apiVersion = nonlocalizedFieldChangesFlags['api-version'] || '3';
-      
+    nonlocalizedFieldChangesFlags.apiVersion = nonlocalizedFieldChangesFlags['api-version'] || '3';
+
     delete nonlocalizedFieldChangesFlags['api-version']
     delete nonlocalizedFieldChangesFlags['retry-failed'];
     delete nonlocalizedFieldChangesFlags['bulk-publish'];
@@ -187,7 +187,7 @@ NonlocalizedFieldChangesCommand.flags = {
     parse: printFlagDeprecation(['-b', '--bulkPublish'], ['--bulk-publish']),
   }),
   'api-version': flags.string({
-    description : "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
+    description: "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
   }),
   sourceEnv: flags.string({
     char: 's',

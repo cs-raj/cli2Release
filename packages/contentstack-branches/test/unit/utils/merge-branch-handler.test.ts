@@ -1,7 +1,7 @@
 import { describe, it, beforeEach, afterEach } from 'mocha';
 import { expect } from 'chai';
 import { stub, assert } from 'sinon';
-import { cliux } from '@contentstack/cli-utilities';
+import { cliux } from 'cs/cli-utilities';
 import { mockData } from '../mock/data';
 import { interactive } from '../../../src/utils';
 import * as mergeHelper from '../../../src/utils/merge-helper';
@@ -161,7 +161,7 @@ describe('Merge helper', () => {
       const res = { queue: [{ merge_details: mockData.mergeProgressStatusRes.merge_details }] };
       getMergeQueueStatusStub.resolves(res);
       const fetchMergeStatusStub = stub(mergeHelper, 'fetchMergeStatus').resolves(mockData.mergeCompleteStatusRes);
-      const result = await mergeHelper.fetchMergeStatus('',mockData.mergePayload);
+      const result = await mergeHelper.fetchMergeStatus('', mockData.mergePayload);
       expect(result).to.deep.equal(mockData.mergeCompleteStatusRes);
       fetchMergeStatusStub.restore();
     });
@@ -169,21 +169,21 @@ describe('Merge helper', () => {
     it('status is failed', async function () {
       const res = { queue: [{ merge_details: mockData.mergeFailedStatusRes.merge_details }] };
       getMergeQueueStatusStub.resolves(res);
-      const result = await mergeHelper.fetchMergeStatus('',mockData.mergePayload).catch(err => err);
+      const result = await mergeHelper.fetchMergeStatus('', mockData.mergePayload).catch(err => err);
       expect(result).to.be.equal(`merge uid: ${mockData.mergePayload.uid}`);
     });
 
     it('No status', async function () {
       const res = { queue: [{ merge_details: mockData.mergeNoStatusRes.merge_details }] };
       getMergeQueueStatusStub.resolves(res);
-      const result = await mergeHelper.fetchMergeStatus('',mockData.mergePayload).catch(err => err);
+      const result = await mergeHelper.fetchMergeStatus('', mockData.mergePayload).catch(err => err);
       expect(result).to.be.equal(`Invalid merge status found with merge ID ${mockData.mergePayload.uid}`);
     });
 
     it('Empty queue', async function () {
       const res = { queue: [] };
       getMergeQueueStatusStub.resolves(res);
-      const result = await mergeHelper.fetchMergeStatus('',mockData.mergePayload).catch(err => err);
+      const result = await mergeHelper.fetchMergeStatus('', mockData.mergePayload).catch(err => err);
       expect(result).to.be.equal(`No queue found with merge ID ${mockData.mergePayload.uid}`);
     });
   });
@@ -191,9 +191,9 @@ describe('Merge helper', () => {
 
 describe('Merge Handler', () => {
   let successMessageStub,
-  successMessageStub2,
-  loaderMessageStub,
-  errorMessageStub;
+    successMessageStub2,
+    loaderMessageStub,
+    errorMessageStub;
   beforeEach(function () {
     successMessageStub = stub(cliux, 'print');
     successMessageStub2 = stub(cliux, 'success');
@@ -207,13 +207,13 @@ describe('Merge Handler', () => {
     errorMessageStub.restore();
   });
 
-  describe('Start', () =>{
+  describe('Start', () => {
     let collectMergeSettingsStub,
-    displayMergeSummaryStub,
-    selectMergeExecutionStub,
-    mergeRequestStub,
-    exportSummaryStub,
-    executeMergeStub;
+      displayMergeSummaryStub,
+      selectMergeExecutionStub,
+      mergeRequestStub,
+      exportSummaryStub,
+      executeMergeStub;
     beforeEach(function () {
       collectMergeSettingsStub = stub(MergeHandler.prototype, 'collectMergeSettings').resolves();
       displayMergeSummaryStub = stub(MergeHandler.prototype, 'displayMergeSummary').resolves();
@@ -245,14 +245,14 @@ describe('Merge Handler', () => {
       selectMergeExecutionStub.resolves('both');
       new MergeHandler(mockData.mergeInputOptions).start();
     });
-    
+
     it('Restart merge process', async function () {
       selectMergeExecutionStub.resolves('export');
       new MergeHandler(mockData.mergeInputOptions).restartMergeProcess();
     });
   });
 
-  it('Export summary', async ()=> {
+  it('Export summary', async () => {
     const msg = 'Exported the summary successfully'
     const askExportMergeSummaryPathStub = stub(interactive, 'askExportMergeSummaryPath').resolves('abcd');
     const writeFileStub = stub(util, 'writeFile').resolves('done');
@@ -267,22 +267,22 @@ describe('Merge Handler', () => {
 
   describe('Execute merge', () => {
     let askMergeCommentStub, executeMergeStub;
-    beforeEach(function(){
+    beforeEach(function () {
       askMergeCommentStub = stub(interactive, 'askMergeComment').resolves('changes');
       executeMergeStub = stub(mergeHelper, 'executeMerge');
     });
-    afterEach(function(){
+    afterEach(function () {
       askMergeCommentStub.restore();
       executeMergeStub.restore();
     });
-    
-    it('Merged the changes successfully', async()=>{
+
+    it('Merged the changes successfully', async () => {
       executeMergeStub.resolves(mockData.mergeCompleteStatusRes);
       await new MergeHandler(mockData.mergeInputOptions).executeMerge(mockData.mergePayload);
       expect(successMessageStub2.calledOnce).to.be.true;
     })
 
-    it('Failed to merge the changes', async()=>{
+    it('Failed to merge the changes', async () => {
       executeMergeStub.rejects('Failed to merge the changes');
       await new MergeHandler(mockData.mergeInputOptions).executeMerge(mockData.mergePayload);
       expect(errorMessageStub.calledOnce).to.be.true;
@@ -291,18 +291,18 @@ describe('Merge Handler', () => {
 
   describe('collect merge settings', () => {
     let selectMergeStrategyStub,
-    strategySubOptionStub,
-    displayMergeSummaryStub,
-    selectMergeExecutionStub,
-    restartMergeProcessStub;
-    beforeEach(function(){
+      strategySubOptionStub,
+      displayMergeSummaryStub,
+      selectMergeExecutionStub,
+      restartMergeProcessStub;
+    beforeEach(function () {
       selectMergeStrategyStub = stub(interactive, 'selectMergeStrategy');
       strategySubOptionStub = stub(interactive, 'selectMergeStrategySubOptions');
       displayMergeSummaryStub = stub(MergeHandler.prototype, 'displayMergeSummary').resolves();
       selectMergeExecutionStub = stub(interactive, 'selectMergeExecution');
       restartMergeProcessStub = stub(MergeHandler.prototype, 'restartMergeProcess').resolves();
     })
-    afterEach(function(){
+    afterEach(function () {
       selectMergeStrategyStub.restore();
       strategySubOptionStub.restore();
       displayMergeSummaryStub.restore();
@@ -310,7 +310,7 @@ describe('Merge Handler', () => {
       restartMergeProcessStub.restore();
     })
 
-    it('custom_preferences strategy, new strategySubOption', async() => {
+    it('custom_preferences strategy, new strategySubOption', async () => {
       selectMergeStrategyStub.resolves('custom_preferences');
       const selectCustomPreferencesStub = stub(interactive, 'selectCustomPreferences').resolves();
       selectMergeExecutionStub.resolves("export");
@@ -319,7 +319,7 @@ describe('Merge Handler', () => {
       selectCustomPreferencesStub.restore();
     });
 
-    it('merge_prefer_base strategy, new strategySubOption', async() => {
+    it('merge_prefer_base strategy, new strategySubOption', async () => {
       selectMergeStrategyStub.resolves('merge_prefer_base');
       strategySubOptionStub.resolves('new');
       selectMergeExecutionStub.resolves("export");
@@ -328,7 +328,7 @@ describe('Merge Handler', () => {
       expect(strategySubOptionStub.calledOnce).to.be.true;
     });
 
-    it('merge_prefer_base strategy, modified strategySubOption', async() => {
+    it('merge_prefer_base strategy, modified strategySubOption', async () => {
       selectMergeStrategyStub.resolves('merge_prefer_base');
       strategySubOptionStub.resolves('modified');
       selectMergeExecutionStub.resolves("export");
@@ -337,7 +337,7 @@ describe('Merge Handler', () => {
       expect(strategySubOptionStub.calledOnce).to.be.true;
     });
 
-    it('merge_prefer_base strategy, both strategySubOption', async() => {
+    it('merge_prefer_base strategy, both strategySubOption', async () => {
       selectMergeStrategyStub.resolves('merge_prefer_base');
       strategySubOptionStub.resolves('both');
       selectMergeExecutionStub.resolves("export");
@@ -346,7 +346,7 @@ describe('Merge Handler', () => {
       expect(strategySubOptionStub.calledOnce).to.be.true;
     });
 
-    it('merge_prefer_compare strategy, new strategySubOption', async() => {
+    it('merge_prefer_compare strategy, new strategySubOption', async () => {
       selectMergeStrategyStub.resolves('merge_prefer_compare');
       strategySubOptionStub.resolves('new');
       selectMergeExecutionStub.resolves("export");
@@ -355,7 +355,7 @@ describe('Merge Handler', () => {
       expect(strategySubOptionStub.calledOnce).to.be.true;
     });
 
-    it('merge_prefer_compare strategy, modified strategySubOption', async() => {
+    it('merge_prefer_compare strategy, modified strategySubOption', async () => {
       selectMergeStrategyStub.resolves('merge_prefer_compare');
       strategySubOptionStub.resolves('modified');
       selectMergeExecutionStub.resolves("export");
@@ -364,7 +364,7 @@ describe('Merge Handler', () => {
       expect(strategySubOptionStub.calledOnce).to.be.true;
     });
 
-    it('merge_prefer_compare strategy, both strategySubOption', async() => {
+    it('merge_prefer_compare strategy, both strategySubOption', async () => {
       selectMergeStrategyStub.resolves('merge_prefer_compare');
       strategySubOptionStub.resolves('both');
       selectMergeExecutionStub.resolves("export");
@@ -373,28 +373,28 @@ describe('Merge Handler', () => {
       expect(strategySubOptionStub.calledOnce).to.be.true;
     });
 
-    it('overwrite_with_compare strategy', async() => {
+    it('overwrite_with_compare strategy', async () => {
       selectMergeStrategyStub.resolves('overwrite_with_compare');
       selectMergeExecutionStub.resolves("export");
       await new MergeHandler(mockData.mergeInputOptionsWithoutStartegy).collectMergeSettings();
       expect(selectMergeStrategyStub.calledOnce).to.be.true;
     });
 
-    it('Merge execution, previous', async() => {
+    it('Merge execution, previous', async () => {
       selectMergeStrategyStub.resolves('overwrite_with_compare');
       selectMergeExecutionStub.resolves("previous");
       await new MergeHandler(mockData.mergeInputOptionsWithoutStartegy).collectMergeSettings();
       expect(selectMergeStrategyStub.calledOnce).to.be.true;
     });
-    
-    it('Merge execution, restart', async() => {
+
+    it('Merge execution, restart', async () => {
       selectMergeStrategyStub.resolves('overwrite_with_compare');
       selectMergeExecutionStub.resolves("restart");
       await new MergeHandler(mockData.mergeInputOptionsWithoutStartegy).collectMergeSettings();
       expect(selectMergeStrategyStub.calledOnce).to.be.true;
     });
 
-    it('merge_prefer_base strategy, previous strategySubOption', async() => {
+    it('merge_prefer_base strategy, previous strategySubOption', async () => {
       selectMergeStrategyStub.resolves('merge_prefer_base');
       strategySubOptionStub.resolves('previous');
       const stub1 = stub(MergeHandler.prototype, 'collectMergeSettings').resolves();
@@ -402,7 +402,7 @@ describe('Merge Handler', () => {
       stub1.restore();
     });
 
-    it('merge_prefer_base strategy, previous strategySubOption', async() => {
+    it('merge_prefer_base strategy, previous strategySubOption', async () => {
       selectMergeStrategyStub.resolves('merge_prefer_base');
       strategySubOptionStub.resolves('restart');
       await new MergeHandler(mockData.mergeInputOptionsWithoutStartegy).collectMergeSettings();

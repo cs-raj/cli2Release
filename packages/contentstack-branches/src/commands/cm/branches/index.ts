@@ -1,5 +1,5 @@
-import { Command } from '@contentstack/cli-command';
-import { cliux, messageHandler, managementSDKClient, flags, isAuthenticated } from '@contentstack/cli-utilities';
+import { Command } from 'cs/cli-command';
+import { cliux, messageHandler, managementSDKClient, flags, isAuthenticated } from 'cs/cli-utilities';
 import { getbranchesList, getbranchConfig, interactive, handleErrorMsg } from '../../../utils/index';
 import chalk from 'chalk';
 export default class BranchListCommand extends Command {
@@ -48,11 +48,11 @@ export default class BranchListCommand extends Command {
         if (!verbose) {
           currentBranch[0]?.Source
             ? cliux.print(`* ${chalk.bold(currentBranch[0].Branch)} (source: ${currentBranch[0].Source})`, {
-                color: 'blue',
-              })
+              color: 'blue',
+            })
             : cliux.print(`* ${chalk.bold(currentBranch[0].Branch)}`, {
-                color: 'blue',
-              });
+              color: 'blue',
+            });
 
           otherBranches.map(({ Branch, Source }: { Branch: string; Source: string }) => {
             Source

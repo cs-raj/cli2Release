@@ -1,5 +1,5 @@
-import { messageHandler } from '@contentstack/cli-utilities';
-import { LoggerService } from '@contentstack/cli-utilities';
+import { messageHandler } from 'cs/cli-utilities';
+import { LoggerService } from 'cs/cli-utilities';
 /**
  * Validate environment
  * @param contentStackClient
@@ -12,7 +12,7 @@ export const validateEnvironment = async (
   apiKey: string,
   environment: string,
 ): Promise<any> => {
-  const newLogger = new LoggerService(process.cwd(),'cli-log');
+  const newLogger = new LoggerService(process.cwd(), 'cli-log');
   let result: { valid: boolean; message: string };
   try {
     const validationResult = await contentStackClient.Stack({ api_key: apiKey }).environment(environment).fetch();
@@ -36,7 +36,7 @@ export const validateEnvironment = async (
  * @returns
  */
 export const validateAPIKey = async (contentStackClient: any, apiKey: string): Promise<any> => {
-  const newLogger = new LoggerService(process.cwd(),'cli-log');
+  const newLogger = new LoggerService(process.cwd(), 'cli-log');
   let result: { valid: boolean; message: string };
   try {
     const validateAPIKeyResult = await contentStackClient.stack({ api_key: apiKey }).fetch();

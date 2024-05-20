@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { interactive } from '../../src/utils';
-import { cliux } from '@contentstack/cli-utilities';
+import { cliux } from 'cs/cli-utilities';
 
 describe('Interactive', () => {
   let inquireStub;

@@ -1,4 +1,4 @@
-import { FlagInput, Flags, ux } from '@contentstack/cli-utilities';
+import { FlagInput, Flags, ux } from 'cs/cli-utilities';
 
 import config from '../../../../config';
 import { auditMsg } from '../../../../messages';

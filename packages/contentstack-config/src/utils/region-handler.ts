@@ -1,14 +1,14 @@
-import { configHandler } from '@contentstack/cli-utilities';
+import { configHandler } from 'cs/cli-utilities';
 
 function validURL(str) {
   const pattern = new RegExp(
     '^(https?:\\/\\/)?' + // protocol (http or https)
-      '([a-zA-Z0-9.-]+|' + // domain name
-      '((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))' + // IP address
-      '(:\\d+)?' + // port
-      '(/[-a-zA-Z0-9_.~+-]*)*' + // path
-      '(\\?[;&a-zA-Z0-9_.~+=-]*)?' + // query string
-      '(\\#[-a-zA-Z0-9_]*)?$', // fragment
+    '([a-zA-Z0-9.-]+|' + // domain name
+    '((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))' + // IP address
+    '(:\\d+)?' + // port
+    '(/[-a-zA-Z0-9_.~+-]*)*' + // path
+    '(\\?[;&a-zA-Z0-9_.~+=-]*)?' + // query string
+    '(\\#[-a-zA-Z0-9_]*)?$', // fragment
     'i',
   );
 

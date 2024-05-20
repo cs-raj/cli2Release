@@ -2,7 +2,7 @@ import { Stream } from 'stream';
 import * as zlib from 'zlib';
 import * as tar from 'tar';
 const mkdirp = require('mkdirp')
-import { HttpRequestConfig, HttpClient } from '@contentstack/cli-utilities';
+import { HttpRequestConfig, HttpClient } from 'cs/cli-utilities';
 
 import GithubError from './github-error';
 import messageHandler from '../../messages';
@@ -47,9 +47,8 @@ export default class GitHubClient {
     if (privateRepo) {
       this.accessToken = token;
     }
-    this.gitTarBallUrl = `https://api.github.com/repos/${repo.user}/${repo.name}/tarball/${
-      repo.branch || DEFAULT_BRANCH
-    }`;
+    this.gitTarBallUrl = `https://api.github.com/repos/${repo.user}/${repo.name}/tarball/${repo.branch || DEFAULT_BRANCH
+      }`;
   }
 
   async getLatest(destination: string): Promise<void> {

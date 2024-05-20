@@ -1,4 +1,4 @@
-import { FlagDefinition, Flags, ux } from '@contentstack/cli-utilities';
+import { FlagDefinition, Flags, ux } from 'cs/cli-utilities';
 
 import { IFlags, IncludeFlags, JSONFlagOptions } from '../types';
 import { tableColumnDescriptions } from '../messages';

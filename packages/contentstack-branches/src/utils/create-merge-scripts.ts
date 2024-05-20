@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { cliux, formatTime, formatDate } from '@contentstack/cli-utilities';
+import { cliux, formatTime, formatDate } from 'cs/cli-utilities';
 import { entryCreateScript } from './entry-create-script';
 import { entryUpdateScript } from './entry-update-script';
 import { entryCreateUpdateScript } from './entry-create-update-script';
@@ -43,7 +43,7 @@ export function generateMergeScripts(mergeSummary, mergeJobUID) {
         cliux.print(`Info: Entries of ${messageType} content types selected for the migration`, { color: 'blue' });
       }
     };
-    
+
     processContentType(
       { type: 'assets', uid: '', entry_merge_strategy: '' },
       mergeStrategies['asset_create_folder'],
@@ -96,9 +96,8 @@ export function createMergeScripts(contentType: CreateMergeScriptsProps, mergeJo
       if (contentType.type === 'assets') {
         filePath = `${fullPath}/${fileCreatedAt}${milliSeconds}_create_assets_folder.js`;
       } else {
-        filePath = `${fullPath}/${fileCreatedAt}${milliSeconds}_${getContentTypeMergeStatus(contentType.entry_merge_strategy)}_${
-          contentType.uid
-        }.js`;
+        filePath = `${fullPath}/${fileCreatedAt}${milliSeconds}_${getContentTypeMergeStatus(contentType.entry_merge_strategy)}_${contentType.uid
+          }.js`;
       }
       fs.writeFileSync(filePath, content, 'utf-8');
     }

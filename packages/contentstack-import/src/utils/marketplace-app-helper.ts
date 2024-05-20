@@ -10,7 +10,7 @@ import {
   managementSDKClient,
   marketplaceSDKClient,
   createDeveloperHubUrl,
-} from '@contentstack/cli-utilities';
+} from 'cs/cli-utilities';
 
 import { log } from './logger';
 import { trace } from '../utils/log';

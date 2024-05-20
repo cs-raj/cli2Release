@@ -1,5 +1,5 @@
 import path from 'path';
-import { Command } from '@contentstack/cli-command';
+import { Command } from 'cs/cli-command';
 import {
   cliux,
   messageHandler,
@@ -9,7 +9,7 @@ import {
   ContentstackClient,
   FlagInput,
   pathValidator,
-} from '@contentstack/cli-utilities';
+} from 'cs/cli-utilities';
 import { ModuleExporter } from '../../../export';
 import { setupExportConfig, log, formatError, writeExportMetaFile } from '../../../utils';
 import { ExportConfig } from '../../../types';

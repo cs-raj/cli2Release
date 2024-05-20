@@ -5,7 +5,7 @@ import startCase from 'lodash/startCase';
 import camelCase from 'lodash/camelCase';
 import unionWith from 'lodash/unionWith';
 import find from 'lodash/find';
-import { cliux, messageHandler, managementSDKClient } from '@contentstack/cli-utilities';
+import { cliux, messageHandler, managementSDKClient } from 'cs/cli-utilities';
 import isArray from 'lodash/isArray';
 import { diff } from 'just-diff';
 
@@ -107,7 +107,7 @@ function handleErrorMsg(err, spinner) {
 
   if (err?.errorMessage) {
     cliux.print(`Error: ${err.errorMessage}`, { color: 'red' });
-  }else if(err?.message){
+  } else if (err?.message) {
     cliux.print(`Error: ${err.message}`, { color: 'red' });
   } else {
     console.log(err)
@@ -306,25 +306,25 @@ async function baseAndCompareBranchDiff(params: {
   if (baseBranchFieldExists && compareBranchFieldExists) {
     await prepareModifiedDiff(params);
   } else if (baseBranchFieldExists && !compareBranchFieldExists) {
-    let displayName= baseBranchFieldExists?.display_name;
+    let displayName = baseBranchFieldExists?.display_name;
     let path = baseBranchFieldExists?.uid;
     let field = baseBranchFieldExists?.data_type;
-    if(baseBranchFieldExists.path === 'description'){
+    if (baseBranchFieldExists.path === 'description') {
       displayName = 'Description';
       path = baseBranchFieldExists?.path;
       field = 'metadata'
     }
     params.listOfDeletedFields.push({
       path: path,
-      displayName:displayName,
+      displayName: displayName,
       uid: baseBranchFieldExists?.uid,
       field: field,
     });
   } else if (!baseBranchFieldExists && compareBranchFieldExists) {
-    let displayName= compareBranchFieldExists?.display_name;
+    let displayName = compareBranchFieldExists?.display_name;
     let path = compareBranchFieldExists?.uid;
     let field = compareBranchFieldExists?.data_type;
-    if(compareBranchFieldExists.path === 'description'){
+    if (compareBranchFieldExists.path === 'description') {
       displayName = 'Description';
       path = compareBranchFieldExists?.path;
       field = 'metadata'
@@ -354,9 +354,9 @@ async function prepareModifiedDiff(params: {
   ) {
     let displayName: string;
     if (baseBranchFieldExists.path === 'options.singleton') {
-      if(compareBranchFieldExists.value){
+      if (compareBranchFieldExists.value) {
         displayName = 'Single'
-      }else{
+      } else {
         displayName = 'Multiple'
       }
     } else if (baseBranchFieldExists.path === 'description') {
@@ -444,7 +444,7 @@ function printModifiedFields(modfiedFields: ModifiedFieldsInput): void {
   if (modfiedFields.modified?.length || modfiedFields.added?.length || modfiedFields.deleted?.length) {
     forEach(modfiedFields.modified, (diff: ModifiedFieldsType) => {
       const field: string = diff.field ? `${diff.field}` : 'field';
-      const fieldDetail = diff.path ? `(${diff.path}) ${field}`: `${field}`;
+      const fieldDetail = diff.path ? `(${diff.path}) ${field}` : `${field}`;
       cliux.print(`   ${chalk.blue(`± "${diff.displayName}" ${fieldDetail}`)}`);
     });
 

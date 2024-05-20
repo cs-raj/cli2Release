@@ -1,6 +1,6 @@
 import * as path from 'path';
 import { writeFileSync, makeDirectory } from './file-helper';
-import { isAuthenticated, configHandler } from '@contentstack/cli-utilities';
+import { isAuthenticated, configHandler } from 'cs/cli-utilities';
 import { ExportConfig } from '../types';
 
 const setupBranches = async (config: ExportConfig, stackAPIClient: any) => {
@@ -14,7 +14,7 @@ const setupBranches = async (config: ExportConfig, stackAPIClient: any) => {
     const result = await stackAPIClient
       .branch(config.branchName)
       .fetch()
-      .catch((_err: Error) => {});
+      .catch((_err: Error) => { });
     if (result && typeof result === 'object') {
       branches.push(result);
     } else {
@@ -26,7 +26,7 @@ const setupBranches = async (config: ExportConfig, stackAPIClient: any) => {
         .branch()
         .query()
         .find()
-        .catch((_err: Error) => {});
+        .catch((_err: Error) => { });
       if (result && result.items && Array.isArray(result.items) && result.items.length > 0) {
         branches = result.items;
       } else {

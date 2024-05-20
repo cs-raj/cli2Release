@@ -1,5 +1,5 @@
 import { Color } from "chalk";
-import { PrintOptions } from "@contentstack/cli-utilities";
+import { PrintOptions } from "cs/cli-utilities";
 
 import config from "../config";
 

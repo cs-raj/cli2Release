@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { ContentstackClient } from '@contentstack/cli-utilities';
+import { ContentstackClient } from 'cs/cli-utilities';
 import { log, formatError, fsUtil, executeTask } from '../../utils';
 import { ExportConfig, ModuleClassParams } from '../../types';
 import BaseClass from './base-class';
@@ -37,11 +37,11 @@ export default class ContentTypesExport extends BaseClass {
       include_global_field_schema: true,
     };
 
-     // If content type id is provided then use it as part of query
-     if (Array.isArray(this.exportConfig.contentTypes) && this.exportConfig.contentTypes.length > 0) {
+    // If content type id is provided then use it as part of query
+    if (Array.isArray(this.exportConfig.contentTypes) && this.exportConfig.contentTypes.length > 0) {
       this.qs.uid = { $in: this.exportConfig.contentTypes };
-     }
-    
+    }
+
     this.contentTypesDirPath = path.resolve(
       exportConfig.data,
       exportConfig.branchName || '',

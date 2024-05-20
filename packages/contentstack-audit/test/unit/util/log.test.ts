@@ -3,7 +3,7 @@ import winston from 'winston';
 import { resolve } from 'path';
 import { fancy } from 'fancy-test';
 import { expect } from '@oclif/test';
-import { cliux as ux } from '@contentstack/cli-utilities';
+import { cliux as ux } from 'cs/cli-utilities';
 import { FileTransportInstance } from 'winston/lib/winston/transports';
 
 import { Logger, print } from '../../../src/util';
@@ -34,7 +34,7 @@ describe('Log utility', () => {
   describe('Stubbing winston logger method', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(ux, 'print', () => {})
+      .stub(ux, 'print', () => { })
       .stub(winston.transports, 'File', () => fsTransport)
       .it('should log message', () => {
         const logSpy = sinon.spy();
@@ -51,17 +51,17 @@ describe('Log utility', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(winston.transports, 'File', () => fsTransport)
-      .stub(ux, 'print', () => {})
-      .stub(winston, 'createLogger', () => {})
+      .stub(ux, 'print', () => { })
+      .stub(winston, 'createLogger', () => { })
       .it('should remove any credentials before log message', () => {
         const logSpy = sinon.spy();
         sinon.replace(winston, 'createLogger', () => ({} as unknown as winston.Logger));
         sinon.stub(winston, 'createLogger').callsFake(
           () =>
-            ({
-              log: logSpy,
-              error: logSpy,
-            } as unknown as winston.Logger),
+          ({
+            log: logSpy,
+            error: logSpy,
+          } as unknown as winston.Logger),
         );
         const logger = new Logger({ basePath: resolve(__dirname, '..', 'mock') });
 

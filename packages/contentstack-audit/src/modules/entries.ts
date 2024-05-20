@@ -3,7 +3,7 @@ import find from 'lodash/find';
 import values from 'lodash/values';
 import isEmpty from 'lodash/isEmpty';
 import { join, resolve } from 'path';
-import { ux, FsUtility } from '@contentstack/cli-utilities';
+import { ux, FsUtility } from 'cs/cli-utilities';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 
 import auditConfig from '../config';
@@ -193,7 +193,7 @@ export default class Entries {
   async fixPrerequisiteData() {
     this.ctSchema = (await new ContentType({
       fix: true,
-      log: () => {},
+      log: () => { },
       config: this.config,
       moduleName: 'content-types',
       ctSchema: this.ctSchema,
@@ -201,7 +201,7 @@ export default class Entries {
     }).run(true)) as ContentTypeStruct[];
     this.gfSchema = (await new GlobalField({
       fix: true,
-      log: () => {},
+      log: () => { },
       config: this.config,
       moduleName: 'global-fields',
       ctSchema: this.ctSchema,
@@ -214,7 +214,7 @@ export default class Entries {
     if (existsSync(extensionPath)) {
       try {
         this.extensions = Object.keys(JSON.parse(readFileSync(extensionPath, 'utf8')));
-      } catch (error) {}
+      } catch (error) { }
     }
 
     if (existsSync(marketplacePath)) {
@@ -227,7 +227,7 @@ export default class Entries {
           ) as string[];
           this.extensions.push(...metaData);
         }
-      } catch (error) {}
+      } catch (error) { }
     }
   }
 
@@ -409,19 +409,19 @@ export default class Entries {
 
     return missingRefs.length
       ? [
-          {
-            tree,
-            data_type,
-            missingRefs,
-            display_name,
-            ct_uid: this.currentUid,
-            name: this.currentTitle,
-            treeStr: tree
-              .map(({ name }) => name)
-              .filter((val) => val)
-              .join(' ➜ '),
-          },
-        ]
+        {
+          tree,
+          data_type,
+          missingRefs,
+          display_name,
+          ct_uid: this.currentUid,
+          name: this.currentTitle,
+          treeStr: tree
+            .map(({ name }) => name)
+            .filter((val) => val)
+            .join(' ➜ '),
+        },
+      ]
       : [];
   }
 
@@ -581,19 +581,19 @@ export default class Entries {
 
     return missingRefs.length
       ? [
-          {
-            tree,
-            data_type,
-            missingRefs,
-            display_name,
-            uid: this.currentUid,
-            name: this.currentTitle,
-            treeStr: tree
-              .map(({ name }) => name)
-              .filter((val) => val)
-              .join(' ➜ '),
-          },
-        ]
+        {
+          tree,
+          data_type,
+          missingRefs,
+          display_name,
+          uid: this.currentUid,
+          name: this.currentTitle,
+          treeStr: tree
+            .map(({ name }) => name)
+            .filter((val) => val)
+            .join(' ➜ '),
+        },
+      ]
       : [];
   }
 

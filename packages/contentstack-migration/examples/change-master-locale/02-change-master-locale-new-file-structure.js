@@ -3,7 +3,7 @@ let { existsSync } = require('fs');
 let path = require('path');
 let crypto = require('crypto');
 let supportedLocales = require('./locales.json');
-const { pathValidator, FsUtility } = require('@contentstack/cli-utilities');
+const { pathValidator, FsUtility } = require('cs/cli-utilities');
 
 module.exports = async ({ migration, config }) => {
   let changeMasterLocale = {
@@ -98,8 +98,7 @@ module.exports = async ({ migration, config }) => {
                 pathValidator(
                   path.resolve(
                     config.data_dir,
-                    `entries/${contentType}/${config.target_locale}/${
-                      Object.values(JSON.parse(targetMasterLocaleEntries))[0]
+                    `entries/${contentType}/${config.target_locale}/${Object.values(JSON.parse(targetMasterLocaleEntries))[0]
                     }`,
                   ),
                 ),
@@ -132,8 +131,7 @@ module.exports = async ({ migration, config }) => {
               pathValidator(
                 path.resolve(
                   config.data_dir,
-                  `entries/${contentType}/${config.target_locale}/${
-                    Object.values(JSON.parse(exsitingTargetMasterLocalEntries))[0]
+                  `entries/${contentType}/${config.target_locale}/${Object.values(JSON.parse(exsitingTargetMasterLocalEntries))[0]
                   }`,
                 ),
               ),

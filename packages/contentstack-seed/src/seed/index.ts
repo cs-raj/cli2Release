@@ -1,5 +1,5 @@
 import * as tmp from 'tmp';
-import { cliux } from '@contentstack/cli-utilities';
+import { cliux } from 'cs/cli-utilities';
 
 import * as importer from '../seed/importer';
 import ContentstackClient, { Organization, Stack } from '../seed/contentstack/client';
@@ -98,9 +98,9 @@ export default class ContentModelSeeder {
 
   async getInput(): Promise<
     | {
-        organizationResponse: Organization;
-        stackResponse: InquireStackResponse;
-      }
+      organizationResponse: Organization;
+      stackResponse: InquireStackResponse;
+    }
     | any
   > {
     if (!this.ghRepo) {

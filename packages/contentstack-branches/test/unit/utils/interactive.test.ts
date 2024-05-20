@@ -1,16 +1,16 @@
 import { expect } from 'chai';
 import { describe, it, beforeEach, afterEach } from 'mocha';
 import { stub, assert } from 'sinon';
-import { cliux, messageHandler } from '@contentstack/cli-utilities';
+import { cliux, messageHandler } from 'cs/cli-utilities';
 import { interactive } from '../../../src/utils';
-import {mockData} from '../mock/data'
+import { mockData } from '../mock/data'
 
 describe('Interactive', () => {
   let inquireStub;
-  beforeEach(function (){
+  beforeEach(function () {
     inquireStub = stub(cliux, 'inquire');
   })
-  afterEach(function(){
+  afterEach(function () {
     inquireStub.restore();
   })
 

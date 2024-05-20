@@ -1,4 +1,4 @@
-import { messageHandler, cliux, managementSDKInitiator, marketplaceSDKInitiator } from '@contentstack/cli-utilities';
+import { messageHandler, cliux, managementSDKInitiator, marketplaceSDKInitiator } from 'cs/cli-utilities';
 
 /**
  * Initialize the utilities 

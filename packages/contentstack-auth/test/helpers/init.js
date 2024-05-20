@@ -1,5 +1,5 @@
 const path = require('path');
-const { messageHandler } = require('@contentstack/cli-utilities');
+const { messageHandler } = require('cs/cli-utilities');
 
 process.env.TS_NODE_PROJECT = path.resolve('test/tsconfig.json');
 process.env.CLI_ENV = 'TEST';

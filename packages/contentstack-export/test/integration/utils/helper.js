@@ -1,8 +1,8 @@
 const fs = require('fs');
 const _ = require('lodash');
 const { default: config } = require('../../../lib/config');
-const { Command } = require('@contentstack/cli-command');
-const { managementSDKClient, HttpClient } = require('@contentstack/cli-utilities');
+const { Command } = require('cs/cli-command');
+const { managementSDKClient, HttpClient } = require('cs/cli-utilities');
 const { getDeveloperHubUrl } = require('../../../lib/utils/marketplace-app-helper');
 const pjson = require('../../../package.json');
 const { REGIONS } = require('../../config.json');

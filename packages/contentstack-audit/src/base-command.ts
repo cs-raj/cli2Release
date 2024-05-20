@@ -1,8 +1,8 @@
 import merge from 'lodash/merge';
 import isEmpty from 'lodash/isEmpty';
 import { existsSync, readFileSync } from 'fs';
-import { Command } from '@contentstack/cli-command';
-import { Flags, FlagInput, Interfaces, cliux, ux, PrintOptions } from '@contentstack/cli-utilities';
+import { Command } from 'cs/cli-command';
+import { Flags, FlagInput, Interfaces, cliux, ux, PrintOptions } from 'cs/cli-utilities';
 
 import config from './config';
 import { Logger } from './util';
@@ -12,7 +12,7 @@ import messages, { $t, commonMsg } from './messages';
 export type Args<T extends typeof Command> = Interfaces.InferredArgs<T['args']>;
 export type Flags<T extends typeof Command> = Interfaces.InferredFlags<(typeof BaseCommand)['baseFlags'] & T['flags']>;
 
-const noLog = (_message: string | any, _logType?: LoggerType | PrintOptions | undefined) => {};
+const noLog = (_message: string | any, _logType?: LoggerType | PrintOptions | undefined) => { };
 
 export abstract class BaseCommand<T extends typeof Command> extends Command {
   public log!: LogFn;
@@ -68,8 +68,8 @@ export abstract class BaseCommand<T extends typeof Command> extends Command {
     // Init logger
     if (this.flags['external-config']?.noLog) {
       this.log = noLog;
-      ux.action.start = () => {};
-      ux.action.stop = () => {};
+      ux.action.start = () => { };
+      ux.action.stop = () => { };
     } else {
       const logger = new Logger(this.sharedConfig);
       this.log = logger.log.bind(logger);

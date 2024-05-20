@@ -4,7 +4,7 @@ import { resolve } from 'path';
 import { fancy } from 'fancy-test';
 import { expect } from '@oclif/test';
 import cloneDeep from 'lodash/cloneDeep';
-import { ux } from '@contentstack/cli-utilities';
+import { ux } from 'cs/cli-utilities';
 
 import config from '../../../src/config';
 import { ContentType } from '../../../src/modules';
@@ -44,7 +44,7 @@ describe('Content types', () => {
 
   beforeEach(() => {
     constructorParam = {
-      log: () => {},
+      log: () => { },
       moduleName: 'content-types',
       ctSchema: cloneDeep(require('../mock/contents/content_types/schema.json')),
       gfSchema: cloneDeep(require('../mock/contents/global_fields/globalfields.json')),
@@ -72,7 +72,7 @@ describe('Content types', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(ContentType.prototype, 'lookForReference', async () => {})
+      .stub(ContentType.prototype, 'lookForReference', async () => { })
       .it('should call lookForReference', async () => {
         const ctInstance = new ContentType(constructorParam);
         const logSpy = sinon.spy(ctInstance, 'lookForReference');
@@ -82,7 +82,7 @@ describe('Content types', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(ContentType.prototype, 'lookForReference', async () => {})
+      .stub(ContentType.prototype, 'lookForReference', async () => { })
       .it('should not break if empty schema passed', async () => {
         const ctInstance = new ContentType({ ...constructorParam, ctSchema: undefined as any });
         expect(await ctInstance.run(true)).to.be.undefined;
@@ -90,7 +90,7 @@ describe('Content types', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(ContentType.prototype, 'lookForReference', async () => {})
+      .stub(ContentType.prototype, 'lookForReference', async () => { })
       .it('should return schema', async () => {
         const ctInstance = new ContentType(constructorParam);
         expect(await ctInstance.run(true)).to.deep.equals(ctInstance.ctSchema);
@@ -98,8 +98,8 @@ describe('Content types', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(ContentType.prototype, 'lookForReference', async () => {})
-      .stub(ContentType.prototype, 'writeFixContent', async () => {})
+      .stub(ContentType.prototype, 'lookForReference', async () => { })
+      .stub(ContentType.prototype, 'writeFixContent', async () => { })
       .it('should call writeFixContent', async () => {
         const ctInstance = new ContentType({ ...constructorParam, fix: true });
         const logSpy = sinon.spy(ctInstance, 'writeFixContent');
@@ -108,9 +108,9 @@ describe('Content types', () => {
       });
 
     fancy
-      .stub(fs, 'rmSync', () => {})
+      .stub(fs, 'rmSync', () => { })
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(ContentType.prototype, 'writeFixContent', async () => {})
+      .stub(ContentType.prototype, 'writeFixContent', async () => { })
       .it('perform audit operation on the given CT schema', async () => {
         const ctInstance = new AuditFixTempClass();
 
@@ -121,9 +121,9 @@ describe('Content types', () => {
       });
 
     fancy
-      .stub(fs, 'rmSync', () => {})
+      .stub(fs, 'rmSync', () => { })
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(ContentType.prototype, 'writeFixContent', async () => {})
+      .stub(ContentType.prototype, 'writeFixContent', async () => { })
       .it('perform audit and fix operation on the given CT schema', async () => {
         const ctInstance = new AuditFixTempClass();
 
@@ -136,7 +136,7 @@ describe('Content types', () => {
   describe('writeFixContent method', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(fs, 'writeFileSync', () => {})
+      .stub(fs, 'writeFileSync', () => { })
       .stub(ux, 'confirm', async () => true)
       .it('should not write the file', async () => {
         const ctInstance = new ContentType({ ...constructorParam, fix: true });
@@ -147,7 +147,7 @@ describe('Content types', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(fs, 'writeFileSync', () => {})
+      .stub(fs, 'writeFileSync', () => { })
       .it('should prompt and ask confirmation', async () => {
         sinon.replace(ux, 'confirm', async () => false);
         const ctInstance = new ContentType({ ...constructorParam, fix: true });
@@ -161,7 +161,7 @@ describe('Content types', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(ContentType.prototype, 'validateReferenceField', () => [])
-      .stub(ContentType.prototype, 'validateGlobalField', () => {})
+      .stub(ContentType.prototype, 'validateGlobalField', () => { })
       .stub(ContentType.prototype, 'validateJsonRTEFields', () => [])
       .stub(ContentType.prototype, 'validateGroupField', () => [])
       .stub(ContentType.prototype, 'validateModularBlocksField', () => [])
@@ -228,7 +228,7 @@ describe('Content types', () => {
   describe('validateGlobalField method', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(ContentType.prototype, 'runFixOnSchema', () => {})
+      .stub(ContentType.prototype, 'runFixOnSchema', () => { })
       .it('should call lookForReference method', async () => {
         const ctInstance = new AuditTempClass();
 
@@ -243,7 +243,7 @@ describe('Content types', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(ContentType.prototype, 'runFixOnSchema', () => {})
+      .stub(ContentType.prototype, 'runFixOnSchema', () => { })
       .it('should identify missing schema on global field', async () => {
         const ctInstance = new AuditTempClass();
         const field = {
@@ -276,9 +276,9 @@ describe('Content types', () => {
   describe('fixGlobalFieldReferences method', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(fs, 'rmSync', () => {})
-      .stub(ContentType.prototype, 'runFixOnSchema', () => {})
-      .stub(ContentType.prototype, 'lookForReference', () => {})
+      .stub(fs, 'rmSync', () => { })
+      .stub(ContentType.prototype, 'runFixOnSchema', () => { })
+      .stub(ContentType.prototype, 'lookForReference', () => { })
       .it('should identify missing global-field schema and attach with content-type schema', async () => {
         // Mock/Stub
         const ctInstance = new AuditFixTempClass();

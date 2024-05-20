@@ -16,7 +16,7 @@ import includes from 'lodash/includes';
 import cloneDeep from 'lodash/cloneDeep';
 import { ApolloClient } from '@apollo/client/core';
 import { writeFileSync, existsSync, readFileSync } from 'fs';
-import { cliux as ux, ContentstackClient } from '@contentstack/cli-utilities';
+import { cliux as ux, ContentstackClient } from 'cs/cli-utilities';
 
 import config from '../config';
 import { print, GraphqlApiClient, LogPolling, getOrganizations } from '../util';
@@ -178,15 +178,15 @@ export default class BaseClass {
     const variables =
       this.config.provider === 'FileUpload'
         ? {
-            query: { uploadUid: this.config.uploadUid },
-          }
+          query: { uploadUid: this.config.uploadUid },
+        }
         : {
-            query: {
-              provider: this.config.provider,
-              repoName: fullName,
-              branchName: defaultBranch,
-            },
-          };
+          query: {
+            provider: this.config.provider,
+            repoName: fullName,
+            branchName: defaultBranch,
+          },
+        };
     this.config.framework = (await this.apolloClient
       .query({ query, variables })
       .then(
@@ -614,9 +614,9 @@ export default class BaseClass {
         ...(this.config.flags['show-variables']
           ? this.envVariables
           : this.envVariables.map(({ key, value }) => ({
-              key,
-              value: replace(value, /./g, '*'),
-            }))),
+            key,
+            value: replace(value, /./g, '*'),
+          }))),
         { key: '', value: '' },
       ],
       {

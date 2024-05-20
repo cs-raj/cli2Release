@@ -1,5 +1,5 @@
 import memoize from 'lodash/memoize';
-import { escapeRegExp } from '@contentstack/cli-utilities';
+import { escapeRegExp } from 'cs/cli-utilities';
 
 const errors = {};
 

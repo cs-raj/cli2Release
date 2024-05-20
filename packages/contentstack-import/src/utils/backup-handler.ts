@@ -1,6 +1,6 @@
 import * as path from 'path';
 import { copy } from 'fs-extra';
-import { cliux } from '@contentstack/cli-utilities';
+import { cliux } from 'cs/cli-utilities';
 
 import { fileHelper, trace } from './index';
 import { ImportConfig } from '../types';

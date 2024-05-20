@@ -1,4 +1,4 @@
-const { Command } = require('@contentstack/cli-command');
+const { Command } = require('cs/cli-command');
 const command = new Command();
 const chalk = require('chalk');
 const {
@@ -26,7 +26,7 @@ const {
   isAuthenticated,
   doesBranchExist,
   pathValidator,
-} = require('@contentstack/cli-utilities');
+} = require('cs/cli-utilities');
 const packageValue = require('../../../package.json');
 const isBlank = (variable) => {
   return isNil(variable) || isEmpty(variable);
@@ -229,14 +229,14 @@ async function updateEntriesInBatch(contentType, config, skip = 0, retry = 0, lo
           customBar.start(entriesResponse.count, skip, {
             title: title,
           });
-        } catch (error) {}
+        } catch (error) { }
         skip += entriesResponse.items.length;
         let entries = entriesResponse.items;
 
         for (const entry of entries) {
           try {
             customBar.increment();
-          } catch (error) {}
+          } catch (error) { }
           await updateSingleEntry(entry, contentType, config);
           await delay(config.delay || 1000);
         }
@@ -280,7 +280,7 @@ async function updateSingleContentTypeEntries(stack, contentTypeUid, config) {
   config.contentTypeCount += 1;
   try {
     customBar.stop();
-  } catch (error) {}
+  } catch (error) { }
 }
 async function updateSingleContentTypeEntriesWithGlobalField(contentType, config) {
   let schema = contentType.schema;
@@ -410,8 +410,7 @@ function isPathValid(schema, path) {
           return true;
         }
         throw new Error(
-          `Cannot convert "${ishtmlRteMultiple ? 'Multiple' : 'Single'}" type HTML RTE to "${
-            isJSONRteMultiple ? 'Multiple' : 'Single'
+          `Cannot convert "${ishtmlRteMultiple ? 'Multiple' : 'Single'}" type HTML RTE to "${isJSONRteMultiple ? 'Multiple' : 'Single'
           }" type JSON RTE.`,
         );
       } else {
@@ -593,7 +592,7 @@ async function updateContentTypeForGlobalField(stack, global_field, config) {
     }
     try {
       customBar.stop();
-    } catch (error) {}
+    } catch (error) { }
   } else {
     throw new Error(`${globalField.uid} Global field is not referred in any content type.`);
   }

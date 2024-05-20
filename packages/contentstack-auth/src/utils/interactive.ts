@@ -1,4 +1,4 @@
-import { cliux } from '@contentstack/cli-utilities';
+import { cliux } from 'cs/cli-utilities';
 
 export const askPassword = async () => {
   return cliux.inquire<string>({
@@ -45,8 +45,8 @@ export const askTokenType = async (): Promise<string> => {
     name: 'tokenType',
     message: 'CLI_SELECT_TOKEN_TYPE',
     choices: [
-      { name: 'Management Token', value: 'management'},
-      { name: 'Delivery Token', value: 'delivery'},
+      { name: 'Management Token', value: 'management' },
+      { name: 'Delivery Token', value: 'delivery' },
     ]
   });
 }

@@ -1,5 +1,5 @@
-const { Command } = require('@contentstack/cli-command');
-const { printFlagDeprecation, cliux, flags } = require('@contentstack/cli-utilities');
+const { Command } = require('cs/cli-command');
+const { printFlagDeprecation, cliux, flags } = require('cs/cli-utilities');
 
 const store = require('../../../util/store.js');
 const { getStack } = require('../../../util/client.js');
@@ -131,7 +131,7 @@ UpdateAndPublishCommand.flags = {
     default: 'true',
   }),
   'api-version': flags.string({
-    description : "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
+    description: "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
   }),
   'content-types': flags.string({
     description: 'The Contenttypes from which entries will be published',

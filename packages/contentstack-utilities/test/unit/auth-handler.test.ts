@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { expect } from 'chai';
 import { assert, stub, createSandbox } from 'sinon';
-import { cliux } from '@contentstack/cli-utilities';
+import { cliux } from 'cs/cli-utilities';
 import authHandler from '../../src/auth-handler';
 import configHandler from '../../src/config-handler';
 import { HttpClient } from '../../src/http-client';
@@ -125,7 +125,7 @@ describe('Auth Handler', () => {
       const openStub = sandbox.stub().resolves();
 
       sandbox.stub(authHandler, 'setOAuthBaseURL').resolves();
-      sandbox.stub(crypto, 'createHash').returns({ update: () => {}, digest: () => {} });
+      sandbox.stub(crypto, 'createHash').returns({ update: () => { }, digest: () => { } });
       sandbox.stub(authHandler, 'codeVerifier').value('CODE_VERIFIER');
       sandbox.stub(authHandler, 'OAuthBaseURL').value('https://example.com');
       sandbox.stub(authHandler, 'OAuthAppId').value('APP_ID');
@@ -142,7 +142,7 @@ describe('Auth Handler', () => {
         await authHandler.openOAuthURL();
 
         assert.calledWith(openStub, expectedURL);
-      } catch (error) {}
+      } catch (error) { }
     });
   });
 
@@ -184,7 +184,7 @@ describe('Auth Handler', () => {
         assert.calledWith(httpClientStub, `${authHandler.OAuthBaseURL}/apps-api/apps/token`, expectedPayload);
         assert.calledWith(getUserDetailsStub, userData);
         assert.calledWith(setConfigDataStub, 'oauth', userData);
-      } catch (error) {}
+      } catch (error) { }
     });
   });
 
@@ -215,7 +215,7 @@ describe('Auth Handler', () => {
         assert.calledWith(configHandler.set, authHandler.oauthAccessTokenKeyName, userData.access_token);
         assert.calledWith(configHandler.set, authHandler.oauthRefreshTokenKeyName, userData.refresh_token);
         assert.calledWith(configHandler.set, authHandler.authEmailKeyName, userData.email);
-      } catch (error) {}
+      } catch (error) { }
     });
 
     it('should set refresh token config data', async () => {
@@ -230,7 +230,7 @@ describe('Auth Handler', () => {
 
         assert.calledWithExactly(setStub, authHandler.oauthAccessTokenKeyName, userData.access_token);
         assert.calledWithExactly(setStub, authHandler.oauthRefreshTokenKeyName, userData.refresh_token);
-      } catch (error) {}
+      } catch (error) { }
     });
 
     it('should set basic auth config data', async () => {
@@ -246,7 +246,7 @@ describe('Auth Handler', () => {
 
         assert.calledWithExactly(setStub, authHandler.authTokenKeyName, userData.authtoken);
         assert.calledWithExactly(setStub, authHandler.authEmailKeyName, userData.email);
-      } catch (error) {}
+      } catch (error) { }
     });
   });
 

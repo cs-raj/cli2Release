@@ -16,7 +16,7 @@ const {
   isAuthenticated,
   HttpClientDecorator,
   OauthDecorator,
-} = require('@contentstack/cli-utilities');
+} = require('cs/cli-utilities');
 
 const {
   log,
@@ -330,12 +330,12 @@ module.exports = class ImportMarketplaceApps {
     const appName = this.config.forceStopMarketplaceAppsPrompt
       ? this.getAppName(app.name, appSuffix)
       : await cliux.inquire({
-          type: 'input',
-          name: 'name',
-          validate: this.validateAppName,
-          default: this.getAppName(app.name, appSuffix),
-          message: `${app.name} app already exist. Enter a new name to create an app.?`,
-        });
+        type: 'input',
+        name: 'name',
+        validate: this.validateAppName,
+        default: this.getAppName(app.name, appSuffix),
+        message: `${app.name} app already exist. Enter a new name to create an app.?`,
+      });
     app.name = appName;
 
     return this.createPrivateApps(app, true, appSuffix + 1);
@@ -472,15 +472,15 @@ module.exports = class ImportMarketplaceApps {
       const configOption = this.config.forceStopMarketplaceAppsPrompt
         ? 'Update it with the new configuration.'
         : await cliux.inquire({
-            choices: [
-              'Update it with the new configuration.',
-              'Do not update the configuration (WARNING!!! If you do not update the configuration, there may be some issues with the content which you import).',
-              'Exit',
-            ],
-            type: 'list',
-            name: 'value',
-            message: 'Choose the option to proceed',
-          });
+          choices: [
+            'Update it with the new configuration.',
+            'Do not update the configuration (WARNING!!! If you do not update the configuration, there may be some issues with the content which you import).',
+            'Exit',
+          ],
+          type: 'list',
+          name: 'value',
+          message: 'Choose the option to proceed',
+        });
 
       if (configOption === 'Exit') {
         process.exit();

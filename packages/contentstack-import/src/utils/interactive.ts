@@ -1,4 +1,4 @@
-import { cliux, validatePath } from '@contentstack/cli-utilities';
+import { cliux, validatePath } from 'cs/cli-utilities';
 import * as path from 'path';
 import first from 'lodash/first';
 import split from 'lodash/split';
@@ -23,7 +23,7 @@ export const askAPIKey = async (): Promise<string> => {
 };
 
 
-export const askEncryptionKey = async(defaultValue: unknown): Promise<string> => {
+export const askEncryptionKey = async (defaultValue: unknown): Promise<string> => {
   return await cliux.inquire({
     type: 'input',
     name: 'name',
@@ -37,7 +37,7 @@ export const askEncryptionKey = async(defaultValue: unknown): Promise<string> =>
   });
 }
 
-export const askAppName = async(app: any, appSuffix: number):Promise<string> =>{
+export const askAppName = async (app: any, appSuffix: number): Promise<string> => {
   return await cliux.inquire({
     type: 'input',
     name: 'name',
@@ -47,13 +47,13 @@ export const askAppName = async(app: any, appSuffix: number):Promise<string> =>{
   });
 }
 
-export const getAppName= (name: string, appSuffix = 1) => {
+export const getAppName = (name: string, appSuffix = 1) => {
   if (name.length >= 19) name = name.slice(0, 18);
   name = `${first(split(name, '◈'))}◈${appSuffix}`;
   return name;
 }
 
-const validateAppName =(name: string ) =>{
+const validateAppName = (name: string) => {
   if (name.length < 3 || name.length > 20) {
     return 'The app name should be within 3-20 characters long.';
   }
@@ -61,7 +61,7 @@ const validateAppName =(name: string ) =>{
   return true;
 }
 
-export const selectConfiguration = async():Promise<string> =>{
+export const selectConfiguration = async (): Promise<string> => {
   return await cliux.inquire({
     choices: [
       'Update it with the new configuration.',

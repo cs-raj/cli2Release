@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { Command } from '@contentstack/cli-command';
+import { Command } from 'cs/cli-command';
 import {
   messageHandler,
   printFlagDeprecation,
@@ -8,7 +8,7 @@ import {
   FlagInput,
   ContentstackClient,
   pathValidator,
-} from '@contentstack/cli-utilities';
+} from 'cs/cli-utilities';
 
 import { ImportConfig } from '../../../types';
 import { ModuleImporter } from '../../../import';
@@ -157,10 +157,9 @@ export default class ImportCommand extends Command {
       );
       log(
         { data: backupDir } as ImportConfig,
-        `The log has been stored at ${
-          { data: backupDir }
-            ? pathValidator(path.join(backupDir || __dirname, 'logs', 'import'))
-            : pathValidator(path.join(__dirname, 'logs'))
+        `The log has been stored at ${{ data: backupDir }
+          ? pathValidator(path.join(backupDir || __dirname, 'logs', 'import'))
+          : pathValidator(path.join(__dirname, 'logs'))
         }`,
         'info',
       );

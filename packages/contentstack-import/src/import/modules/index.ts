@@ -1,4 +1,4 @@
-import { FsUtility } from '@contentstack/cli-utilities';
+import { FsUtility } from 'cs/cli-utilities';
 import { join } from 'node:path';
 import { ModuleClassParams } from '../../types';
 import startJSModuleImport from '../modules-js';

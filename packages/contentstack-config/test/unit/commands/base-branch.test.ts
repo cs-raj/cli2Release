@@ -1,9 +1,9 @@
 import { expect, should } from 'chai';
 import { stub } from 'sinon';
-import { configHandler } from '@contentstack/cli-utilities';
+import { configHandler } from 'cs/cli-utilities';
 import BranchGetCommand from '../../../src/commands/config/get/base-branch';
 import BranchSetCommand from '../../../src/commands/config/set/base-branch';
-import { cliux } from '@contentstack/cli-utilities';
+import { cliux } from 'cs/cli-utilities';
 import { setConfigMockData } from '../mock/index';
 import { interactive } from '../../../src/utils/index';
 
@@ -48,7 +48,7 @@ describe('base-branch command', function () {
   });
 
   it('Get base-branch: should print base-branch', async function () {
-    const branchStub = stub(cliux, 'table').callsFake(() => {});
+    const branchStub = stub(cliux, 'table').callsFake(() => { });
     await BranchGetCommand.run([]);
     expect(branchStub.calledOnce).to.be.true;
     branchStub.restore();

@@ -1,5 +1,5 @@
-import { Command } from '@contentstack/cli-command';
-import { cliux, configHandler, flags, FlagInput } from '@contentstack/cli-utilities';
+import { Command } from 'cs/cli-command';
+import { cliux, configHandler, flags, FlagInput } from 'cs/cli-utilities';
 import { BaseCommand } from '../../../base-command';
 
 export default class TokensRemoveCommand extends BaseCommand<typeof TokensRemoveCommand> {
@@ -27,8 +27,7 @@ export default class TokensRemoveCommand extends BaseCommand<typeof TokensRemove
       if (tokens && Object.keys(tokens).length > 0) {
         Object.keys(tokens).forEach(function (item) {
           tokenOptions.push(
-            `${item}: ${tokens[item].token} : ${tokens[item].apiKey}${
-              tokens[item].environment ? ' : ' + tokens[item].environment + ' ' : ''
+            `${item}: ${tokens[item].token} : ${tokens[item].apiKey}${tokens[item].environment ? ' : ' + tokens[item].environment + ' ' : ''
             }: ${tokens[item].type}`,
           );
         });
@@ -46,11 +45,11 @@ export default class TokensRemoveCommand extends BaseCommand<typeof TokensRemove
       if (selectedTokens.length === 0) {
         return;
       }
-      
-      selectedTokens.forEach((ele)=>{
-        this.logger.info('selected tokens',ele);
+
+      selectedTokens.forEach((ele) => {
+        this.logger.info('selected tokens', ele);
       })
-    
+
       selectedTokens.forEach((element) => {
         const selectedToken = element.split(':')[0];
         configHandler.delete(`tokens.${selectedToken}`);

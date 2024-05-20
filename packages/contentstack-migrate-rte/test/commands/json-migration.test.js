@@ -2,7 +2,7 @@ const { expect, test } = require('@oclif/test');
 const sinon = require('sinon');
 const qs = require('querystring');
 const nock = require('nock');
-const { cliux } = require('@contentstack/cli-utilities');
+const { cliux } = require('cs/cli-utilities');
 const {
   getToken,
   getContentType,
@@ -537,7 +537,7 @@ describe('Content Type with Single RTE Field of Single Type', function () {
       );
     });
 
-    test
+  test
     .stub(cliux, 'confirm', () => 'yes')
     .stub(command, 'getToken', getTokenCallback)
     .stdout()
@@ -545,7 +545,7 @@ describe('Content Type with Single RTE Field of Single Type', function () {
     .it('should have proper json structure for images migrated from HTML RTE', (ctx) => {
       expect(ctx.stdout).to.contain('Updated 1 Content Type(s) and 1 Entrie(s)');
     });
-    
+
 });
 describe('Global Field Migration', () => {
   let token = getToken('test1');

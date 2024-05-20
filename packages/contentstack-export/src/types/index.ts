@@ -1,4 +1,4 @@
-import { ContentstackClient } from '@contentstack/cli-utilities';
+import { ContentstackClient } from 'cs/cli-utilities';
 import ExportConfig from './export-config';
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare

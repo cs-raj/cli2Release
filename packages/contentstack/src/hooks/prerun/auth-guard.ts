@@ -1,13 +1,13 @@
-import { 
-  cliux, 
+import {
+  cliux,
   managementSDKClient,
   isAuthenticated
-} from '@contentstack/cli-utilities';
-import {LoggerService} from '@contentstack/cli-utilities'
+} from 'cs/cli-utilities';
+import { LoggerService } from 'cs/cli-utilities'
 // TBD: run region command if region is not there
 
 export default async function (opts): Promise<void> {
-  const newLogger = new LoggerService(process.cwd(),'cli-log');
+  const newLogger = new LoggerService(process.cwd(), 'cli-log');
   const { context: { plugin: { config: { protectedCommands = {} } = {} } = {}, region = null } = {} } = this.config;
   if (opts.Command.id !== 'config:set:region') {
     if (!region) {
@@ -24,7 +24,7 @@ export default async function (opts): Promise<void> {
       cliux.error('Please login to execute the command');
       this.exit();
     }
-    const client = await managementSDKClient({host: region.cma})
+    const client = await managementSDKClient({ host: region.cma })
     try {
       const result = await client.getUser();
       if (!result) {
@@ -32,11 +32,11 @@ export default async function (opts): Promise<void> {
         cliux.error('Please login to execute the command');
         this.exit();
       }
-      newLogger.debug('logged in user', result.data);    
+      newLogger.debug('logged in user', result.data);
     } catch (error) {
       newLogger.error('error in auth validation', error);
       cliux.error('Please login to execute the command');
       process.exit();
-    }   
+    }
   }
 }

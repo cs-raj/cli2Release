@@ -1,12 +1,12 @@
 const { join } = require('path')
 const { existsSync, unlinkSync } = require('fs')
-const { test } = require('@contentstack/cli-dev-dependencies')
+const { test } = require('cs/cli-dev-dependencies')
 
 const { getEnvData, getStackDetailsByRegion, deleteStack } = require('./utils/helper')
 const { DEFAULT_TIMEOUT, PRINT_LOGS } = require("./config.json")
-const LogoutCommand = require('@contentstack/cli-auth/lib/commands/auth/logout').default
-const RemoveTokenCommand = require('@contentstack/cli-auth/lib/commands/auth/tokens/remove').default
-const { cliux: CliUx, messageHandler, configHandler } = require("@contentstack/cli-utilities")
+const LogoutCommand = require('cs/cli-auth/lib/commands/auth/logout').default
+const RemoveTokenCommand = require('cs/cli-auth/lib/commands/auth/tokens/remove').default
+const { cliux: CliUx, messageHandler, configHandler } = require("cs/cli-utilities")
 const { DELIMITER, KEY_VAL_DELIMITER } = process.env
 
 const { ENC_CONFIG_NAME } = getEnvData()
@@ -59,7 +59,7 @@ module.exports = (region) => {
           }
         }
       })
-      removeTokens(Object.keys(stackDetails));
-      await deleteStack({ apiKey: stackDetails[stack].STACK_API_KEY, authToken: configHandler.get('authtoken') });
+    removeTokens(Object.keys(stackDetails));
+    await deleteStack({ apiKey: stackDetails[stack].STACK_API_KEY, authToken: configHandler.get('authtoken') });
   })
 };

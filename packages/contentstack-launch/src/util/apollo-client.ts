@@ -14,7 +14,7 @@ import {
   ApolloClient,
   InMemoryCache,
 } from "@apollo/client/core";
-import { cliux as ux, authHandler, configHandler } from '@contentstack/cli-utilities';
+import { cliux as ux, authHandler, configHandler } from 'cs/cli-utilities';
 
 import config from '../config';
 import { GraphqlApiClientInput } from '../types';
@@ -142,7 +142,7 @@ export default class GraphqlApiClient {
         !includes(
           this.skipErrorCods,
           (graphQLErrors as any)?.response?.status ||
-            (networkError as any)?.response?.status
+          (networkError as any)?.response?.status
         )
       ) {
         if (!isArray(graphQLErrors) && isObject(graphQLErrors)) {

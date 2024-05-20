@@ -2,12 +2,12 @@ const fs = require('fs');
 const { promises: fsPromises } = fs;
 const path = require('path');
 const { expect, test } = require('@oclif/test');
-const { test: customTest } = require('@contentstack/cli-dev-dependencies');
-const { messageHandler, configHandler } = require('@contentstack/cli-utilities');
-const LoginCommand = require('@contentstack/cli-auth/lib/commands/auth/login').default;
-const AddTokenCommand = require('@contentstack/cli-auth/lib/commands/auth/tokens/add').default;
-const RegionSetCommand = require('@contentstack/cli-config/lib/commands/config/set/region').default;
-const ExportCommand = require('@contentstack/cli-cm-export/src/commands/cm/stacks/export');
+const { test: customTest } = require('cs/cli-dev-dependencies');
+const { messageHandler, configHandler } = require('cs/cli-utilities');
+const LoginCommand = require('cs/cli-auth/lib/commands/auth/login').default;
+const AddTokenCommand = require('cs/cli-auth/lib/commands/auth/tokens/add').default;
+const RegionSetCommand = require('cs/cli-config/lib/commands/config/set/region').default;
+const ExportCommand = require('cs/cli-cm-export/src/commands/cm/stacks/export');
 
 const {
   getStackDetailsByRegion,

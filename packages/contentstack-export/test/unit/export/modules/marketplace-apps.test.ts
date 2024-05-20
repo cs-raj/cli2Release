@@ -1,10 +1,10 @@
 import { expect } from '@oclif/test';
-import { App, FsUtility, cliux, marketplaceSDKClient } from '@contentstack/cli-utilities';
-import { fancy } from '@contentstack/cli-dev-dependencies';
+import { App, FsUtility, cliux, marketplaceSDKClient } from 'cs/cli-utilities';
+import { fancy } from 'cs/cli-dev-dependencies';
 
 import defaultConfig from '../../../../src/config';
 import * as logUtil from '../../../../src/utils/logger';
-import * as utilities from '@contentstack/cli-utilities';
+import * as utilities from 'cs/cli-utilities';
 import ExportConfig from '../../../../lib/types/export-config';
 import * as appUtility from '../../../../src/utils/marketplace-app-helper';
 import ExportMarketplaceApps from '../../../../src/export/modules/marketplace-apps';
@@ -24,7 +24,7 @@ describe('ExportMarketplaceApps class', () => {
   describe('start method', () => {
     fancy
       .stub(utilities, 'isAuthenticated', () => false)
-      .stub(cliux, 'print', () => {})
+      .stub(cliux, 'print', () => { })
       .spy(utilities, 'isAuthenticated')
       .spy(cliux, 'print')
       .spy(ExportMarketplaceApps.prototype, 'exportApps')
@@ -38,10 +38,10 @@ describe('ExportMarketplaceApps class', () => {
 
     fancy
       .stub(utilities, 'isAuthenticated', () => true)
-      .stub(utilities, 'log', () => {})
-      .stub(FsUtility.prototype, 'makeDirectory', () => {})
+      .stub(utilities, 'log', () => { })
+      .stub(FsUtility.prototype, 'makeDirectory', () => { })
       .stub(appUtility, 'getOrgUid', () => 'ORG-UID')
-      .stub(ExportMarketplaceApps.prototype, 'exportApps', () => {})
+      .stub(ExportMarketplaceApps.prototype, 'exportApps', () => { })
       .spy(appUtility, 'getOrgUid')
       .spy(ExportMarketplaceApps.prototype, 'exportApps')
       .it('should trigger start method', async ({ spy }) => {
@@ -55,8 +55,8 @@ describe('ExportMarketplaceApps class', () => {
 
   describe('exportApps method', () => {
     fancy
-      .stub(ExportMarketplaceApps.prototype, 'getStackSpecificApps', () => {})
-      .stub(ExportMarketplaceApps.prototype, 'getAppManifestAndAppConfig', () => {})
+      .stub(ExportMarketplaceApps.prototype, 'getStackSpecificApps', () => { })
+      .stub(ExportMarketplaceApps.prototype, 'getAppManifestAndAppConfig', () => { })
       .stub(appUtility, 'createNodeCryptoInstance', () => ({ encrypt: (val: any) => val }))
       .spy(ExportMarketplaceApps.prototype, 'getStackSpecificApps')
       .spy(ExportMarketplaceApps.prototype, 'getAppManifestAndAppConfig')
@@ -77,7 +77,7 @@ describe('ExportMarketplaceApps class', () => {
 
   describe('getAppManifestAndAppConfig method', () => {
     fancy
-      .stub(logUtil, 'log', () => {})
+      .stub(logUtil, 'log', () => { })
       .spy(logUtil, 'log')
       .it(
         "if no apps is exported from stack, It should log message that 'No marketplace apps found'",
@@ -94,10 +94,10 @@ describe('ExportMarketplaceApps class', () => {
       );
 
     fancy
-      .stub(logUtil, 'log', () => {})
-      .stub(FsUtility.prototype, 'writeFile', () => {})
-      .stub(ExportMarketplaceApps.prototype, 'getAppConfigurations', () => {})
-      .stub(ExportMarketplaceApps.prototype, 'getPrivateAppsManifest', () => {})
+      .stub(logUtil, 'log', () => { })
+      .stub(FsUtility.prototype, 'writeFile', () => { })
+      .stub(ExportMarketplaceApps.prototype, 'getAppConfigurations', () => { })
+      .stub(ExportMarketplaceApps.prototype, 'getPrivateAppsManifest', () => { })
       .spy(logUtil, 'log')
       .spy(FsUtility.prototype, 'writeFile')
       .spy(ExportMarketplaceApps.prototype, 'getAppConfigurations')
@@ -141,8 +141,8 @@ describe('ExportMarketplaceApps class', () => {
             {
               uid: 'UID',
               name: 'TEST-APP',
-              configuration: () => {},
-              fetch: () => {},
+              configuration: () => { },
+              fetch: () => { },
               manifest: { visibility: 'private' },
             },
           ],
@@ -155,8 +155,8 @@ describe('ExportMarketplaceApps class', () => {
             {
               uid: 'UID',
               name: 'TEST-APP-2',
-              configuration: () => {},
-              fetch: () => {},
+              configuration: () => { },
+              fetch: () => { },
               manifest: { visibility: 'private' },
             },
           ],
@@ -176,7 +176,7 @@ describe('ExportMarketplaceApps class', () => {
       });
 
     fancy
-      .stub(logUtil, 'log', () => {})
+      .stub(logUtil, 'log', () => { })
       .spy(logUtil, 'log')
       .nock(`https://${host}`, (api) => api.get(`/installations?target_uids=STACK-UID&skip=0`).reply(400))
       .it('should catch and log api error', async ({ spy }) => {
@@ -220,7 +220,7 @@ describe('ExportMarketplaceApps class', () => {
       });
 
     fancy
-      .stub(logUtil, 'log', () => {})
+      .stub(logUtil, 'log', () => { })
       .spy(logUtil, 'log')
       .nock(`https://${host}`, (api) => api.get(`/manifests/UID?include_oauth=true`).reply(400))
       .it('should handle API/SDK errors and log them', async ({ spy }) => {
@@ -245,7 +245,7 @@ describe('ExportMarketplaceApps class', () => {
 
   describe('getAppConfigurations method', () => {
     fancy
-      .stub(logUtil, 'log', () => {})
+      .stub(logUtil, 'log', () => { })
       .stub(appUtility, 'createNodeCryptoInstance', () => ({ encrypt: (val: any) => val }))
       .nock(`https://${host}`, (api) =>
         api
@@ -272,7 +272,7 @@ describe('ExportMarketplaceApps class', () => {
       });
 
     fancy
-      .stub(logUtil, 'log', () => {})
+      .stub(logUtil, 'log', () => { })
       .stub(appUtility, 'createNodeCryptoInstance', () => ({ encrypt: (val: any) => val }))
       .spy(logUtil, 'log')
       .nock(`https://${host}`, (api) =>
@@ -300,7 +300,7 @@ describe('ExportMarketplaceApps class', () => {
       });
 
     fancy
-      .stub(logUtil, 'log', () => {})
+      .stub(logUtil, 'log', () => { })
       .spy(logUtil, 'log')
       .nock(`https://${host}`, (api) =>
         api.get(`/installations/UID/installationData`).reply(200, { error: 'API is broken' }),
@@ -325,7 +325,7 @@ describe('ExportMarketplaceApps class', () => {
       });
 
     fancy
-      .stub(logUtil, 'log', () => {})
+      .stub(logUtil, 'log', () => { })
       .spy(logUtil, 'log')
       .nock(`https://${host}`, (api) =>
         api.get(`/installations/UID/installationData`).reply(500, { error: 'API is broken' }),

@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import mkdirp from 'mkdirp';
 import bigJSON from 'big-json';
-import { FsUtility } from '@contentstack/cli-utilities';
+import { FsUtility } from 'cs/cli-utilities';
 
 export const readFileSync = function (filePath: string, parse: boolean): unknown {
   let data;

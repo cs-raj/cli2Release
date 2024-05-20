@@ -1,9 +1,9 @@
-const { Command } = require('@contentstack/cli-command');
-const { printFlagDeprecation, flags } = require('@contentstack/cli-utilities');
+const { Command } = require('cs/cli-command');
+const { printFlagDeprecation, flags } = require('cs/cli-utilities');
 const { start } = require('../../../producer/publish-edits');
 const store = require('../../../util/store.js');
 // eslint-disable-next-line node/no-extraneous-require
-const { cliux } = require('@contentstack/cli-utilities');
+const { cliux } = require('cs/cli-utilities');
 const configKey = 'publish_edits_on_env';
 const { prettyPrint, formatError } = require('../../../util');
 const { getStack } = require('../../../util/client.js');
@@ -153,7 +153,7 @@ PublishModifiedCommand.flags = {
     default: 'true',
   }),
   'api-version': flags.string({
-    description : "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
+    description: "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
   }),
   sourceEnv: flags.string({
     char: 's',

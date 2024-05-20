@@ -1,9 +1,9 @@
-const { Command } = require('@contentstack/cli-command');
-const { printFlagDeprecation, flags, isAuthenticated } = require('@contentstack/cli-utilities');
+const { Command } = require('cs/cli-command');
+const { printFlagDeprecation, flags, isAuthenticated } = require('cs/cli-utilities');
 const { start: startPublish } = require('../../../producer/publish-assets');
 const { start: startCrossPublish } = require('../../../producer/cross-publish');
 const store = require('../../../util/store.js');
-const { cliux } = require('@contentstack/cli-utilities');
+const { cliux } = require('cs/cli-utilities');
 const { prettyPrint, formatError } = require('../../../util');
 const { getStack } = require('../../../util/client.js');
 let config;
@@ -225,7 +225,7 @@ AssetsPublishCommand.flags = {
     parse: printFlagDeprecation(['-b', '--bulkPublish'], ['--bulk-publish']),
   }),
   'api-version': flags.string({
-    description : "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
+    description: "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
   }),
   'delivery-token': flags.string({ description: 'Delivery token for source environment' }),
   'source-env': flags.string({ description: 'Source environment' }),

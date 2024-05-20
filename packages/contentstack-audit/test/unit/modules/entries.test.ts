@@ -2,8 +2,8 @@ import fs from 'fs';
 import { resolve } from 'path';
 import { expect } from '@oclif/test';
 import cloneDeep from 'lodash/cloneDeep';
-import { ux } from '@contentstack/cli-utilities';
-import { fancy } from '@contentstack/cli-dev-dependencies';
+import { ux } from 'cs/cli-utilities';
+import { fancy } from 'cs/cli-dev-dependencies';
 
 import config from '../../../src/config';
 import { $t, auditMsg } from '../../../src/messages';
@@ -25,7 +25,7 @@ describe('Entries module', () => {
 
   beforeEach(() => {
     constructorParam = {
-      log: () => {},
+      log: () => { },
       moduleName: 'entries',
       ctSchema: cloneDeep(require('../mock/contents/content_types/schema.json')),
       gfSchema: cloneDeep(require('../mock/contents/global_fields/globalfields.json')),
@@ -51,10 +51,10 @@ describe('Entries module', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(Entries.prototype, 'prepareEntryMetaData', async () => {})
-      .stub(Entries.prototype, 'fixPrerequisiteData', async () => {})
-      .stub(Entries.prototype, 'writeFixContent', async () => {})
-      .stub(Entries.prototype, 'lookForReference', async () => {})
+      .stub(Entries.prototype, 'prepareEntryMetaData', async () => { })
+      .stub(Entries.prototype, 'fixPrerequisiteData', async () => { })
+      .stub(Entries.prototype, 'writeFixContent', async () => { })
+      .stub(Entries.prototype, 'lookForReference', async () => { })
       .stub(Entries.prototype, 'locales', [{ code: 'en-us' }] as any)
       .it('should return missing refs', async () => {
         const ctInstance = new (class Class extends Entries {
@@ -71,10 +71,10 @@ describe('Entries module', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(Entries.prototype, 'prepareEntryMetaData', async () => {})
-      .stub(Entries.prototype, 'fixPrerequisiteData', async () => {})
-      .stub(Entries.prototype, 'lookForReference', async () => {})
-      .stub(Entries.prototype, 'writeFixContent', async () => {})
+      .stub(Entries.prototype, 'prepareEntryMetaData', async () => { })
+      .stub(Entries.prototype, 'fixPrerequisiteData', async () => { })
+      .stub(Entries.prototype, 'lookForReference', async () => { })
+      .stub(Entries.prototype, 'writeFixContent', async () => { })
       .stub(Entries.prototype, 'locales', [{ code: 'en-us' }] as any)
       .spy(Entries.prototype, 'prepareEntryMetaData')
       .spy(Entries.prototype, 'fixPrerequisiteData')
@@ -113,7 +113,7 @@ describe('Entries module', () => {
   describe('writeFixContent method', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(fs, 'writeFileSync', () => {})
+      .stub(fs, 'writeFileSync', () => { })
       .stub(ux, 'confirm', async () => true)
       .spy(fs, 'writeFileSync')
       .it('should ask confirmation adn write content in given path', async ({ spy }) => {
@@ -125,7 +125,7 @@ describe('Entries module', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(fs, 'writeFileSync', () => {})
+      .stub(fs, 'writeFileSync', () => { })
       .spy(fs, 'writeFileSync')
       .it("should skip confirmation if 'yes' flag passed", async ({ spy }) => {
         const ctInstance = new Entries({ ...constructorParam, fix: true });
@@ -144,10 +144,10 @@ describe('Entries module', () => {
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(Entries.prototype, 'runFixOnSchema', () => emptyEntries)
       .stub(Entries.prototype, 'validateReferenceField', () => [])
-      .stub(Entries.prototype, 'validateGlobalField', () => {})
-      .stub(Entries.prototype, 'validateJsonRTEFields', () => {})
-      .stub(Entries.prototype, 'validateModularBlocksField', () => {})
-      .stub(Entries.prototype, 'validateGroupField', () => {})
+      .stub(Entries.prototype, 'validateGlobalField', () => { })
+      .stub(Entries.prototype, 'validateJsonRTEFields', () => { })
+      .stub(Entries.prototype, 'validateModularBlocksField', () => { })
+      .stub(Entries.prototype, 'validateGroupField', () => { })
       .spy(Entries.prototype, 'runFixOnSchema')
       .spy(Entries.prototype, 'validateReferenceField')
       .spy(Entries.prototype, 'validateGlobalField')
@@ -186,7 +186,7 @@ describe('Entries module', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(Entries.prototype, 'validateReferenceValues', () => {})
+      .stub(Entries.prototype, 'validateReferenceValues', () => { })
       .spy(Entries.prototype, 'validateReferenceValues')
       .it('should call validateReferenceField method', async ({ spy }) => {
         const ctInstance = new Class();
@@ -233,7 +233,7 @@ describe('Entries module', () => {
   describe('validateGlobalField method', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(Entries.prototype, 'lookForReference', () => {})
+      .stub(Entries.prototype, 'lookForReference', () => { })
       .spy(Entries.prototype, 'lookForReference')
       .it('should call validateReferenceField method', async ({ spy }) => {
         const ctInstance = new (class Class extends Entries {
@@ -251,7 +251,7 @@ describe('Entries module', () => {
   describe('validateJsonRTEFields method', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(Entries.prototype, 'jsonRefCheck', () => {})
+      .stub(Entries.prototype, 'jsonRefCheck', () => { })
       .spy(Entries.prototype, 'jsonRefCheck')
       .spy(Entries.prototype, 'validateJsonRTEFields')
       .it('should do recursive call on validateJsonRTEFields method', async ({ spy }) => {
@@ -267,8 +267,8 @@ describe('Entries module', () => {
   describe('validateModularBlocksField method', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(Entries.prototype, 'modularBlockRefCheck', () => {})
-      .stub(Entries.prototype, 'lookForReference', () => {})
+      .stub(Entries.prototype, 'modularBlockRefCheck', () => { })
+      .stub(Entries.prototype, 'lookForReference', () => { })
       .spy(Entries.prototype, 'modularBlockRefCheck')
       .spy(Entries.prototype, 'lookForReference')
       .it(
@@ -294,7 +294,7 @@ describe('Entries module', () => {
   describe('validateGroupField method', () => {
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(Entries.prototype, 'lookForReference', () => {})
+      .stub(Entries.prototype, 'lookForReference', () => { })
       .spy(Entries.prototype, 'lookForReference')
       .it('should call lookForReference method to iterate GroupField schema', async ({ spy }) => {
         const ctInstance = new Entries(constructorParam);
@@ -305,7 +305,7 @@ describe('Entries module', () => {
 
     fancy
       .stdout({ print: process.env.PRINT === 'true' || false })
-      .stub(Entries.prototype, 'lookForReference', () => {})
+      .stub(Entries.prototype, 'lookForReference', () => { })
       .spy(Entries.prototype, 'lookForReference')
       .it(
         'should iterate all group entries and call lookForReference method to iterate GroupField schema',

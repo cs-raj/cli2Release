@@ -4,7 +4,7 @@ import { expect, test } from '@oclif/test';
 import { Helper } from './helper';
 // @ts-ignore
 import { PRINT_LOGS } from './config.json';
-import { cliux as CliUx, messageHandler, NodeCrypto } from '@contentstack/cli-utilities';
+import { cliux as CliUx, messageHandler, NodeCrypto } from 'cs/cli-utilities';
 
 const messageFilePath = path.join(__dirname, '..', '..', '..', 'contentstack-utilities', 'messages/auth.json');
 const crypto = new NodeCrypto({

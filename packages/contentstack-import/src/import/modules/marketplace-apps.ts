@@ -16,7 +16,7 @@ import {
   isAuthenticated,
   marketplaceSDKClient,
   ContentstackMarketplaceClient,
-} from '@contentstack/cli-utilities';
+} from 'cs/cli-utilities';
 
 import { trace } from '../../utils/log';
 import { askEncryptionKey, getAppName } from '../../utils/interactive';
@@ -280,7 +280,7 @@ export default class ImportMarketplaceApps {
       .marketplace(this.importConfig.org_uid)
       .installation(app.uid)
       .fetch()
-      .catch(() => {}); // NOTE Keeping this to avoid Unhandled exception
+      .catch(() => { }); // NOTE Keeping this to avoid Unhandled exception
 
     return !isEmpty(installation);
   }

@@ -11,7 +11,7 @@ let chalk = require('chalk');
 let mkdirp = require('mkdirp');
 let Promise = require('bluebird');
 let { isEmpty, merge, cloneDeep } = require('lodash');
-const { cliux } = require('@contentstack/cli-utilities');
+const { cliux } = require('cs/cli-utilities');
 let { default: config } = require('../../config');
 const { fileHelper, log, formatError } = require('../../utils');
 module.exports = class ImportLanguages {
@@ -89,9 +89,9 @@ module.exports = class ImportLanguages {
               .catch(function (err) {
                 let error = JSON.parse(err.message);
                 if (error.hasOwnProperty('errorCode') && error.errorCode === 247) {
-                  if(error?.errors?.code){
+                  if (error?.errors?.code) {
                     log(self.config, error.errors.code[0], 'error');
-                  }else{
+                  } else {
                     log(self.config, err, 'error');
                   }
                   return err;
@@ -173,7 +173,7 @@ module.exports = class ImportLanguages {
         masterLangDetails['name'] &&
         sourceMasterLangDetails[0]['name'] &&
         masterLangDetails['name'].toString().toUpperCase() !==
-          sourceMasterLangDetails[0]['name'].toString().toUpperCase()
+        sourceMasterLangDetails[0]['name'].toString().toUpperCase()
       ) {
         cliux.print('WARNING!!! The master language name for the source and destination is different.', {
           color: 'yellow',

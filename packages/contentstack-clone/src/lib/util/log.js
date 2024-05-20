@@ -7,7 +7,7 @@
 var winston = require('winston');
 var path = require('path');
 var mkdirp = require('mkdirp');
-const { pathValidator } = require('@contentstack/cli-utilities');
+const { pathValidator } = require('cs/cli-utilities');
 var slice = Array.prototype.slice;
 
 function returnString(args) {

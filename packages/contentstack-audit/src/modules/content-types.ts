@@ -4,7 +4,7 @@ import isEmpty from 'lodash/isEmpty';
 import { join, resolve } from 'path';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 
-import { ux } from '@contentstack/cli-utilities';
+import { ux } from 'cs/cli-utilities';
 
 import {
   LogFn,
@@ -115,7 +115,7 @@ export default class ContentType {
     if (existsSync(extensionPath)) {
       try {
         this.extensions = Object.keys(JSON.parse(readFileSync(extensionPath, 'utf8')));
-      } catch (error) {}
+      } catch (error) { }
     }
 
     if (existsSync(marketplacePath)) {
@@ -128,7 +128,7 @@ export default class ContentType {
           ) as string[];
           this.extensions.push(...metaData);
         }
-      } catch (error) {}
+      } catch (error) { }
     }
   }
 
@@ -183,8 +183,8 @@ export default class ContentType {
             ...this.validateReferenceField(
               [...tree, { uid: field.uid, name: child.display_name }],
               child as ReferenceFieldDataType,
-          ),
-        );
+            ),
+          );
           break;
         case 'global_field':
           await this.validateGlobalField(
@@ -264,19 +264,19 @@ export default class ContentType {
 
     return missingRefs.length
       ? [
-          {
-            tree,
-            data_type,
-            missingRefs,
-            display_name,
-            ct_uid: this.currentUid,
-            name: this.currentTitle,
-            treeStr: tree
-              .map(({ name }) => name)
-              .filter((val) => val)
-              .join(' ➜ '),
-          },
-        ]
+        {
+          tree,
+          data_type,
+          missingRefs,
+          display_name,
+          ct_uid: this.currentUid,
+          name: this.currentTitle,
+          treeStr: tree
+            .map(({ name }) => name)
+            .filter((val) => val)
+            .join(' ➜ '),
+        },
+      ]
       : [];
   }
 
@@ -392,19 +392,19 @@ export default class ContentType {
 
     return missingRefs.length
       ? [
-          {
-            tree,
-            data_type,
-            missingRefs,
-            display_name,
-            ct_uid: this.currentUid,
-            name: this.currentTitle,
-            treeStr: tree
-              .map(({ name }) => name)
-              .filter((val) => val)
-              .join(' ➜ '),
-          },
-        ]
+        {
+          tree,
+          data_type,
+          missingRefs,
+          display_name,
+          ct_uid: this.currentUid,
+          name: this.currentTitle,
+          treeStr: tree
+            .map(({ name }) => name)
+            .filter((val) => val)
+            .join(' ➜ '),
+        },
+      ]
       : [];
   }
 

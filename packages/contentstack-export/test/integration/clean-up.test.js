@@ -1,27 +1,27 @@
 const { join } = require('path')
 const { existsSync, unlinkSync } = require('fs')
-const { test } = require("@contentstack/cli-dev-dependencies")
+const { test } = require("cs/cli-dev-dependencies")
 
 const { getEnvData, getStackDetailsByRegion } = require('./utils/helper')
 const { DEFAULT_TIMEOUT, PRINT_LOGS, ALIAS_NAME } = require("./config.json")
-const LogoutCommand = require('@contentstack/cli-auth/lib/commands/auth/logout').default
-const RemoveTokenCommand = require('@contentstack/cli-auth/lib/commands/auth/tokens/remove').default
-const { cliux: CliUx, messageHandler, configHandler } = require("@contentstack/cli-utilities")
+const LogoutCommand = require('cs/cli-auth/lib/commands/auth/logout').default
+const RemoveTokenCommand = require('cs/cli-auth/lib/commands/auth/tokens/remove').default
+const { cliux: CliUx, messageHandler, configHandler } = require("cs/cli-utilities")
 const { DELIMITER, KEY_VAL_DELIMITER } = process.env
 
 const { ENC_CONFIG_NAME } = getEnvData()
 
 module.exports = (region) => {
   const stackDetails = getStackDetailsByRegion(region.REGION, DELIMITER, KEY_VAL_DELIMITER)
-  
+
   function removeTokens(stacks) {
     let stack = stacks.pop()
     test
-    .command(RemoveTokenCommand, ['--alias', stackDetails[stack].ALIAS_NAME])
-    .it('Cleaning up is done', () => {
-      config = ''
-      messageHandler.init({ messageFilePath: '' });
-    });
+      .command(RemoveTokenCommand, ['--alias', stackDetails[stack].ALIAS_NAME])
+      .it('Cleaning up is done', () => {
+        config = ''
+        messageHandler.init({ messageFilePath: '' });
+      });
     if (stacks.length > 0) {
       removeTokens(stacks)
     }
@@ -57,6 +57,6 @@ module.exports = (region) => {
           }
         }
       })
-      removeTokens(Object.keys(stackDetails))
+    removeTokens(Object.keys(stackDetails))
   })
 }

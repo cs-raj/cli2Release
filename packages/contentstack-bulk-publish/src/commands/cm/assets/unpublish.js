@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable node/no-extraneous-require */
-const { Command } = require('@contentstack/cli-command');
-const { cliux, flags, isAuthenticated } = require('@contentstack/cli-utilities');
+const { Command } = require('cs/cli-command');
+const { cliux, flags, isAuthenticated } = require('cs/cli-utilities');
 const { start } = require('../../../producer/unpublish');
 const store = require('../../../util/store.js');
 const configKey = 'Unpublish';
@@ -169,7 +169,7 @@ UnpublishCommand.flags = {
     default: 'true',
   }),
   'api-version': flags.string({
-    description : "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
+    description: "API Version to be used. Values [Default: 3, Nested Reference Publishing: 3.2].",
   }),
   'delivery-token': flags.string({
     description: 'Delivery Token for source environment',

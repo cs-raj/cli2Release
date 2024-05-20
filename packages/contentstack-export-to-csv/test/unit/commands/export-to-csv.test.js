@@ -4,7 +4,7 @@ const { test: fancy } = require('@oclif/test');
 const { PassThrough } = require('stream');
 const inquirer = require('inquirer');
 const mockData = require('../../mock-data/common.mock.json');
-const { configHandler } = require('@contentstack/cli-utilities');
+const { configHandler } = require('cs/cli-utilities');
 
 const { cma } = configHandler.get('region');
 
@@ -14,8 +14,8 @@ describe('export-to-csv with action taxonomies', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
       .nock(cma, (api) => {
         api
           .get(`/v3/stacks?&query={"org_uid":"${mockData.organizations[0].uid}"}`)
@@ -51,8 +51,8 @@ describe('export-to-csv with action taxonomies', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
       .nock(cma, (api) => {
         api
           .get(`/v3/stacks?&query={"org_uid":"${mockData.organizations[0].uid}"}`)
@@ -91,9 +91,9 @@ describe('export-to-csv with action taxonomies', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
-      .stub(inquirer, 'registerPrompt', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
+      .stub(inquirer, 'registerPrompt', () => { })
       .stub(inquirer, 'prompt', () => {
         return Promise.resolve({
           action: 'taxonomies',
@@ -132,8 +132,8 @@ describe('export-to-csv with action entries', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
       .nock(cma, (api) => {
         api
           .get(`/v3/stacks?&query={"org_uid":"${mockData.organizations[0].uid}"}`)
@@ -184,9 +184,9 @@ describe('export-to-csv with action entries', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
-      .stub(inquirer, 'registerPrompt', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
+      .stub(inquirer, 'registerPrompt', () => { })
       .stub(inquirer, 'prompt', () => {
         return Promise.resolve({
           action: 'entries',
@@ -245,8 +245,8 @@ describe('export-to-csv with action users', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
       .nock(cma, (api) => {
         api.get('/v3/user?include_orgs_roles=true').reply(200, { user: mockData.users[0] }).persist();
       })
@@ -266,9 +266,9 @@ describe('export-to-csv with action users', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
-      .stub(inquirer, 'registerPrompt', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
+      .stub(inquirer, 'registerPrompt', () => { })
       .stub(inquirer, 'prompt', () => {
         return Promise.resolve({ action: 'users', chosenOrg: mockData.organizations[0].name });
       })
@@ -297,8 +297,8 @@ describe('Testing the teams support in cli export-to-csv', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
       .nock(cma, (api) => {
         api
           .get(`/v3/organizations/org_uid_1_teams/teams?skip=0&limit=100&includeUserDetails=true`)
@@ -318,8 +318,8 @@ describe('Testing the teams support in cli export-to-csv', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
       .nock(cma, (api) => {
         api
           .get(`/v3/organizations/org_uid_1_teams/teams?skip=0&limit=100&includeUserDetails=true`)
@@ -339,8 +339,8 @@ describe('Testing the teams support in cli export-to-csv', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
       .nock(cma, (api) => {
         api
           .get(`/v3/organizations/org_uid_1_teams/teams?skip=0&limit=100&includeUserDetails=true`)
@@ -360,9 +360,9 @@ describe('Testing the teams support in cli export-to-csv', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
-      .stub(inquirer, 'registerPrompt', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
+      .stub(inquirer, 'registerPrompt', () => { })
       .stub(inquirer, 'prompt', () => {
         return Promise.resolve({ action: 'teams', chosenOrg: mockData.organizations[2].name });
       })
@@ -388,9 +388,9 @@ describe('Testing the teams support in cli export-to-csv', () => {
     test
       .stdout({ print: process.env.PRINT === 'true' || false })
       .stub(fs, 'createWriteStream', () => new PassThrough())
-      .stub(mkdirp, 'sync', () => {})
-      .stub(process, 'chdir', () => {})
-      .stub(inquirer, 'registerPrompt', () => {})
+      .stub(mkdirp, 'sync', () => { })
+      .stub(process, 'chdir', () => { })
+      .stub(inquirer, 'registerPrompt', () => { })
       .stub(inquirer, 'prompt', () => {
         return Promise.resolve({ action: 'teams', chosenOrg: mockData.organizations[2].name, chooseExport: 'yes' });
       })

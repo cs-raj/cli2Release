@@ -1,5 +1,5 @@
-import { Command } from '@contentstack/cli-command';
-import { cliux, configHandler, messageHandler } from '@contentstack/cli-utilities';
+import { Command } from 'cs/cli-command';
+import { cliux, configHandler, messageHandler } from 'cs/cli-utilities';
 
 export default class BranchGetCommand extends Command {
   static description = 'Get current branch set for CLI';
