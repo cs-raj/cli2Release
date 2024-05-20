@@ -1,11 +1,11 @@
-const { Command } = require('contentstack-cli-1-command');
+const { Command } = require('cs-cli-1-command');
 const { start } = require('../../../producer/nonlocalized-field-changes');
 const store = require('../../../util/store.js');
-const { cliux } = require('contentstack-cli-1-utilities');
+const { cliux } = require('cs-cli-1-utilities');
 const configKey = 'nonlocalized_field_changes';
 const { prettyPrint, formatError } = require('../../../util');
 const { getStack } = require('../../../util/client.js');
-const { printFlagDeprecation, flags } = require('contentstack-cli-1-utilities');
+const { printFlagDeprecation, flags } = require('cs-cli-1-utilities');
 let config;
 
 class NonlocalizedFieldChangesCommand extends Command {

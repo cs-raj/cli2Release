@@ -1,6 +1,6 @@
 const { describe, it } = require('mocha');
 const EntriesUnpublish = require('../../../../src/commands/cm/entries/unpublish');
-const { cliux } = require('contentstack-cli-1-utilities');
+const { cliux } = require('cs-cli-1-utilities');
 const sinon = require('sinon');
 const { config } = require('dotenv');
 const { expect } = require('chai');

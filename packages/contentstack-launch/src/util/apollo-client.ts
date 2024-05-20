@@ -14,7 +14,7 @@ import {
   ApolloClient,
   InMemoryCache,
 } from "@apollo/client/core";
-import { cliux as ux, authHandler, configHandler } from 'contentstack-cli-1-utilities';
+import { cliux as ux, authHandler, configHandler } from 'cs-cli-1-utilities';
 
 import config from '../config';
 import { GraphqlApiClientInput } from '../types';

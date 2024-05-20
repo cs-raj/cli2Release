@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 import WhoamiCommand from '../../../src/commands/auth/whoami';
-import { cliux } from 'contentstack-cli-1-utilities';
+import { cliux } from 'cs-cli-1-utilities';
 
 describe('Whoami Command', () => {
   let getEmailStub;

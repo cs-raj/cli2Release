@@ -1,4 +1,4 @@
-import { Command } from 'contentstack-cli-1-command';
+import { Command } from 'cs-cli-1-command';
 import {
   cliux,
   configHandler,
@@ -7,7 +7,7 @@ import {
   authHandler as oauthHandler,
   managementSDKClient,
   FlagInput,
-} from 'contentstack-cli-1-utilities';
+} from 'cs-cli-1-utilities';
 
 import { authHandler } from '../../utils';
 import { BaseCommand } from '../../base-command';

@@ -8,7 +8,7 @@
  */
 
 import { log } from './logger';
-import { managementSDKClient, isAuthenticated } from 'contentstack-cli-1-utilities';
+import { managementSDKClient, isAuthenticated } from 'cs-cli-1-utilities';
 import { ImportConfig } from '../types';
 
 const login = async (config: ImportConfig): Promise<any> => {

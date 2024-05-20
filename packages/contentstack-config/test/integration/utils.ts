@@ -1,4 +1,4 @@
-import { Command } from 'contentstack-cli-1-command';
+import { Command } from 'cs-cli-1-command';
 
 // helper function for timing
 export const delay = ms => new Promise(resolve => setTimeout(resolve, ms))

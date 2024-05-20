@@ -4,7 +4,7 @@ const { test: fancy } = require('@oclif/test');
 const { PassThrough } = require('stream');
 const inquirer = require('inquirer');
 const mockData = require('../../mock-data/common.mock.json');
-const { configHandler } = require('contentstack-cli-1-utilities');
+const { configHandler } = require('cs-cli-1-utilities');
 
 const { cma } = configHandler.get('region');
 

@@ -1,5 +1,5 @@
-import { Command } from 'contentstack-cli-1-command';
-import { messageHandler, flags, cliux, isAuthenticated } from 'contentstack-cli-1-utilities';
+import { Command } from 'cs-cli-1-command';
+import { messageHandler, flags, cliux, isAuthenticated } from 'cs-cli-1-utilities';
 import { deleteBranch } from '../../../utils/delete-branch';
 import { interactive, handleErrorMsg } from '../../../utils';
 

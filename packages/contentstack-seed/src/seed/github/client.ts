@@ -3,7 +3,7 @@ import * as zlib from 'zlib';
 import * as https from 'https';
 import { Stream } from 'stream';
 import mkdirp = require('mkdirp');
-import { HttpClient } from 'contentstack-cli-1-utilities';
+import { HttpClient } from 'cs-cli-1-utilities';
 
 import GithubError from './error';
 

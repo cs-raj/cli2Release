@@ -9,7 +9,7 @@ import { existsSync } from 'node:fs';
 import includes from 'lodash/includes';
 import { v4 as uuid } from 'uuid';
 import { resolve as pResolve, join } from 'node:path';
-import { FsUtility } from 'contentstack-cli-1-utilities';
+import { FsUtility } from 'cs-cli-1-utilities';
 
 import config from '../../config';
 import { log, formatError, formatDate } from '../../utils';

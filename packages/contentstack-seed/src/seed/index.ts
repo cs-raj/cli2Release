@@ -1,5 +1,5 @@
 import * as tmp from 'tmp';
-import { cliux } from 'contentstack-cli-1-utilities';
+import { cliux } from 'cs-cli-1-utilities';
 
 import * as importer from '../seed/importer';
 import ContentstackClient, { Organization, Stack } from '../seed/contentstack/client';

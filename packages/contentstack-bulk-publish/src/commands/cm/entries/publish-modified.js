@@ -1,9 +1,9 @@
-const { Command } = require('contentstack-cli-1-command');
-const { printFlagDeprecation, flags } = require('contentstack-cli-1-utilities');
+const { Command } = require('cs-cli-1-command');
+const { printFlagDeprecation, flags } = require('cs-cli-1-utilities');
 const { start } = require('../../../producer/publish-edits');
 const store = require('../../../util/store.js');
 // eslint-disable-next-line node/no-extraneous-require
-const { cliux } = require('contentstack-cli-1-utilities');
+const { cliux } = require('cs-cli-1-utilities');
 const configKey = 'publish_edits_on_env';
 const { prettyPrint, formatError } = require('../../../util');
 const { getStack } = require('../../../util/client.js');

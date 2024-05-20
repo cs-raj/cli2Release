@@ -1,5 +1,5 @@
 import map from 'lodash/map';
-import { FlagInput, Flags } from 'contentstack-cli-1-utilities';
+import { FlagInput, Flags } from 'cs-cli-1-utilities';
 
 import config from '../../config';
 import { BaseCommand } from '../../base-command';

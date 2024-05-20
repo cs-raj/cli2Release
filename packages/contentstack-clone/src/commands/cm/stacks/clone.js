@@ -1,5 +1,5 @@
-const { Command } = require('contentstack-cli-1-command');
-const { configHandler, flags, isAuthenticated, managementSDKClient } = require('contentstack-cli-1-utilities');
+const { Command } = require('cs-cli-1-command');
+const { configHandler, flags, isAuthenticated, managementSDKClient } = require('cs-cli-1-utilities');
 const { CloneHandler } = require('../../../lib/util/clone-handler');
 const path = require('path');
 const { rimraf } = require('rimraf');

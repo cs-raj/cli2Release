@@ -12,7 +12,7 @@ import {
 } from '../mock/data';
 import { BranchDiffHandler } from '../../../src/branch';
 import * as util from '../../../src/utils';
-import { cliux } from 'contentstack-cli-1-utilities';
+import { cliux } from 'cs-cli-1-utilities';
 
 describe('Branch Diff Utility Testcases', () => {
   let apiRequestStub, fetchBranchesDiffStub, loaderV2Stub;

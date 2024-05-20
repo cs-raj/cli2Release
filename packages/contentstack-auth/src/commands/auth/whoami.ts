@@ -1,5 +1,5 @@
-import { Command } from 'contentstack-cli-1-command';
-import { cliux } from 'contentstack-cli-1-utilities';
+import { Command } from 'cs-cli-1-command';
+import { cliux } from 'cs-cli-1-utilities';
 import { BaseCommand } from '../../base-command';
 
 export default class WhoamiCommand extends BaseCommand<typeof WhoamiCommand> {

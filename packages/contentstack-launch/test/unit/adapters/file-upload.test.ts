@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { expect } from 'chai';
 import { stub, createSandbox } from 'sinon';
-import { cliux } from 'contentstack-cli-1-utilities';
+import { cliux } from 'cs-cli-1-utilities';
 import fs from 'fs';
 import { FileUpload, BaseClass } from '../../../src/adapters';
 import { BaseCommand } from '../../../src/commands/launch/base-command';

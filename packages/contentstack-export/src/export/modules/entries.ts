@@ -1,5 +1,5 @@
 import * as path from 'path';
-import { ContentstackClient, FsUtility } from 'contentstack-cli-1-utilities';
+import { ContentstackClient, FsUtility } from 'cs-cli-1-utilities';
 import { log, formatError, fsUtil } from '../../utils';
 import { ExportConfig, ModuleClassParams } from '../../types';
 import BaseClass, { ApiOptions } from './base-class';

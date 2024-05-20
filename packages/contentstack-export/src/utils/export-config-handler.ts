@@ -1,6 +1,6 @@
 import merge from 'merge';
 import * as path from 'path';
-import { configHandler, isAuthenticated, FlagInput, cliux } from 'contentstack-cli-1-utilities';
+import { configHandler, isAuthenticated, FlagInput, cliux } from 'cs-cli-1-utilities';
 import defaultConfig from '../config';
 import { readFile } from './file-helper';
 import { askExportDir, askAPIKey } from './interactive';

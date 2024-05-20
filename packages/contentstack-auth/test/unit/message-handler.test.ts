@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { messageHandler } from 'contentstack-cli-1-utilities';
+import { messageHandler } from 'cs-cli-1-utilities';
 
 describe('Message Handler', () => {
   it('parse with invalid message key, returns the key itself', function () {

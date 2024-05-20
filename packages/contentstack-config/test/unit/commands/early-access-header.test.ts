@@ -1,7 +1,7 @@
 import { expect, should } from 'chai';
 import { stub, spy } from 'sinon';
-import { configHandler } from 'contentstack-cli-1-utilities';
-import { cliux } from 'contentstack-cli-1-utilities';
+import { configHandler } from 'cs-cli-1-utilities';
+import { cliux } from 'cs-cli-1-utilities';
 import Conf from 'conf';
 import { setEarlyAccessHeaderMockData } from '../mock/index';
 import { interactive } from '../../../src/utils/index';

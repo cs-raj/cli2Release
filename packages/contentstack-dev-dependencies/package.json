@@ -1,5 +1,5 @@
 {
-  "name": "contentstack-cli-1-dev-dependencies",
+  "name": "cs-cli-1-dev-dependencies",
   "version": "1.2.4",
   "description": "Customized dev dependencies for ContentStack projects",
   "main": "lib/index.js",

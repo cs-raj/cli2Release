@@ -1,4 +1,4 @@
-import { cliux } from 'contentstack-cli-1-utilities';
+import { cliux } from 'cs-cli-1-utilities';
 
 export const askPassword = async () => {
   return cliux.inquire<string>({

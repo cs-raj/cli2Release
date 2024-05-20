@@ -2,8 +2,8 @@ import fs from 'fs';
 import { resolve } from 'path';
 import { expect } from '@oclif/test';
 import cloneDeep from 'lodash/cloneDeep';
-import { ux } from 'contentstack-cli-1-utilities';
-import { fancy } from 'contentstack-cli-1-dev-dependencies';
+import { ux } from 'cs-cli-1-utilities';
+import { fancy } from 'cs-cli-1-dev-dependencies';
 
 import config from '../../../src/config';
 import { $t, auditMsg } from '../../../src/messages';

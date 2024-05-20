@@ -3,7 +3,7 @@ let { existsSync } = require('fs');
 let path = require('path');
 let crypto = require('crypto');
 let supportedLocales = require('./locales.json');
-const { pathValidator, FsUtility } = require('contentstack-cli-1-utilities');
+const { pathValidator, FsUtility } = require('cs-cli-1-utilities');
 
 module.exports = async ({ migration, config }) => {
   let changeMasterLocale = {

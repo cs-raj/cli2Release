@@ -1,4 +1,4 @@
-import { cliux } from 'contentstack-cli-1-utilities';
+import { cliux } from 'cs-cli-1-utilities';
 
 export default async function (_opts): Promise<void> {
   const { context: { plugin: { config: { expiredCommands = {} } = {} } = {}, info: { command = null } = {} } = {} } =

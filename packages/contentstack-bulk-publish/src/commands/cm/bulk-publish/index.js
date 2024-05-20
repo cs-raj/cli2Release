@@ -1,4 +1,4 @@
-const { Command } = require('contentstack-cli-1-command');
+const { Command } = require('cs-cli-1-command');
 
 class HelloCommand extends Command {
   async run() {

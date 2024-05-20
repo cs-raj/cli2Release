@@ -1,11 +1,11 @@
-# contentstack-cli-1
+# cs-cli-1
 
 Use Contentstack Command-line Interface to command Contentstack for executing a set of operations from the terminal. To get started with CLI, refer to the [CLI’s documentation](https://www.contentstack.com/docs/developers/cli)
 
-[![License](https://img.shields.io/npm/l/contentstack-cli-1)](https://github.com/contentstack/cli/blob/main/LICENSE)
+[![License](https://img.shields.io/npm/l/cs-cli-1)](https://github.com/contentstack/cli/blob/main/LICENSE)
 
 <!-- toc -->
-* [contentstack-cli-1](#contentstackcli)
+* [cs-cli-1](#cs-cli-1)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -14,11 +14,11 @@ Use Contentstack Command-line Interface to command Contentstack for executing a 
 
 <!-- usage -->
 ```sh-session
-$ npm install -g contentstack-cli-1
+$ npm install -g cs-cli-1
 $ csdx COMMAND
 running command...
 $ csdx (--version|-v)
-contentstack-cli-1/1.18.1 darwin-arm64 node-v21.6.2
+cs-cli-1/1.18.1 darwin-arm64 node-v21.6.2
 $ csdx --help [COMMAND]
 USAGE
   $ csdx COMMAND
@@ -235,7 +235,7 @@ EXAMPLES
   $ csdx auth:login --username <username> --password <password>
 ```
 
-_See code: [contentstack-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/login.ts)_
+_See code: [cs-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/login.ts)_
 
 ## `csdx auth:logout`
 
@@ -262,7 +262,7 @@ EXAMPLES
   $ csdx auth:logout --yes
 ```
 
-_See code: [contentstack-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/logout.ts)_
+_See code: [cs-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/logout.ts)_
 
 ## `csdx auth:tokens`
 
@@ -294,7 +294,7 @@ EXAMPLES
   $ csdx auth:tokens
 ```
 
-_See code: [contentstack-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/tokens/index.ts)_
+_See code: [cs-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/tokens/index.ts)_
 
 ## `csdx auth:tokens:add [-a <value>] [--delivery] [--management] [-e <value>] [-k <value>] [-y] [--token <value>]`
 
@@ -340,7 +340,7 @@ EXAMPLES
   $ csdx auth:tokens:add --alias <alias> --stack-api-key <stack api key> --delivery -e <environment> --token <delivery token>
 ```
 
-_See code: [contentstack-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/tokens/add.ts)_
+_See code: [cs-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/tokens/add.ts)_
 
 ## `csdx auth:tokens:remove`
 
@@ -363,7 +363,7 @@ EXAMPLES
   $ csdx auth:tokens:remove -a <alias>
 ```
 
-_See code: [contentstack-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/tokens/remove.ts)_
+_See code: [cs-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/tokens/remove.ts)_
 
 ## `csdx auth:whoami`
 
@@ -383,7 +383,7 @@ EXAMPLES
   $ csdx auth:whoami
 ```
 
-_See code: [contentstack-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/whoami.ts)_
+_See code: [cs-cli-1-auth](https://github.com/contentstack/cli/blob/main/packages/contentstack-auth/src/commands/auth/whoami.ts)_
 
 ## `csdx cm:assets:publish [-a <value>] [--retry-failed <value>] [-e <value>] [--folder-uid <value>] [--bulk-publish <value>] [-c <value>] [-y] [--locales <value>] [--branch <value>] [--delivery-token <value>] [--source-env <value>]`
 
@@ -463,7 +463,7 @@ EXAMPLES
   $ csdx cm:assets:publish --environments [ENVIRONMENT 1] [ENVIRONMENT 2] --locales [LOCALE] --stack-api-key [STACK API KEY]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/assets/publish.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/assets/publish.js)_
 
 ## `csdx cm:assets:unpublish`
 
@@ -530,7 +530,7 @@ EXAMPLES
   $ csdx cm:assets:unpublish --bulk-unpublish --environment [SOURCE ENV] --locale [LOCALE] --stack-api-key [STACK API KEY] --delivery-token [DELIVERY TOKEN]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/assets/unpublish.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/assets/unpublish.js)_
 
 ## `csdx cm:bootstrap`
 
@@ -567,7 +567,7 @@ EXAMPLES
   $ csdx cm:bootstrap --app-name "reactjs-starter" --project-dir <path/to/setup/the/app> --org "your-org-uid" --stack-name "stack-name"
 ```
 
-_See code: [contentstack-cli-1-cm-bootstrap](https://github.com/contentstack/cli/blob/main/packages/contentstack-bootstrap/src/commands/cm/bootstrap.ts)_
+_See code: [cs-cli-1-cm-bootstrap](https://github.com/contentstack/cli/blob/main/packages/contentstack-bootstrap/src/commands/cm/bootstrap.ts)_
 
 ## `csdx cm:branches`
 
@@ -592,7 +592,7 @@ EXAMPLES
   $ csdx cm:branches -k <stack api key>
 ```
 
-_See code: [contentstack-cli-1-cm-branches](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/branches/index.ts)_
+_See code: [cs-cli-1-cm-branches](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/branches/index.ts)_
 
 ## `csdx cm:branches:create`
 
@@ -620,7 +620,7 @@ EXAMPLES
   $ csdx cm:branches:create --source main --uid new_branch --stack-api-key bltxxxxxxxx
 ```
 
-_See code: [contentstack-cli-1-cm-branches](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/branches/create.ts)_
+_See code: [cs-cli-1-cm-branches](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/branches/create.ts)_
 
 ## `csdx cm:branches:delete [-uid <value>] [-k <value>]`
 
@@ -649,7 +649,7 @@ EXAMPLES
   $ csdx cm:branches:delete --uid main --stack-api-key bltxxxxxxxx --yes
 ```
 
-_See code: [contentstack-cli-1-cm-branches](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/branches/delete.ts)_
+_See code: [cs-cli-1-cm-branches](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/branches/delete.ts)_
 
 ## `csdx cm:branches:diff [--base-branch <value>] [--compare-branch <value>] [-k <value>][--module <value>]`
 
@@ -697,7 +697,7 @@ EXAMPLES
   $ csdx cm:branches:diff --stack-api-key "bltxxxxxxxx" --base-branch "main" --compare-branch "develop" --module "content-types" --format "detailed-text"
 ```
 
-_See code: [contentstack-cli-1-cm-branches](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/branches/diff.ts)_
+_See code: [cs-cli-1-cm-branches](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/branches/diff.ts)_
 
 ## `csdx cm:branches:merge [-k <value>][--compare-branch <value>] [--no-revert] [--export-summary-path <value>] [--use-merge-summary <value>] [--comment <value>] [--base-branch <value>]`
 
@@ -736,7 +736,7 @@ EXAMPLES
   $ csdx cm:branches:merge -k bltxxxxxxxx --compare-branch feature-branch --no-revert
 ```
 
-_See code: [contentstack-cli-1-cm-branches](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/branches/merge.ts)_
+_See code: [cs-cli-1-cm-branches](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/branches/merge.ts)_
 
 ## `csdx cm:bulk-publish`
 
@@ -750,7 +750,7 @@ DESCRIPTION
   Bulk Publish script for managing entries and assets
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/bulk-publish/index.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/bulk-publish/index.js)_
 
 ## `csdx cm:entries:update-and-publish [-a <value>] [--retry-failed <value>] [--bulk-publish <value>] [--content-types <value>] [-t <value>] [-e <value>] [-c <value>] [-y] [--locales <value>] [--branch <value>]`
 
@@ -1034,7 +1034,7 @@ EXAMPLES
   $ csdx cm:bulk-publish:cross-publish --content-type [CONTENT TYPE] --source-env [SOURCE ENV] --environments [DESTINATION ENVIRONMENT] --locales [LOCALE] --stack-api-key [STACK API KEY] --delivery-token [DELIVERY TOKEN]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/bulk-publish/cross-publish.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/bulk-publish/cross-publish.js)_
 
 ## `csdx cm:entries:publish [-a <value>] [--retry-failed <value>] [--bulk-publish <value>] [--publish-all-content-types] [--content-types <value>] [--locales <value>] [-e <value>] [-c <value>] [-y] [--branch <value>] [--delivery-token <value>] [--source-env <value>]`
 
@@ -1530,7 +1530,7 @@ EXAMPLES
   $ csdx cm:entries:migrate-html-rte --alias alias --content-type global_field_uid --global-field --html-path html-path --json-path json-path
 ```
 
-_See code: [contentstack-cli-1-cm-migrate-rte](https://github.com/contentstack/cli/blob/main/packages/contentstack-migrate-rte/src/commands/cm/entries/migrate-html-rte.js)_
+_See code: [cs-cli-1-cm-migrate-rte](https://github.com/contentstack/cli/blob/main/packages/contentstack-migrate-rte/src/commands/cm/entries/migrate-html-rte.js)_
 
 ## `csdx cm:entries:publish [-a <value>] [--retry-failed <value>] [--bulk-publish <value>] [--publish-all-content-types] [--content-types <value>] [--locales <value>] [-e <value>] [-c <value>] [-y] [--branch <value>] [--delivery-token <value>] [--source-env <value>]`
 
@@ -1618,7 +1618,7 @@ EXAMPLES
   $ csdx cm:entries:publish -e [ENVIRONMENT 1] [ENVIRONMENT 2] --locales [LOCALE 1] [LOCALE 2] --stack-api-key [STACK API KEY] --source-env [SOURCE ENVIRONMENT] --delivery-token [DELIVERY TOKEN]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/publish.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/publish.js)_
 
 ## `csdx cm:entries:publish-modified [-a <value>] [--retry-failed <value>] [--bulk-publish <value>] [--source-env <value>] [--content-types <value>] [--locales <value>] [-e <value>] [-c <value>] [-y] [--branch <value>]`
 
@@ -1694,7 +1694,7 @@ EXAMPLES
   $ csdx cm:entries:publish-modified --content-types [CONTENT TYPE 1] [CONTENT TYPE 2] --source-env [SOURCE_ENV] -e [ENVIRONMENT 1] [ENVIRONMENT 2] --locales [LOCALE 1] [LOCALE 2] -stack-api-key [STACK API KEY]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/publish-modified.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/publish-modified.js)_
 
 ## `csdx cm:entries:publish-non-localized-fields [-a <value>] [--retry-failed <value>] [--bulk-publish <value>] [--source-env <value>] [--content-types <value>] [-e <value>] [-c <value>] [-y] [--branch <value>]`
 
@@ -1766,7 +1766,7 @@ EXAMPLES
   $ csdx cm:entries:publish-non-localized-fields --content-types [CONTENT TYPE 1] [CONTENT TYPE 2] --environments [ENVIRONMENT 1] [ENVIRONMENT 2] --stack-api-key [STACK API KEY] --source-env [SOURCE ENV]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/publish-non-localized-fields.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/publish-non-localized-fields.js)_
 
 ## `csdx cm:entries:publish-only-unpublished [-a <value>] [--retry-failed <value>] [--bulk-publish <value>] [--source-env <value>] [--content-types <value>] [--locales <value>] [-e <value>] [-c <value>] [-y] [--branch <value>]`
 
@@ -1840,7 +1840,7 @@ EXAMPLES
   $ csdx cm:entries:publish-only-unpublished -b --content-types [CONTENT TYPES] -e [ENVIRONMENTS] --locales LOCALE -a [MANAGEMENT TOKEN ALIAS] --stack-api-key [STACK API KEY] -source-env [SOURCE ENV]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/publish-only-unpublished.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/publish-only-unpublished.js)_
 
 ## `csdx cm:entries:unpublish`
 
@@ -1909,7 +1909,7 @@ EXAMPLES
   $ csdx cm:stacks:unpublish --bulk-unpublish --content-type [CONTENT TYPE] --environment [SOURCE ENV] --locale [LOCALE] --stack-api-key [STACK API KEY] --delivery-token [DELIVERY TOKEN]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/unpublish.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/unpublish.js)_
 
 ## `csdx cm:entries:update-and-publish [-a <value>] [--retry-failed <value>] [--bulk-publish <value>] [--content-types <value>] [-t <value>] [-e <value>] [-c <value>] [-y] [--locales <value>] [--branch <value>]`
 
@@ -1983,7 +1983,7 @@ EXAMPLES
   $ csdx cm:entries:update-and-publish --content-types [CONTENT TYPE 1] [CONTENT TYPE 2] -e [ENVIRONMENT 1] [ENVIRONMENT 2] --locales [LOCALE 1] [LOCALE 2] --stack-api-key [STACK API KEY]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/update-and-publish.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/entries/update-and-publish.js)_
 
 ## `csdx cm:stacks:export [-c <value>] [-k <value>] [-d <value>] [-a <value>] [--module <value>] [--content-types <value>] [--branch <value>] [--secured-assets]`
 
@@ -2132,7 +2132,7 @@ EXAMPLES
   $ csdx cm:export-to-csv --action <taxonomies> --alias <management-token-alias> --delimiter <delimiter>
 ```
 
-_See code: [contentstack-cli-1-cm-export-to-csv](https://github.com/contentstack/cli/blob/main/packages/contentstack-export-to-csv/src/commands/cm/export-to-csv.js)_
+_See code: [cs-cli-1-cm-export-to-csv](https://github.com/contentstack/cli/blob/main/packages/contentstack-export-to-csv/src/commands/cm/export-to-csv.js)_
 
 ## `csdx cm:stacks:import [-c <value>] [-k <value>] [-d <value>] [-a <value>] [--module <value>] [--backup-dir <value>] [--branch <value>] [--import-webhook-status disable|current]`
 
@@ -2408,7 +2408,7 @@ EXAMPLES
   $ csdx cm:stacks:audit --report-path=<path> --modules=content-types --filter="name="<filter-value>"
 ```
 
-_See code: [contentstack-cli-1-audit](https://github.com/contentstack/audit/blob/main/packages/contentstack-audit/src/commands/cm/stacks/audit/index.ts)_
+_See code: [cs-cli-1-audit](https://github.com/contentstack/audit/blob/main/packages/contentstack-audit/src/commands/cm/stacks/audit/index.ts)_
 
 ## `csdx cm:stacks:audit:fix`
 
@@ -2458,7 +2458,7 @@ EXAMPLES
   $ csdx cm:stacks:audit:fix --report-path=<path> --modules=content-types --filter="name="<filter-value>" --copy-dir --copy-path=<path>
 ```
 
-_See code: [contentstack-cli-1-audit](https://github.com/contentstack/audit/blob/main/packages/contentstack-audit/src/commands/cm/stacks/audit/fix.ts)_
+_See code: [cs-cli-1-audit](https://github.com/contentstack/audit/blob/main/packages/contentstack-audit/src/commands/cm/stacks/audit/fix.ts)_
 
 ## `csdx cm:stacks:clone [--source-branch <value>] [--target-branch <value>] [--source-management-token-alias <value>] [--destination-management-token-alias <value>] [-n <value>] [--type a|b] [--source-stack-api-key <value>] [--destination-stack-api-key <value>] [--import-webhook-status disable|current]`
 
@@ -2511,7 +2511,7 @@ EXAMPLES
   $ csdx cm:stacks:clone --source-branch --target-branch --source-management-token-alias <management token alias> --destination-management-token-alias <management token alias> --type <value a or b>
 ```
 
-_See code: [contentstack-cli-1-cm-clone](https://github.com/contentstack/cli/blob/main/packages/contentstack-clone/src/commands/cm/stacks/clone.js)_
+_See code: [cs-cli-1-cm-clone](https://github.com/contentstack/cli/blob/main/packages/contentstack-clone/src/commands/cm/stacks/clone.js)_
 
 ## `csdx cm:stacks:export [-c <value>] [-k <value>] [-d <value>] [-a <value>] [--module <value>] [--content-types <value>] [--branch <value>] [--secured-assets]`
 
@@ -2555,7 +2555,7 @@ EXAMPLES
   $ csdx cm:stacks:export --branch [optional] branch name
 ```
 
-_See code: [contentstack-cli-1-cm-export](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/stacks/export.ts)_
+_See code: [cs-cli-1-cm-export](https://github.com/contentstack/cli/blob/main/packages/contentstack-export/src/commands/cm/stacks/export.ts)_
 
 ## `csdx cm:stacks:import [-c <value>] [-k <value>] [-d <value>] [-a <value>] [--module <value>] [--backup-dir <value>] [--branch <value>] [--import-webhook-status disable|current]`
 
@@ -2606,7 +2606,7 @@ EXAMPLES
   $ csdx cm:stacks:import --branch <branch name>  --yes --skip-audit
 ```
 
-_See code: [contentstack-cli-1-cm-import](https://github.com/contentstack/cli/blob/main/packages/contentstack-import/src/commands/cm/stacks/import.ts)_
+_See code: [cs-cli-1-cm-import](https://github.com/contentstack/cli/blob/main/packages/contentstack-import/src/commands/cm/stacks/import.ts)_
 
 ## `csdx cm:stacks:migration [-k <value>] [-a <value>] [--file-path <value>] [--branch <value>] [--config-file <value>] [--config <value>] [--multiple]`
 
@@ -2647,7 +2647,7 @@ EXAMPLES
   $ csdx cm:migration --alias --file-path <migration/script/file/path> -k <api-key>
 ```
 
-_See code: [contentstack-cli-1-migration](https://github.com/contentstack/cli/blob/main/packages/contentstack-migration/src/commands/cm/stacks/migration.js)_
+_See code: [cs-cli-1-migration](https://github.com/contentstack/cli/blob/main/packages/contentstack-migration/src/commands/cm/stacks/migration.js)_
 
 ## `csdx cm:stacks:publish`
 
@@ -2699,7 +2699,7 @@ EXAMPLES
   $ csdx cm:stacks:publish --environments [ENVIRONMENT 1] [ENVIRONMENT 2] --locales [LOCALE] --alias [MANAGEMENT TOKEN ALIAS] --api-version [API VERSION]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/stacks/publish.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/stacks/publish.js)_
 
 ## `csdx cm:stacks:publish-clear-logs`
 
@@ -2729,7 +2729,7 @@ EXAMPLES
   $ csdx cm:stacks:publish-clear-logs -y
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/stacks/publish-clear-logs.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/stacks/publish-clear-logs.js)_
 
 ## `csdx cm:stacks:publish-configure`
 
@@ -2759,7 +2759,7 @@ EXAMPLES
   $ csdx cm:stacks:publish-configure --stack-api-key <stack_api_key>
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/stacks/publish-configure.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/stacks/publish-configure.js)_
 
 ## `csdx cm:stacks:publish-revert`
 
@@ -2794,7 +2794,7 @@ EXAMPLES
   cm:bulk-publish:revert --retry-failed [LOG FILE NAME]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/stacks/publish-revert.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/stacks/publish-revert.js)_
 
 ## `csdx cm:stacks:seed [--repo <value>] [--org <value>] [-k <value>] [-n <value>] [-y <value>] [-s <value>]`
 
@@ -2831,7 +2831,7 @@ EXAMPLES
   $ csdx cm:stacks:seed --repo "account/repository" --org "your-org-uid" --stack-name "stack-name" //create a new stack in given org uid
 ```
 
-_See code: [contentstack-cli-1-cm-seed](https://github.com/contentstack/cli/blob/main/packages/contentstack-seed/src/commands/cm/stacks/seed.ts)_
+_See code: [cs-cli-1-cm-seed](https://github.com/contentstack/cli/blob/main/packages/contentstack-seed/src/commands/cm/stacks/seed.ts)_
 
 ## `csdx csdx cm:stacks:unpublish [-a <value>] [-e <value>] [-c <value>] [-y] [--locale <value>] [--branch <value>] [--retry-failed <value>] [--bulk-unpublish <value>] [--content-type <value>] [--delivery-token <value>] [--only-assets] [--only-entries]`
 
@@ -2930,7 +2930,7 @@ EXAMPLES
   $ csdx cm:stacks:unpublish --bulk-unpublish --content-type [CONTENT TYPE] --environment [SOURCE ENV] --locale [LOCALE] --stack-api-key [STACK API KEY] --delivery-token [DELIVERY TOKEN]
 ```
 
-_See code: [contentstack-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/stacks/unpublish.js)_
+_See code: [cs-cli-1-cm-bulk-publish](https://github.com/contentstack/cli/blob/main/packages/contentstack-bulk-publish/src/commands/cm/stacks/unpublish.js)_
 
 ## `csdx config:get:base-branch`
 
@@ -2947,7 +2947,7 @@ EXAMPLES
   $ csdx config:get:base-branch
 ```
 
-_See code: [contentstack-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/get/base-branch.ts)_
+_See code: [cs-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/get/base-branch.ts)_
 
 ## `csdx config:get:ea-header`
 
@@ -2985,7 +2985,7 @@ EXAMPLES
   $ csdx config:get:early-access-header
 ```
 
-_See code: [contentstack-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/get/early-access-header.ts)_
+_See code: [cs-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/get/early-access-header.ts)_
 
 ## `csdx config:get:region`
 
@@ -3002,7 +3002,7 @@ EXAMPLES
   $ csdx config:get:region
 ```
 
-_See code: [contentstack-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/get/region.ts)_
+_See code: [cs-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/get/region.ts)_
 
 ## `csdx config:remove:base-branch`
 
@@ -3025,7 +3025,7 @@ EXAMPLES
   $ csdx config:remove:base-branch --stack-api-key <value>
 ```
 
-_See code: [contentstack-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/remove/base-branch.ts)_
+_See code: [cs-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/remove/base-branch.ts)_
 
 ## `csdx config:remove:ea-header`
 
@@ -3075,7 +3075,7 @@ EXAMPLES
   $ csdx config:remove:early-access-header --header-alias <value>
 ```
 
-_See code: [contentstack-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/remove/early-access-header.ts)_
+_See code: [cs-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/remove/early-access-header.ts)_
 
 ## `csdx config:set:base-branch`
 
@@ -3098,7 +3098,7 @@ EXAMPLES
   $ csdx config:set:base-branch --stack-api-key <value> --base-branch <value>
 ```
 
-_See code: [contentstack-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/set/base-branch.ts)_
+_See code: [cs-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/set/base-branch.ts)_
 
 ## `csdx config:set:ea-header`
 
@@ -3148,7 +3148,7 @@ EXAMPLES
   $ csdx config:set:early-access-header --header <value> --header-alias <value>
 ```
 
-_See code: [contentstack-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/set/early-access-header.ts)_
+_See code: [cs-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/set/early-access-header.ts)_
 
 ## `csdx config:set:region [REGION]`
 
@@ -3188,7 +3188,7 @@ EXAMPLES
   $ csdx config:set:region --cma <contentstack_cma_endpoint> --cda <contentstack_cda_endpoint> --ui-host <contentstack_ui_host_endpoint> --name "India"
 ```
 
-_See code: [contentstack-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/set/region.ts)_
+_See code: [cs-cli-1-config](https://github.com/contentstack/cli/blob/main/packages/contentstack-config/src/commands/config/set/region.ts)_
 
 ## `csdx help [COMMANDS]`
 
@@ -3250,7 +3250,7 @@ EXAMPLES
   $ csdx launch --config <path/to/launch/config/file> --type <options: GitHub|FileUpload> --name=<value> --environment=<value> --branch=<value> --build-command=<value> --framework=<option> --org=<value> --out-dir=<value>
 ```
 
-_See code: [contentstack-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/index.ts)_
+_See code: [cs-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/index.ts)_
 
 ## `csdx launch:deployments`
 
@@ -3278,7 +3278,7 @@ EXAMPLES
   $ csdx launch:deployments -e "environment number or uid" --org=<org UID> --project=<Project UID>
 ```
 
-_See code: [contentstack-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/deployments.ts)_
+_See code: [cs-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/deployments.ts)_
 
 ## `csdx launch:environments`
 
@@ -3305,7 +3305,7 @@ EXAMPLES
   $ csdx launch:environments --org=<org UID> --project=<Project UID>
 ```
 
-_See code: [contentstack-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/environments.ts)_
+_See code: [cs-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/environments.ts)_
 
 ## `csdx launch:functions`
 
@@ -3335,7 +3335,7 @@ EXAMPLES
   $ csdx launch:functions --config <path/to/launch/config/file> --port=port
 ```
 
-_See code: [contentstack-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/functions.ts)_
+_See code: [cs-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/functions.ts)_
 
 ## `csdx launch:logs`
 
@@ -3381,7 +3381,7 @@ EXAMPLES
   $ csdx launch:logs --environment=environment --config <path/to/launch/config/file> --deployment=deployment
 ```
 
-_See code: [contentstack-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/logs.ts)_
+_See code: [cs-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/logs.ts)_
 
 ## `csdx launch:open`
 
@@ -3413,7 +3413,7 @@ EXAMPLES
   $ csdx launch:open --environment=environment --data-dir <path/of/current/working/dir>
 ```
 
-_See code: [contentstack-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/open.ts)_
+_See code: [cs-cli-1-launch](https://github.com/contentstack/cli/blob/main/packages/contentstack-launch/src/commands/launch/open.ts)_
 
 ## `csdx login`
 
@@ -3517,7 +3517,7 @@ GLOBAL FLAGS
 DESCRIPTION
   Installs a plugin into csdx.
 
-  Uses bundled npm executable to install plugins into /Users/raj.pandey/.local/share/contentstack-cli-1
+  Uses bundled npm executable to install plugins into /Users/raj.pandey/.local/share/cs-cli-1
 
   Installation of a user-installed plugin will override a core plugin.
 
@@ -3591,7 +3591,7 @@ GLOBAL FLAGS
 DESCRIPTION
   Installs a plugin into csdx.
 
-  Uses bundled npm executable to install plugins into /Users/raj.pandey/.local/share/contentstack-cli-1
+  Uses bundled npm executable to install plugins into /Users/raj.pandey/.local/share/cs-cli-1
 
   Installation of a user-installed plugin will override a core plugin.
 

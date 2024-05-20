@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import * as sinon from 'sinon';
 import LogoutCommand from '../../../src/commands/auth/logout';
 import { authHandler } from '../../../src/utils';
-import { CLIError, cliux } from 'contentstack-cli-1-utilities';
+import { CLIError, cliux } from 'cs-cli-1-utilities';
 
 const user = { email: '***REMOVED***', authtoken: 'testtoken' };
 const validAuthToken = 'bltadjkjdkjfd';

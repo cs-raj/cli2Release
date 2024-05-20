@@ -1,9 +1,9 @@
 import { expect, should } from 'chai';
 import { stub } from 'sinon';
-import { configHandler } from 'contentstack-cli-1-utilities';
+import { configHandler } from 'cs-cli-1-utilities';
 import BranchGetCommand from '../../../src/commands/config/get/base-branch';
 import BranchSetCommand from '../../../src/commands/config/set/base-branch';
-import { cliux } from 'contentstack-cli-1-utilities';
+import { cliux } from 'cs-cli-1-utilities';
 import { setConfigMockData } from '../mock/index';
 import { interactive } from '../../../src/utils/index';
 

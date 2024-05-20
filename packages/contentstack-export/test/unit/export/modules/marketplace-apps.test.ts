@@ -1,10 +1,10 @@
 import { expect } from '@oclif/test';
-import { App, FsUtility, cliux, marketplaceSDKClient } from 'contentstack-cli-1-utilities';
-import { fancy } from 'contentstack-cli-1-dev-dependencies';
+import { App, FsUtility, cliux, marketplaceSDKClient } from 'cs-cli-1-utilities';
+import { fancy } from 'cs-cli-1-dev-dependencies';
 
 import defaultConfig from '../../../../src/config';
 import * as logUtil from '../../../../src/utils/logger';
-import * as utilities from 'contentstack-cli-1-utilities';
+import * as utilities from 'cs-cli-1-utilities';
 import ExportConfig from '../../../../lib/types/export-config';
 import * as appUtility from '../../../../src/utils/marketplace-app-helper';
 import ExportMarketplaceApps from '../../../../src/export/modules/marketplace-apps';

@@ -1,12 +1,12 @@
 const { join } = require('path')
 const { existsSync, unlinkSync } = require('fs')
-const { test } = require('contentstack-cli-1-dev-dependencies')
+const { test } = require('cs-cli-1-dev-dependencies')
 
 const { getEnvData, getStackDetailsByRegion, deleteStack } = require('./utils/helper')
 const { DEFAULT_TIMEOUT, PRINT_LOGS } = require("./config.json")
-const LogoutCommand = require('contentstack-cli-1-auth/lib/commands/auth/logout').default
-const RemoveTokenCommand = require('contentstack-cli-1-auth/lib/commands/auth/tokens/remove').default
-const { cliux: CliUx, messageHandler, configHandler } = require("contentstack-cli-1-utilities")
+const LogoutCommand = require('cs-cli-1-auth/lib/commands/auth/logout').default
+const RemoveTokenCommand = require('cs-cli-1-auth/lib/commands/auth/tokens/remove').default
+const { cliux: CliUx, messageHandler, configHandler } = require("cs-cli-1-utilities")
 const { DELIMITER, KEY_VAL_DELIMITER } = process.env
 
 const { ENC_CONFIG_NAME } = getEnvData()

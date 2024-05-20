@@ -1,9 +1,9 @@
-# contentstack-cli-1-cm-migrate-rte
+# cs-cli-1-cm-migrate-rte
 
 It is Contentstack’s CLI plugin to migrate rte. Using this command, you can copy existing value of HTML RTE into JSON RTE.
 
 <!-- toc -->
-* [contentstack-cli-1-cm-migrate-rte](#contentstackcli-cm-migrate-rte)
+* [cs-cli-1-cm-migrate-rte](#cs-cli-1-cm-migrate-rte)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -12,11 +12,11 @@ It is Contentstack’s CLI plugin to migrate rte. Using this command, you can co
 
 <!-- usage -->
 ```sh-session
-$ npm install -g contentstack-cli-1-cm-migrate-rte
+$ npm install -g cs-cli-1-cm-migrate-rte
 $ csdx COMMAND
 running command...
 $ csdx (--version)
-contentstack-cli-1-cm-migrate-rte/1.4.17 darwin-arm64 node-v21.6.2
+cs-cli-1-cm-migrate-rte/1.4.17 darwin-arm64 node-v21.6.2
 $ csdx --help [COMMAND]
 USAGE
   $ csdx COMMAND

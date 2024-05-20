@@ -1,11 +1,11 @@
-# contentstack-cli-1-auth
+# cs-cli-1-auth
 
 It is Contentstack’s CLI plugin to perform authentication-related activities. To get started with authentication, refer to the [CLI’s Authentication documentation](https://www.contentstack.com/docs/developers/cli/authentication)
 
-[![License](https://img.shields.io/npm/l/contentstack-cli-1)](https://github.com/contentstack/cli/blob/main/LICENSE)
+[![License](https://img.shields.io/npm/l/cs-cli-1)](https://github.com/contentstack/cli/blob/main/LICENSE)
 
 <!-- toc -->
-* [contentstack-cli-1-auth](#contentstackcli-auth)
+* [cs-cli-1-auth](#cs-cli-1-auth)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -14,11 +14,11 @@ It is Contentstack’s CLI plugin to perform authentication-related activities. 
 
 <!-- usage -->
 ```sh-session
-$ npm install -g contentstack-cli-1-auth
+$ npm install -g cs-cli-1-auth
 $ csdx COMMAND
 running command...
 $ csdx (--version)
-contentstack-cli-1-auth/1.3.18 darwin-arm64 node-v21.6.2
+cs-cli-1-auth/1.3.18 darwin-arm64 node-v21.6.2
 $ csdx --help [COMMAND]
 USAGE
   $ csdx COMMAND

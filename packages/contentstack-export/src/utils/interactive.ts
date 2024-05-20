@@ -1,4 +1,4 @@
-import { cliux, validatePath } from 'contentstack-cli-1-utilities';
+import { cliux, validatePath } from 'cs-cli-1-utilities';
 import * as path from 'path';
 
 export const askPassword = async () => {

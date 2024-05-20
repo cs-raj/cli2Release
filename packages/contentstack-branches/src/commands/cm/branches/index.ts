@@ -1,5 +1,5 @@
-import { Command } from 'contentstack-cli-1-command';
-import { cliux, messageHandler, managementSDKClient, flags, isAuthenticated } from 'contentstack-cli-1-utilities';
+import { Command } from 'cs-cli-1-command';
+import { cliux, messageHandler, managementSDKClient, flags, isAuthenticated } from 'cs-cli-1-utilities';
 import { getbranchesList, getbranchConfig, interactive, handleErrorMsg } from '../../../utils/index';
 import chalk from 'chalk';
 export default class BranchListCommand extends Command {

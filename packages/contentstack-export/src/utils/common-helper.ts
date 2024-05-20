@@ -6,7 +6,7 @@
 
 import promiseLimit from 'promise-limit';
 import * as path from 'path';
-import { isAuthenticated } from 'contentstack-cli-1-utilities';
+import { isAuthenticated } from 'cs-cli-1-utilities';
 import { ExternalConfig, ExportConfig } from '../types';
 import { fsUtil } from './file-helper';
 

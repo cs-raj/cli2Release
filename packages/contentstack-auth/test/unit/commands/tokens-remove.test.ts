@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import * as sinon from 'sinon';
-import { configHandler } from 'contentstack-cli-1-utilities';
+import { configHandler } from 'cs-cli-1-utilities';
 import TokensRemoveCommand from '../../../src/commands/auth/tokens/remove';
-import { cliux } from 'contentstack-cli-1-utilities';
+import { cliux } from 'cs-cli-1-utilities';
 
 const config = configHandler;
 const configKeyTokens = 'tokens';

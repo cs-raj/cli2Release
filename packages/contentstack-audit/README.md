@@ -1,25 +1,25 @@
 <!-- Insert Nodejs CI here -->
 <!-- Insert Audit version here -->
 
-# contentstack-cli-1-audit
+# cs-cli-1-audit
 
 Audit plugin
 
 ## How to install this plugin
 
 ```shell
-$ csdx plugins:install contentstack-cli-1-audit
+$ csdx plugins:install cs-cli-1-audit
 ```
 
 ## How to use this plugin
 
 <!-- usage -->
 ```sh-session
-$ npm install -g contentstack-cli-1-audit
+$ npm install -g cs-cli-1-audit
 $ csdx COMMAND
 running command...
 $ csdx (--version|-v)
-contentstack-cli-1-audit/1.6.1 darwin-arm64 node-v21.6.2
+cs-cli-1-audit/1.6.1 darwin-arm64 node-v21.6.2
 $ csdx --help [COMMAND]
 USAGE
   $ csdx COMMAND
@@ -292,7 +292,7 @@ GLOBAL FLAGS
 DESCRIPTION
   Installs a plugin into csdx.
 
-  Uses bundled npm executable to install plugins into /Users/raj.pandey/.local/share/contentstack-cli-1-audit
+  Uses bundled npm executable to install plugins into /Users/raj.pandey/.local/share/cs-cli-1-audit
 
   Installation of a user-installed plugin will override a core plugin.
 
@@ -366,7 +366,7 @@ GLOBAL FLAGS
 DESCRIPTION
   Installs a plugin into csdx.
 
-  Uses bundled npm executable to install plugins into /Users/raj.pandey/.local/share/contentstack-cli-1-audit
+  Uses bundled npm executable to install plugins into /Users/raj.pandey/.local/share/cs-cli-1-audit
 
   Installation of a user-installed plugin will override a core plugin.
 
