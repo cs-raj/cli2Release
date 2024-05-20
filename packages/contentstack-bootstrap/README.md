@@ -11,11 +11,11 @@ This means that all the required steps such as stack, environment, and content t
 
 <!-- usage -->
 ```sh-session
-$ npm install -g @contentstack/cli-cm-bootstrap
+$ npm install -g cs/cli-cm-bootstrap
 $ csdx COMMAND
 running command...
 $ csdx (--version)
-@contentstack/cli-cm-bootstrap/1.9.2 darwin-arm64 node-v21.6.2
+cs/cli-cm-bootstrap/1.9.2 darwin-arm64 node-v21.6.2
 $ csdx --help [COMMAND]
 USAGE
   $ csdx COMMAND
@@ -24,7 +24,7 @@ USAGE
 <!-- usagestop -->
 
 ```sh-session
-$ npm install -g @contentstack/cli-cm-clone
+$ npm install -g cs/cli-cm-clone
 $ csdx COMMAND
 running command...
 $ csdx --help [COMMAND]

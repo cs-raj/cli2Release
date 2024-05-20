@@ -27,7 +27,7 @@ Node.js version 16 or above
 To install CLI on your system, run the below command in your terminal:
 
 ```
-npm install -g @contentstack/cli
+npm install -g cs/cli
 ```
 
 To verify the installation, run `csdx` in the command window.

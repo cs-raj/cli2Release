@@ -1,5 +1,5 @@
 {
-  "name": "@contentstack/cli-config",
+  "name": "cs/cli-config",
   "description": "Contentstack CLI plugin for configuration",
   "version": "1.6.4",
   "author": "Contentstack",
@@ -21,8 +21,8 @@
     "test:unit:report": "nyc --extension .ts mocha --forbid-only \"test/unit/**/*.test.ts\""
   },
   "dependencies": {
-    "@contentstack/cli-command": "~1.2.18",
-    "@contentstack/cli-utilities": "~1.6.1",
+    "cs/cli-command": "~1.2.18",
+    "cs/cli-utilities": "~1.6.1",
     "chalk": "^4.0.0",
     "debug": "^4.1.1",
     "inquirer": "8.2.4",
