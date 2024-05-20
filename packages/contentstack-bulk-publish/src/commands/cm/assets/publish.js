@@ -1,9 +1,9 @@
-const { Command } = require('cs/cli-command');
-const { printFlagDeprecation, flags, isAuthenticated } = require('cs/cli-utilities');
+const { Command } = require('contentstack-cli-1-command');
+const { printFlagDeprecation, flags, isAuthenticated } = require('contentstack-cli-1-utilities');
 const { start: startPublish } = require('../../../producer/publish-assets');
 const { start: startCrossPublish } = require('../../../producer/cross-publish');
 const store = require('../../../util/store.js');
-const { cliux } = require('cs/cli-utilities');
+const { cliux } = require('contentstack-cli-1-utilities');
 const { prettyPrint, formatError } = require('../../../util');
 const { getStack } = require('../../../util/client.js');
 let config;

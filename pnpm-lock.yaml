@@ -10,22 +10,22 @@ importers:
 
   packages/contentstack:
     specifiers:
-      'cs/cli-audit': ~1.6.1
-      'cs/cli-auth': ~1.3.18
-      'cs/cli-cm-bootstrap': ~1.9.2
-      'cs/cli-cm-branches': ~1.0.25
-      'cs/cli-cm-bulk-publish': ~1.4.6
-      'cs/cli-cm-clone': ~1.10.4
-      'cs/cli-cm-export': ~1.11.3
-      'cs/cli-cm-export-to-csv': ~1.7.1
-      'cs/cli-cm-import': ~1.15.5
-      'cs/cli-cm-migrate-rte': ~1.4.17
-      'cs/cli-cm-seed': ~1.7.4
-      'cs/cli-command': ~1.2.18
-      'cs/cli-config': ~1.6.4
-      'cs/cli-launch': ~1.0.18
-      'cs/cli-migration': ~1.5.5
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-audit': ~1.6.1
+      'contentstack-cli-1-auth': ~1.3.18
+      'contentstack-cli-1-cm-bootstrap': ~1.9.2
+      'contentstack-cli-1-cm-branches': ~1.0.25
+      'contentstack-cli-1-cm-bulk-publish': ~1.4.6
+      'contentstack-cli-1-cm-clone': ~1.10.4
+      'contentstack-cli-1-cm-export': ~1.11.3
+      'contentstack-cli-1-cm-export-to-csv': ~1.7.1
+      'contentstack-cli-1-cm-import': ~1.15.5
+      'contentstack-cli-1-cm-migrate-rte': ~1.4.17
+      'contentstack-cli-1-cm-seed': ~1.7.4
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-config': ~1.6.4
+      'contentstack-cli-1-launch': ~1.0.18
+      'contentstack-cli-1-migration': ~1.5.5
+      'contentstack-cli-1-utilities': ~1.6.1
       '@contentstack/management': ~1.15.3
       '@oclif/core': ^3.26.5
       '@oclif/plugin-help': ^5
@@ -64,22 +64,22 @@ importers:
       uuid: ^9.0.0
       winston: ^3.7.2
     dependencies:
-      'cs/cli-audit': link:../contentstack-audit
-      'cs/cli-auth': link:../contentstack-auth
-      'cs/cli-cm-bootstrap': link:../contentstack-bootstrap
-      'cs/cli-cm-branches': link:../contentstack-branches
-      'cs/cli-cm-bulk-publish': link:../contentstack-bulk-publish
-      'cs/cli-cm-clone': link:../contentstack-clone
-      'cs/cli-cm-export': link:../contentstack-export
-      'cs/cli-cm-export-to-csv': link:../contentstack-export-to-csv
-      'cs/cli-cm-import': link:../contentstack-import
-      'cs/cli-cm-migrate-rte': link:../contentstack-migrate-rte
-      'cs/cli-cm-seed': link:../contentstack-seed
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-config': link:../contentstack-config
-      'cs/cli-launch': link:../contentstack-launch
-      'cs/cli-migration': link:../contentstack-migration
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-audit': link:../contentstack-audit
+      'contentstack-cli-1-auth': link:../contentstack-auth
+      'contentstack-cli-1-cm-bootstrap': link:../contentstack-bootstrap
+      'contentstack-cli-1-cm-branches': link:../contentstack-branches
+      'contentstack-cli-1-cm-bulk-publish': link:../contentstack-bulk-publish
+      'contentstack-cli-1-cm-clone': link:../contentstack-clone
+      'contentstack-cli-1-cm-export': link:../contentstack-export
+      'contentstack-cli-1-cm-export-to-csv': link:../contentstack-export-to-csv
+      'contentstack-cli-1-cm-import': link:../contentstack-import
+      'contentstack-cli-1-cm-migrate-rte': link:../contentstack-migrate-rte
+      'contentstack-cli-1-cm-seed': link:../contentstack-seed
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-config': link:../contentstack-config
+      'contentstack-cli-1-launch': link:../contentstack-launch
+      'contentstack-cli-1-migration': link:../contentstack-migration
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       '@contentstack/management': 1.15.4_debug@4.3.4
       '@oclif/core': 3.26.6
       '@oclif/plugin-help': 5.2.20_ogreqof3k35xezedraj6pnd45y
@@ -121,9 +121,9 @@ importers:
 
   packages/contentstack-audit:
     specifiers:
-      'cs/cli-command': ~1.2.18
-      'cs/cli-dev-dependencies': ^1.2.4
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-dev-dependencies': ^1.2.4
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/plugin-help': ^5
       '@oclif/plugin-plugins': ^5.0.0
       '@oclif/test': ^2.5.6
@@ -152,8 +152,8 @@ importers:
       uuid: ^9.0.1
       winston: ^3.10.0
     dependencies:
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       '@oclif/plugin-help': 5.2.20_5h6dsyrne2p5ll2ojq2wndnmm4
       '@oclif/plugin-plugins': 5.0.21
       chalk: 4.1.2
@@ -163,7 +163,7 @@ importers:
       uuid: 9.0.1
       winston: 3.13.0
     devDependencies:
-      'cs/cli-dev-dependencies': link:../contentstack-dev-dependencies
+      'contentstack-cli-1-dev-dependencies': link:../contentstack-dev-dependencies
       '@oclif/test': 2.5.6_5h6dsyrne2p5ll2ojq2wndnmm4
       '@types/chai': 4.3.16
       '@types/fs-extra': 11.0.4
@@ -186,8 +186,8 @@ importers:
 
   packages/contentstack-auth:
     specifiers:
-      'cs/cli-command': ~1.2.18
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-utilities': ~1.6.1
       '@fancy-test/nock': ^0.1.1
       '@oclif/plugin-help': ^5.1.19
       '@oclif/test': ^2.5.6
@@ -216,8 +216,8 @@ importers:
       typescript: ^4.9.3
       winston: ^3.7.2
     dependencies:
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       chalk: 4.1.2
       debug: 4.3.4
       inquirer: 8.2.4
@@ -249,9 +249,9 @@ importers:
 
   packages/contentstack-bootstrap:
     specifiers:
-      'cs/cli-cm-seed': ~1.7.4
-      'cs/cli-command': ~1.2.18
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-cm-seed': ~1.7.4
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/test': ^2.5.6
       '@types/inquirer': ^9.0.3
       '@types/mkdirp': ^1.0.1
@@ -273,9 +273,9 @@ importers:
       ts-node: ^8.10.2
       typescript: ^4.9.3
     dependencies:
-      'cs/cli-cm-seed': link:../contentstack-seed
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-cm-seed': link:../contentstack-seed
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       inquirer: 8.2.4
       mkdirp: 1.0.4
       tar: 6.2.1
@@ -300,11 +300,11 @@ importers:
 
   packages/contentstack-branches:
     specifiers:
-      'cs/cli-auth': ~1.3.18
-      'cs/cli-command': ~1.2.18
-      'cs/cli-config': ~1.6.4
-      'cs/cli-dev-dependencies': ~1.2.4
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-auth': ~1.3.18
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-config': ~1.6.4
+      'contentstack-cli-1-dev-dependencies': ~1.2.4
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/core': ^2.9.3
       '@oclif/plugin-help': ^5.1.19
       '@oclif/test': ^2.5.6
@@ -338,8 +338,8 @@ importers:
       typescript: ^4.9.3
       winston: ^3.7.2
     dependencies:
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       '@oclif/core': 2.16.0_typescript@4.9.5
       async: 3.2.5
       big-json: 3.2.0
@@ -357,9 +357,9 @@ importers:
       tslib: 2.6.2
       winston: 3.13.0
     devDependencies:
-      'cs/cli-auth': link:../contentstack-auth
-      'cs/cli-config': link:../contentstack-config
-      'cs/cli-dev-dependencies': link:../contentstack-dev-dependencies
+      'contentstack-cli-1-auth': link:../contentstack-auth
+      'contentstack-cli-1-config': link:../contentstack-config
+      'contentstack-cli-1-dev-dependencies': link:../contentstack-dev-dependencies
       '@oclif/plugin-help': 5.2.20_typescript@4.9.5
       '@oclif/test': 2.5.6_typescript@4.9.5
       '@types/flat': 5.0.5
@@ -379,8 +379,8 @@ importers:
 
   packages/contentstack-bulk-publish:
     specifiers:
-      'cs/cli-command': ~1.2.18
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/test': ^2.5.6
       bluebird: ^3.7.2
       chai: ^4.2.0
@@ -399,8 +399,8 @@ importers:
       tslib: ^1.13.0
       winston: ^3.7.2
     dependencies:
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       bluebird: 3.7.2
       chalk: 4.1.2
       dotenv: 16.4.5
@@ -423,10 +423,10 @@ importers:
   packages/contentstack-clone:
     specifiers:
       '@colors/colors': ^1.5.0
-      'cs/cli-cm-export': ~1.11.3
-      'cs/cli-cm-import': ~1.15.5
-      'cs/cli-command': ~1.2.18
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-cm-export': ~1.11.3
+      'contentstack-cli-1-cm-import': ~1.15.5
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/test': ^2.5.6
       async: ^3.2.4
       chai: ^4.2.0
@@ -450,10 +450,10 @@ importers:
       winston: ^3.7.2
     dependencies:
       '@colors/colors': 1.6.0
-      'cs/cli-cm-export': link:../contentstack-export
-      'cs/cli-cm-import': link:../contentstack-import
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-cm-export': link:../contentstack-export
+      'contentstack-cli-1-cm-import': link:../contentstack-import
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       async: 3.2.5
       chalk: 4.1.2
       child_process: 1.0.2
@@ -479,7 +479,7 @@ importers:
 
   packages/contentstack-command:
     specifiers:
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/test': ^2.5.6
       '@types/chai': ^4.2.18
       '@types/mkdirp': ^1.0.1
@@ -498,7 +498,7 @@ importers:
       ts-node: ^8.10.2
       typescript: ^4.9.3
     dependencies:
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       contentstack: 3.19.2
     devDependencies:
       '@oclif/test': 2.5.6_ogreqof3k35xezedraj6pnd45y
@@ -520,8 +520,8 @@ importers:
 
   packages/contentstack-config:
     specifiers:
-      'cs/cli-command': ~1.2.18
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/test': ^2.5.6
       '@types/chai': ^4.2.18
       '@types/inquirer': ^9.0.3
@@ -549,8 +549,8 @@ importers:
       typescript: ^4.9.3
       winston: ^3.7.2
     dependencies:
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       chalk: 4.1.2
       debug: 4.3.4
       inquirer: 8.2.4
@@ -606,11 +606,11 @@ importers:
 
   packages/contentstack-export:
     specifiers:
-      'cs/cli-auth': ~1.3.18
-      'cs/cli-command': ~1.2.18
-      'cs/cli-config': ~1.6.4
-      'cs/cli-dev-dependencies': ~1.2.4
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-auth': ~1.3.18
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-config': ~1.6.4
+      'contentstack-cli-1-dev-dependencies': ~1.2.4
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/core': ^3.26.5
       '@oclif/plugin-help': ^5.1.19
       '@oclif/test': ^2.5.6
@@ -645,8 +645,8 @@ importers:
       typescript: ^4.9.3
       winston: ^3.7.2
     dependencies:
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       '@oclif/core': 3.26.6
       async: 3.2.5
       big-json: 3.2.0
@@ -663,9 +663,9 @@ importers:
       tslib: 2.6.2
       winston: 3.13.0
     devDependencies:
-      'cs/cli-auth': link:../contentstack-auth
-      'cs/cli-config': link:../contentstack-config
-      'cs/cli-dev-dependencies': link:../contentstack-dev-dependencies
+      'contentstack-cli-1-auth': link:../contentstack-auth
+      'contentstack-cli-1-config': link:../contentstack-config
+      'contentstack-cli-1-dev-dependencies': link:../contentstack-dev-dependencies
       '@oclif/plugin-help': 5.2.20_typescript@4.9.5
       '@oclif/test': 2.5.6_typescript@4.9.5
       '@types/big-json': 3.2.4
@@ -687,8 +687,8 @@ importers:
 
   packages/contentstack-export-to-csv:
     specifiers:
-      'cs/cli-command': ~1.2.18
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/test': ^2.5.6
       '@types/chai': ^4.3.6
       '@types/mocha': ^10.0.1
@@ -707,8 +707,8 @@ importers:
       nyc: ^15.1.0
       oclif: ^3.8.1
     dependencies:
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       chalk: 4.1.2
       fast-csv: 4.3.6
       inquirer: 8.2.4
@@ -730,9 +730,9 @@ importers:
 
   packages/contentstack-import:
     specifiers:
-      'cs/cli-audit': ~1.6.1
-      'cs/cli-command': ~1.2.18
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-audit': ~1.6.1
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-utilities': ~1.6.1
       '@contentstack/management': ~1.15.3
       '@oclif/core': ^3.26.5
       '@oclif/test': ^2.5.6
@@ -773,9 +773,9 @@ importers:
       uuid: ^9.0.0
       winston: ^3.7.2
     dependencies:
-      'cs/cli-audit': link:../contentstack-audit
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-audit': link:../contentstack-audit
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       '@contentstack/management': 1.15.4_debug@4.3.4
       '@oclif/core': 3.26.6
       big-json: 3.2.0
@@ -820,8 +820,8 @@ importers:
   packages/contentstack-launch:
     specifiers:
       '@apollo/client': ^3.7.9
-      'cs/cli-command': ~1.2.18
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/core': ^3.26.5
       '@oclif/plugin-help': ^5
       '@oclif/plugin-plugins': ^5.0.0
@@ -857,8 +857,8 @@ importers:
       winston: ^3.8.2
     dependencies:
       '@apollo/client': 3.10.3_graphql@16.8.1
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       '@oclif/core': 3.26.6
       '@oclif/plugin-help': 5.2.20_kfag5nv2lkfeupajvbg4ormdsm
       '@oclif/plugin-plugins': 5.0.21
@@ -896,8 +896,8 @@ importers:
 
   packages/contentstack-migrate-rte:
     specifiers:
-      'cs/cli-command': ~1.2.18
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-utilities': ~1.6.1
       '@contentstack/json-rte-serializer': ~2.0.4
       '@oclif/test': ^2.5.6
       chai: ^4.3.4
@@ -918,8 +918,8 @@ importers:
       tslib: ^1.13.0
       uuid: ^9.0.0
     dependencies:
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       '@contentstack/json-rte-serializer': 2.0.6
       chalk: 4.1.2
       collapse-whitespace: 1.1.7
@@ -943,8 +943,8 @@ importers:
 
   packages/contentstack-migration:
     specifiers:
-      'cs/cli-command': ~1.2.18
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/test': ^2.5.6
       async: ^3.2.4
       callsites: ^3.1.0
@@ -965,8 +965,8 @@ importers:
       oclif: ^3.11.3
       winston: ^3.7.2
     dependencies:
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       async: 3.2.5
       callsites: 3.1.0
       cardinal: 2.1.1
@@ -990,9 +990,9 @@ importers:
 
   packages/contentstack-seed:
     specifiers:
-      'cs/cli-cm-import': ~1.15.5
-      'cs/cli-command': ~1.2.18
-      'cs/cli-utilities': ~1.6.1
+      'contentstack-cli-1-cm-import': ~1.15.5
+      'contentstack-cli-1-command': ~1.2.18
+      'contentstack-cli-1-utilities': ~1.6.1
       '@oclif/plugin-help': ^5.1.19
       '@types/inquirer': ^9.0.3
       '@types/jest': ^26.0.15
@@ -1016,9 +1016,9 @@ importers:
       tslib: ^2.4.1
       typescript: ^4.9.3
     dependencies:
-      'cs/cli-cm-import': link:../contentstack-import
-      'cs/cli-command': link:../contentstack-command
-      'cs/cli-utilities': link:../contentstack-utilities
+      'contentstack-cli-1-cm-import': link:../contentstack-import
+      'contentstack-cli-1-command': link:../contentstack-command
+      'contentstack-cli-1-utilities': link:../contentstack-utilities
       inquirer: 8.2.4
       mkdirp: 1.0.4
       tar: 6.2.1
@@ -1045,7 +1045,7 @@ importers:
 
   packages/contentstack-utilities:
     specifiers:
-      'cs/cli-dev-dependencies': ^1.2.4
+      'contentstack-cli-1-dev-dependencies': ^1.2.4
       '@contentstack/management': ~1.15.3
       '@contentstack/marketplace-sdk': ^1.0.1
       '@oclif/core': ^3.26.5
@@ -1119,7 +1119,7 @@ importers:
       winston: 3.13.0
       xdg-basedir: 4.0.0
     devDependencies:
-      'cs/cli-dev-dependencies': link:../contentstack-dev-dependencies
+      'contentstack-cli-1-dev-dependencies': link:../contentstack-dev-dependencies
       '@oclif/test': 2.5.6_ogreqof3k35xezedraj6pnd45y
       '@types/chai': 4.3.16
       '@types/inquirer': 9.0.7
@@ -1768,7 +1768,7 @@ packages:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
     dev: true
 
-  /@isaacs/cliui/8.0.2:
+  /@isaacontentstack-cli-1ui/8.0.2:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
     dependencies:
@@ -9047,7 +9047,7 @@ packages:
     resolution: {integrity: sha512-N3yCS/NegsOBokc8GAdM8UcmfsKiSS8cipheD/nivzr700H+nsMOxJjQnvwOcRYVuFkdH0wGUvW2WbXGmrZGbQ==}
     engines: {node: '>=14'}
     dependencies:
-      '@isaacs/cliui': 8.0.2
+      '@isaacontentstack-cli-1ui': 8.0.2
     optionalDependencies:
       '@pkgjs/parseargs': 0.11.0
 

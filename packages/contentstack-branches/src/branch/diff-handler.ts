@@ -1,6 +1,6 @@
 import startCase from 'lodash/startCase';
 import camelCase from 'lodash/camelCase';
-import { cliux } from 'cs/cli-utilities';
+import { cliux } from 'contentstack-cli-1-utilities';
 import { getbranchConfig } from '../utils';
 import { BranchOptions, BranchDiffRes, BranchDiffPayload } from '../interfaces';
 import { askBaseBranch, askCompareBranch, askStackAPIKey, selectModule } from '../utils/interactive';

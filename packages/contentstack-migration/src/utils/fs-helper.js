@@ -2,7 +2,7 @@
 
 const { existsSync, mkdirSync, readFileSync, readFile } = require('fs');
 const path = require('path');
-const { pathValidator } = require('cs/cli-utilities');
+const { pathValidator } = require('contentstack-cli-1-utilities');
 
 exports.makeDir = (dirname) => {
   !this.existsSync(dirname) && mkdirSync(dirname);

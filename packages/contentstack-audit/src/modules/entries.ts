@@ -3,7 +3,7 @@ import find from 'lodash/find';
 import values from 'lodash/values';
 import isEmpty from 'lodash/isEmpty';
 import { join, resolve } from 'path';
-import { ux, FsUtility } from 'cs/cli-utilities';
+import { ux, FsUtility } from 'contentstack-cli-1-utilities';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 
 import auditConfig from '../config';

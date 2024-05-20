@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { cliux, formatTime, formatDate } from 'cs/cli-utilities';
+import { cliux, formatTime, formatDate } from 'contentstack-cli-1-utilities';
 import { entryCreateScript } from './entry-create-script';
 import { entryUpdateScript } from './entry-update-script';
 import { entryCreateUpdateScript } from './entry-create-update-script';

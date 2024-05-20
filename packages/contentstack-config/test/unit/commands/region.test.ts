@@ -1,9 +1,9 @@
 import { expect, should } from 'chai';
 import * as sinon from 'sinon';
-import { configHandler } from 'cs/cli-utilities';
+import { configHandler } from 'contentstack-cli-1-utilities';
 import GetRegionCommand from '../../../src/commands/config/get/region';
 import SetRegionCommand from '../../../src/commands/config/set/region';
-import { cliux } from 'cs/cli-utilities';
+import { cliux } from 'contentstack-cli-1-utilities';
 import { Region } from '../../../src/interfaces';
 
 const config = configHandler;

@@ -1,4 +1,4 @@
-import { Command } from 'cs/cli-command';
+import { Command } from 'contentstack-cli-1-command';
 import {
   cliux,
   configHandler,
@@ -8,7 +8,7 @@ import {
   HttpClient,
   messageHandler,
   Flags,
-} from 'cs/cli-utilities';
+} from 'contentstack-cli-1-utilities';
 import { askTokenType } from '../../../utils/interactive';
 import { BaseCommand } from '../../../base-command';
 export default class TokensAddCommand extends BaseCommand<typeof TokensAddCommand> {

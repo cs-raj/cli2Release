@@ -1,6 +1,6 @@
-import { cliux, flags, configHandler, FlagInput } from 'cs/cli-utilities';
+import { cliux, flags, configHandler, FlagInput } from 'contentstack-cli-1-utilities';
 import { interactive } from '../../../utils';
-import { Command } from 'cs/cli-command';
+import { Command } from 'contentstack-cli-1-command';
 
 export default class SetEarlyAccessHeaderCommand extends Command {
   static description = 'Set Early Access header';

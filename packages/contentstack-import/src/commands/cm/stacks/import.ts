@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { Command } from 'cs/cli-command';
+import { Command } from 'contentstack-cli-1-command';
 import {
   messageHandler,
   printFlagDeprecation,
@@ -8,7 +8,7 @@ import {
   FlagInput,
   ContentstackClient,
   pathValidator,
-} from 'cs/cli-utilities';
+} from 'contentstack-cli-1-utilities';
 
 import { ImportConfig } from '../../../types';
 import { ModuleImporter } from '../../../import';

@@ -1,11 +1,11 @@
 const { join } = require('path')
-const { test } = require("cs/cli-dev-dependencies")
-const { NodeCrypto, messageHandler } = require("cs/cli-utilities")
+const { test } = require("contentstack-cli-1-dev-dependencies")
+const { NodeCrypto, messageHandler } = require("contentstack-cli-1-utilities")
 
 const { getEnvData, getStackDetailsByRegion } = require('./utils/helper')
-const LoginCommand = require('cs/cli-auth/lib/commands/auth/login').default
-const AddTokenCommand = require('cs/cli-auth/lib/commands/auth/tokens/add').default
-const RegionSetCommand = require('cs/cli-config/lib/commands/config/set/region').default
+const LoginCommand = require('contentstack-cli-1-auth/lib/commands/auth/login').default
+const AddTokenCommand = require('contentstack-cli-1-auth/lib/commands/auth/tokens/add').default
+const RegionSetCommand = require('contentstack-cli-1-config/lib/commands/config/set/region').default
 const { DEFAULT_TIMEOUT, PRINT_LOGS, ALIAS_NAME } = require("./config.json")
 
 const { ENCRYPTION_KEY, USERNAME, PASSWORD } = getEnvData()

@@ -1,11 +1,11 @@
-# cs/cli-config
+# contentstack-cli-1-config
 
 The config namespace contains all the commands that you will need to configure the CLI as per your requirements. Contentstack currently supports four regions: North America, Europe, Azure North America and Azure Europe. [Configure the CLI documentation](https://www.contentstack.com/docs/developers/cli/configure-the-cli)
 
-[![License](https://img.shields.io/npm/l/cs/cli)](https://github.com/contentstack/cli/blob/main/LICENSE)
+[![License](https://img.shields.io/npm/l/contentstack-cli-1)](https://github.com/contentstack/cli/blob/main/LICENSE)
 
 <!-- toc -->
-* [cs/cli-config](#contentstackcli-config)
+* [contentstack-cli-1-config](#contentstackcli-config)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -14,11 +14,11 @@ The config namespace contains all the commands that you will need to configure t
 
 <!-- usage -->
 ```sh-session
-$ npm install -g cs/cli-config
+$ npm install -g contentstack-cli-1-config
 $ csdx COMMAND
 running command...
 $ csdx (--version)
-cs/cli-config/1.6.4 darwin-arm64 node-v21.6.2
+contentstack-cli-1-config/1.6.4 darwin-arm64 node-v21.6.2
 $ csdx --help [COMMAND]
 USAGE
   $ csdx COMMAND

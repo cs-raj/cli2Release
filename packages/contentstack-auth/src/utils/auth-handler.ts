@@ -1,7 +1,7 @@
-import { cliux, CLIError } from 'cs/cli-utilities';
+import { cliux, CLIError } from 'contentstack-cli-1-utilities';
 import { User } from '../interfaces';
 import { askOTPChannel, askOTP } from './interactive';
-import { LoggerService } from 'cs/cli-utilities';
+import { LoggerService } from 'contentstack-cli-1-utilities';
 
 /**
  * @class

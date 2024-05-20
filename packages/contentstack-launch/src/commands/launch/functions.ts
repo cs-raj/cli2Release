@@ -1,4 +1,4 @@
-import { FlagInput, Flags } from 'cs/cli-utilities';
+import { FlagInput, Flags } from 'contentstack-cli-1-utilities';
 
 import { BaseCommand } from '../../base-command';
 import Contentfly from '../../util/cloud-function';

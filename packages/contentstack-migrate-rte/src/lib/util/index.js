@@ -1,4 +1,4 @@
-const { Command } = require('cs/cli-command');
+const { Command } = require('contentstack-cli-1-command');
 const command = new Command();
 const chalk = require('chalk');
 const {
@@ -26,7 +26,7 @@ const {
   isAuthenticated,
   doesBranchExist,
   pathValidator,
-} = require('cs/cli-utilities');
+} = require('contentstack-cli-1-utilities');
 const packageValue = require('../../../package.json');
 const isBlank = (variable) => {
   return isNil(variable) || isEmpty(variable);

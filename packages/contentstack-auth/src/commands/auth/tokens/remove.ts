@@ -1,5 +1,5 @@
-import { Command } from 'cs/cli-command';
-import { cliux, configHandler, flags, FlagInput } from 'cs/cli-utilities';
+import { Command } from 'contentstack-cli-1-command';
+import { cliux, configHandler, flags, FlagInput } from 'contentstack-cli-1-utilities';
 import { BaseCommand } from '../../../base-command';
 
 export default class TokensRemoveCommand extends BaseCommand<typeof TokensRemoveCommand> {

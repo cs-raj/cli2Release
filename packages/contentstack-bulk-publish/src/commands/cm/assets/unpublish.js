@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable node/no-extraneous-require */
-const { Command } = require('cs/cli-command');
-const { cliux, flags, isAuthenticated } = require('cs/cli-utilities');
+const { Command } = require('contentstack-cli-1-command');
+const { cliux, flags, isAuthenticated } = require('contentstack-cli-1-utilities');
 const { start } = require('../../../producer/unpublish');
 const store = require('../../../util/store.js');
 const configKey = 'Unpublish';

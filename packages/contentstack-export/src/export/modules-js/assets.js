@@ -11,7 +11,7 @@ const Promise = require('bluebird');
 const _ = require('lodash');
 const chalk = require('chalk');
 const progress = require('progress-stream');
-const { HttpClient, configHandler } = require('cs/cli-utilities');
+const { HttpClient, configHandler } = require('contentstack-cli-1-utilities');
 const { fileHelper, log, formatError } = require('../../utils');
 let { default: config } = require('../../config');
 

@@ -8,7 +8,7 @@
  * MIT Licensed
  */
 import { join } from 'node:path';
-import { FsUtility } from 'cs/cli-utilities';
+import { FsUtility } from 'contentstack-cli-1-utilities';
 import { ImportConfig } from '../types';
 
 // eslint-disable-next-line camelcase

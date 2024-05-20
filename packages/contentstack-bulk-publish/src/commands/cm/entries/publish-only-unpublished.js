@@ -1,6 +1,6 @@
 'use strict';
-const { Command } = require('cs/cli-command');
-const { printFlagDeprecation, flags } = require('cs/cli-utilities');
+const { Command } = require('contentstack-cli-1-command');
+const { printFlagDeprecation, flags } = require('contentstack-cli-1-utilities');
 const { publishOnlyUnpublishedService } = require('../../../services/publish-only-unpublished');
 
 class PublishOnlyUnpublished extends Command {

@@ -4,7 +4,7 @@ import isEmpty from 'lodash/isEmpty';
 import { join, resolve } from 'path';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 
-import { ux } from 'cs/cli-utilities';
+import { ux } from 'contentstack-cli-1-utilities';
 
 import {
   LogFn,

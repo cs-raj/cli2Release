@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import * as sinon from 'sinon';
-import { configHandler } from 'cs/cli-utilities';
+import { configHandler } from 'contentstack-cli-1-utilities';
 import TokensListCommand from '../../../src/commands/auth/tokens/index';
-import { cliux } from 'cs/cli-utilities';
+import { cliux } from 'contentstack-cli-1-utilities';
 
 const config = configHandler;
 const configKeyTokens = 'tokens';

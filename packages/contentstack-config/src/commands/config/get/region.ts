@@ -1,5 +1,5 @@
-import { Command } from 'cs/cli-command';
-import { cliux } from 'cs/cli-utilities';
+import { Command } from 'contentstack-cli-1-command';
+import { cliux } from 'contentstack-cli-1-utilities';
 
 import { Region } from '../../../interfaces';
 import { BaseCommand } from '../../../base-command';

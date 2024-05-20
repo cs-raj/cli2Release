@@ -3,7 +3,7 @@ const fs = require('fs');
 const { promises: fsPromises } = fs;
 const path = require('path');
 const { test } = require('@oclif/test');
-const { cliux: cliUX, messageHandler } = require('cs/cli-utilities');
+const { cliux: cliUX, messageHandler } = require('contentstack-cli-1-utilities');
 
 const { default: config } = require('../../src/config');
 const modules = config.modules;

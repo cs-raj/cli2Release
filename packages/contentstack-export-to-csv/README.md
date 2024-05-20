@@ -1,4 +1,4 @@
-cs/cli-cm-export-to-csv
+contentstack-cli-1-cm-export-to-csv
 =============
 
 The cm:export-to-csv command allows you to export the following data into a CSV file:
@@ -9,17 +9,17 @@ To be able to export the content of a stack, you need to have access to it. Like
 
 Refer to the [Export Content to .CSV](https://www.contentstack.com/docs/developers/cli/export-content-to-csv-file/) file guide to learn more.
 
-[![License](https://img.shields.io/npm/l/cs/cli)](https://github.com/contentstack/cli/blob/main/LICENSE)
+[![License](https://img.shields.io/npm/l/contentstack-cli-1)](https://github.com/contentstack/cli/blob/main/LICENSE)
 
 * [Usage](#usage)
 * [Commands](#commands)
 # Usage
 ```sh-session
-$ npm install -g cs/cli-cm-export-to-csv
+$ npm install -g contentstack-cli-1-cm-export-to-csv
 $ csdx COMMAND
 running command...
 $ csdx (-v|--version|version)
-cs/cli-cm-export-to-csv/0.1.0-beta linux-x64 node-v12.18.4
+contentstack-cli-1-cm-export-to-csv/0.1.0-beta linux-x64 node-v12.18.4
 $ csdx --help [COMMAND]
 USAGE
   $ csdx COMMAND

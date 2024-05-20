@@ -1,4 +1,4 @@
-import { cliux, managementSDKClient } from 'cs/cli-utilities';
+import { cliux, managementSDKClient } from 'contentstack-cli-1-utilities';
 
 export async function createBranch(host: string, apiKey: string, branch: { uid: string; source: string }) {
   const managementAPIClient = await managementSDKClient({ host });

@@ -2,7 +2,7 @@ let fs = require('fs').promises;
 let path = require('path')
 let crypto = require('crypto')
 let supportedLocales = require('./locales.json')
-const { pathValidator } = require('cs/cli-utilities')
+const { pathValidator } = require('contentstack-cli-1-utilities')
 
 module.exports = async ({ migration, config }) => {
   let changeMasterLocale = {

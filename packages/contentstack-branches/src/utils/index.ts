@@ -4,7 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 import forEach from 'lodash/forEach'
-import { configHandler, cliux, messageHandler } from 'cs/cli-utilities';
+import { configHandler, cliux, messageHandler } from 'contentstack-cli-1-utilities';
 import { MergeParams } from '../interfaces';
 
 export const getbranchesList = (branchResult, baseBranch: string) => {

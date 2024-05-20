@@ -1,11 +1,11 @@
-# cs/cli-cm-export
+# contentstack-cli-1-cm-export
 
 It is Contentstack’s CLI plugin to export content from the stack. To learn how to export and import content in Contentstack, refer to the [Migration guide](https://www.contentstack.com/docs/developers/cli/migration/).
 
-[![License](https://img.shields.io/npm/l/cs/cli)](https://github.com/contentstack/cli/blob/main/LICENSE)
+[![License](https://img.shields.io/npm/l/contentstack-cli-1)](https://github.com/contentstack/cli/blob/main/LICENSE)
 
 <!-- toc -->
-* [cs/cli-cm-export](#contentstackcli-cm-export)
+* [contentstack-cli-1-cm-export](#contentstackcli-cm-export)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
@@ -44,11 +44,11 @@ For switching to AZURE-EU region update the hosts at config/default.js
 
 <!-- usage -->
 ```sh-session
-$ npm install -g cs/cli-cm-export
+$ npm install -g contentstack-cli-1-cm-export
 $ csdx COMMAND
 running command...
 $ csdx (--version)
-cs/cli-cm-export/1.11.3 darwin-arm64 node-v21.6.2
+contentstack-cli-1-cm-export/1.11.3 darwin-arm64 node-v21.6.2
 $ csdx --help [COMMAND]
 USAGE
   $ csdx COMMAND

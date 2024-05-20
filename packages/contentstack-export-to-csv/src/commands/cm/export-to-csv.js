@@ -1,4 +1,4 @@
-const { Command } = require('cs/cli-command');
+const { Command } = require('contentstack-cli-1-command');
 const {
   configHandler,
   managementSDKClient,
@@ -7,7 +7,7 @@ const {
   cliux,
   doesBranchExist,
   isManagementTokenValid
-} = require('cs/cli-utilities');
+} = require('contentstack-cli-1-utilities');
 const util = require('../../util');
 const config = require('../../util/config');
 

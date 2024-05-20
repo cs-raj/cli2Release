@@ -11,7 +11,7 @@ import {
   isAuthenticated,
   marketplaceSDKClient,
   ContentstackMarketplaceClient,
-} from 'cs/cli-utilities';
+} from 'contentstack-cli-1-utilities';
 
 import { ModuleClassParams, MarketplaceAppsConfig, ExportConfig, Installation, Manifest } from '../../types';
 import { log, fsUtil, getOrgUid, formatError, getDeveloperHubUrl, createNodeCryptoInstance } from '../../utils';

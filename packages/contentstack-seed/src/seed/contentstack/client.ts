@@ -1,5 +1,5 @@
 import ContentstackError from './error';
-import { managementSDKClient, configHandler } from 'cs/cli-utilities';
+import { managementSDKClient, configHandler } from 'contentstack-cli-1-utilities';
 import * as ContentstackManagementSDK from '@contentstack/management';
 
 export interface Organization {

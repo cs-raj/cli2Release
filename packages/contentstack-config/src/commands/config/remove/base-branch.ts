@@ -1,5 +1,5 @@
-import { Command } from 'cs/cli-command';
-import { cliux, flags, configHandler, FlagInput } from 'cs/cli-utilities';
+import { Command } from 'contentstack-cli-1-command';
+import { cliux, flags, configHandler, FlagInput } from 'contentstack-cli-1-utilities';
 import { interactive } from '../../../utils';
 
 export default class RemoveBranchConfigCommand extends Command {

@@ -4,7 +4,7 @@ import chalk, { Chalk } from 'chalk';
 import replace from 'lodash/replace';
 import isObject from 'lodash/isObject';
 import { normalize, resolve } from 'path';
-import { PrintOptions, cliux as ux } from 'cs/cli-utilities';
+import { PrintOptions, cliux as ux } from 'contentstack-cli-1-utilities';
 
 import { LoggerType, PrintType } from '../types';
 

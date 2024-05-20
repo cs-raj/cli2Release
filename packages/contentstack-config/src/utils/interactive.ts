@@ -1,5 +1,5 @@
 import { isEmpty } from 'lodash';
-import { cliux, messageHandler } from 'cs/cli-utilities';
+import { cliux, messageHandler } from 'contentstack-cli-1-utilities';
 
 export const askRegions = async (): Promise<string> => {
   return cliux.inquire<string>({

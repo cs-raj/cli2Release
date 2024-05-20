@@ -1,5 +1,5 @@
 {
-  "name": "cs/cli-audit",
+  "name": "contentstack-cli-1-audit",
   "version": "1.6.1",
   "description": "Contentstack audit plugin",
   "author": "Contentstack CLI",
@@ -18,8 +18,8 @@
     "/oclif.manifest.json"
   ],
   "dependencies": {
-    "cs/cli-command": "~1.2.18",
-    "cs/cli-utilities": "~1.6.1",
+    "contentstack-cli-1-command": "~1.2.18",
+    "contentstack-cli-1-utilities": "~1.6.1",
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^5.0.0",
     "chalk": "^4.1.2",
@@ -30,7 +30,7 @@
     "winston": "^3.10.0"
   },
   "devDependencies": {
-    "cs/cli-dev-dependencies": "^1.2.4",
+    "contentstack-cli-1-dev-dependencies": "^1.2.4",
     "@oclif/test": "^2.5.6",
     "@types/chai": "^4.3.5",
     "@types/fs-extra": "^11.0.2",

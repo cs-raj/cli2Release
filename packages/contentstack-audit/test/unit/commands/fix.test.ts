@@ -1,7 +1,7 @@
 import fs from 'fs';
 import winston from 'winston';
 import { expect } from '@oclif/test';
-import { fancy } from 'cs/cli-dev-dependencies';
+import { fancy } from 'contentstack-cli-1-dev-dependencies';
 import { FileTransportInstance } from 'winston/lib/winston/transports';
 
 import { AuditBaseCommand } from '../../../src/audit-base-command';

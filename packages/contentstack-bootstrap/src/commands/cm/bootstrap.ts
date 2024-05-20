@@ -1,4 +1,4 @@
-import { Command } from 'cs/cli-command';
+import { Command } from 'contentstack-cli-1-command';
 import { resolve } from 'path';
 import Bootstrap, { BootstrapOptions, SeedParams } from '../../bootstrap';
 import {
@@ -14,7 +14,7 @@ import {
   isAuthenticated,
   FlagInput,
   configHandler,
-} from 'cs/cli-utilities';
+} from 'contentstack-cli-1-utilities';
 import config, { getAppLevelConfigByName, AppConfig } from '../../config';
 import messageHandler from '../../messages';
 

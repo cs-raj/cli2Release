@@ -1,12 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const { expect, test } = require('@oclif/test');
-const { test: customTest } = require('cs/cli-dev-dependencies');
-const { messageHandler } = require('cs/cli-utilities');
-const LoginCommand = require('cs/cli-auth/lib/commands/auth/login').default;
-const AddTokenCommand = require('cs/cli-auth/lib/commands/auth/tokens/add').default;
-const RegionSetCommand = require('cs/cli-config/lib/commands/config/set/region').default;
-const ExportCommand = require('cs/cli-cm-export/src/commands/cm/stacks/export');
+const { test: customTest } = require('contentstack-cli-1-dev-dependencies');
+const { messageHandler } = require('contentstack-cli-1-utilities');
+const LoginCommand = require('contentstack-cli-1-auth/lib/commands/auth/login').default;
+const AddTokenCommand = require('contentstack-cli-1-auth/lib/commands/auth/tokens/add').default;
+const RegionSetCommand = require('contentstack-cli-1-config/lib/commands/config/set/region').default;
+const ExportCommand = require('contentstack-cli-1-cm-export/src/commands/cm/stacks/export');
 
 const { default: defaultConfig } = require('../../src/config');
 const modules = defaultConfig.modules;

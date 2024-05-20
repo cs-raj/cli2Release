@@ -1,5 +1,5 @@
-import { cliux, configHandler } from 'cs/cli-utilities';
-import { Command } from 'cs/cli-command';
+import { cliux, configHandler } from 'contentstack-cli-1-utilities';
+import { Command } from 'contentstack-cli-1-command';
 
 export default class GetEarlyAccessHeaderCommand extends Command {
   static description = 'Display Early Access headers';

@@ -1,5 +1,5 @@
 const { describe, it } = require('mocha');
-const { cliux } = require('cs/cli-utilities');
+const { cliux } = require('contentstack-cli-1-utilities');
 const sinon = require('sinon');
 const { config } = require('dotenv');
 const { expect } = require('chai');

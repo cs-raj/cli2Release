@@ -1,12 +1,12 @@
 {
-  "name": "cs/cli-cm-export-to-csv",
+  "name": "contentstack-cli-1-cm-export-to-csv",
   "description": "Export entities to csv",
   "version": "1.7.1",
   "author": "Abhinav Gupta @abhinav-from-contentstack",
   "bugs": "https://github.com/contentstack/cli/issues",
   "dependencies": {
-    "cs/cli-command": "~1.2.18",
-    "cs/cli-utilities": "~1.6.1",
+    "contentstack-cli-1-command": "~1.2.18",
+    "contentstack-cli-1-utilities": "~1.6.1",
     "chalk": "^4.1.0",
     "fast-csv": "^4.3.6",
     "inquirer": "8.2.4",

@@ -1,4 +1,4 @@
-jest.mock('cs/cli-cm-import/src/lib/util/import-flags');
+jest.mock('contentstack-cli-1-cm-import/src/lib/util/import-flags');
 jest.mock('path');
 
 import * as process from 'process';

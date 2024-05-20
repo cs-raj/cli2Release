@@ -16,7 +16,7 @@ const {
   HttpClientDecorator,
   OauthDecorator,
   isAuthenticated,
-} = require('cs/cli-utilities');
+} = require('contentstack-cli-1-utilities');
 const { default: config } = require('../../config');
 const { formatError, log, fileHelper } = require('../../utils');
 const { getDeveloperHubUrl, createNodeCryptoInstance } = require('../../utils');

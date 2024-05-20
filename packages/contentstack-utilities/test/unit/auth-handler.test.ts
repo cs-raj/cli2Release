@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { expect } from 'chai';
 import { assert, stub, createSandbox } from 'sinon';
-import { cliux } from 'cs/cli-utilities';
+import { cliux } from 'contentstack-cli-1-utilities';
 import authHandler from '../../src/auth-handler';
 import configHandler from '../../src/config-handler';
 import { HttpClient } from '../../src/http-client';

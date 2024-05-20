@@ -1,6 +1,6 @@
 import * as path from 'path';
 import { writeFileSync, makeDirectory } from './file-helper';
-import { isAuthenticated, configHandler } from 'cs/cli-utilities';
+import { isAuthenticated, configHandler } from 'contentstack-cli-1-utilities';
 import { ExportConfig } from '../types';
 
 const setupBranches = async (config: ExportConfig, stackAPIClient: any) => {

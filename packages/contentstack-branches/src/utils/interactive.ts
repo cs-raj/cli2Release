@@ -2,7 +2,7 @@ import isEmpty from 'lodash/isEmpty';
 import startCase from 'lodash/startCase';
 import camelCase from 'lodash/camelCase';
 import forEach from 'lodash/forEach';
-import { cliux, messageHandler } from 'cs/cli-utilities';
+import { cliux, messageHandler } from 'contentstack-cli-1-utilities';
 
 import { BranchDiffRes } from '../interfaces';
 

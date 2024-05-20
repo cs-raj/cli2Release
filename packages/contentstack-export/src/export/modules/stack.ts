@@ -1,6 +1,6 @@
 import find from 'lodash/find';
 import { resolve as pResolve } from 'node:path';
-import { isAuthenticated, managementSDKClient } from 'cs/cli-utilities';
+import { isAuthenticated, managementSDKClient } from 'contentstack-cli-1-utilities';
 
 import BaseClass from './base-class';
 import { log, formatError, fsUtil } from '../../utils';

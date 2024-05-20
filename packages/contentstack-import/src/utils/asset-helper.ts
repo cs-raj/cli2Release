@@ -1,7 +1,7 @@
 import Bluebird from 'bluebird';
 import * as url from 'url';
 import * as path from 'path';
-import { ContentstackClient, managementSDKClient } from 'cs/cli-utilities';
+import { ContentstackClient, managementSDKClient } from 'contentstack-cli-1-utilities';
 import { ImportConfig } from '../types';
 const debug = require('debug')('util:requests');
 let _ = require('lodash');

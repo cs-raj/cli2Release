@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { cliux, pathValidator } from 'cs/cli-utilities';
+import { cliux, pathValidator } from 'contentstack-cli-1-utilities';
 import { continueBootstrapCommand } from '../bootstrap/interactive';
 import { AppConfig } from '../config';
 import messageHandler from '../messages';

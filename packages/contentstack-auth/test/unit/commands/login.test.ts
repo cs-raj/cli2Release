@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import * as sinon from 'sinon';
 import LoginCommand from '../../../src/commands/auth/login';
 import { authHandler, interactive } from '../../../src/utils';
-import { configHandler, cliux } from 'cs/cli-utilities';
+import { configHandler, cliux } from 'contentstack-cli-1-utilities';
 
 const config = configHandler;
 

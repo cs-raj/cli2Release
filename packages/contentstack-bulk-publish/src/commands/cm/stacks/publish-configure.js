@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const { Command } = require('cs/cli-command');
-const { cliux, flags } = require('cs/cli-utilities');
+const { Command } = require('contentstack-cli-1-command');
+const { cliux, flags } = require('contentstack-cli-1-utilities');
 
 let config = require('../../../config/index.js');
 
